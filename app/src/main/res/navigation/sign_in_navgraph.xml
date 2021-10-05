@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/sign_in_navgraph"
+    app:startDestination="@id/mainSignInFrag">
+
+    <fragment
+        android:id="@+id/mainSignInFrag"
+        android:name="com.example.securityintegration.Views.SignIn.MainSignInFrag"
+        android:label="MainSignInFrag" >
+        <action
+            android:id="@+id/action_mainSignInFrag_to_recoverPasswordFrag"
+            app:destination="@id/recoverPasswordFrag" />
+    </fragment>
+    <fragment
+        android:id="@+id/recoverPasswordFrag"
+        android:name="com.example.securityintegration.Views.SignIn.RecoverPasswordFrag"
+        android:label="RecoverPasswordFrag" >
+        <action
+            android:id="@+id/action_recoverPasswordFrag_to_recoverPasswordSQFrag"
+            app:destination="@id/recoverPasswordSQFrag" />
+    </fragment>
+    <fragment
+        android:id="@+id/recoverPasswordSQFrag"
+        android:name="com.example.securityintegration.Views.SignIn.RecoverPasswordSQFrag"
+        android:label="RecoverPasswordSQFrag" >
+        <action
+            android:id="@+id/action_recoverPasswordSQFrag_to_recoverPasswordNewPassword"
+            app:destination="@id/recoverPasswordNewPassword" />
+    </fragment>
+    <fragment
+        android:id="@+id/recoverPasswordNewPassword"
+        android:name="com.example.securityintegration.Views.SignIn.RecoverPasswordNewPassword"
+        android:label="RecoverPasswordNewPassword" >
+        <action
+            android:id="@+id/action_recoverPasswordNewPassword_to_mainSignInFrag"
+            app:destination="@id/mainSignInFrag" />
+    </fragment>
+</navigation>

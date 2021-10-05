@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/firstlaunch_gradient">
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="156dp"
+        android:layout_height="171dp"
+        android:contentDescription="@string/icon_desc"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/ic_launcher_foreground" />
+
+    <TableLayout
+        android:id="@+id/tableLayout"
+        android:layout_width="357dp"
+        android:layout_height="209dp"
+        android:padding="@dimen/element_large_spacing"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="12dp">
+
+            <EditText
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.3"
+                android:autofillHints="testHint"
+                android:background="@drawable/inputshape"
+                android:backgroundTint="#20FFFFFF"
+                android:drawableStart="@drawable/ic_username"
+                android:hint="@string/nombre_de_la_organizaci_n"
+                android:inputType="text"
+                android:minHeight="48dp"
+                android:textColor="@color/white"
+                android:textColorHint="#70FFFFFF"
+                tools:ignore="TextContrastCheck" />
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="12dp">
+
+            <EditText
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.5"
+                android:autofillHints="testHint"
+                android:background="@drawable/inputshape"
+                android:backgroundTint="#20FFFFFF"
+                android:drawableStart="@drawable/ic_country"
+                android:ems="15"
+                android:hint="@string/pa_s_de_origen"
+                android:inputType="number"
+                android:minHeight="48dp"
+                android:textColor="@color/white"
+                android:textColorHint="#70FFFFFF"
+                tools:ignore="TextContrastCheck" />
+
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="12dp">
+
+            <EditText
+                android:layout_width="182dp"
+                android:layout_height="48dp"
+                android:layout_weight="0.7"
+                android:autofillHints="testHint"
+                android:background="@drawable/inputshape"
+                android:backgroundTint="#20FFFFFF"
+                android:drawableStart="@drawable/ic_date"
+                android:hint="@string/a_o_de_creaci_n"
+                android:inputType="date"
+                android:minHeight="48dp"
+                android:textColor="@color/white"
+                android:textColorHint="#70FFFFFF"
+                tools:ignore="TextContrastCheck" />
+
+        </TableRow>
+
+    </TableLayout>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/btnNext"
+        android:layout_width="200dp"
+        android:layout_height="40dp"
+        android:layout_marginBottom="250dp"
+        android:elevation="2dp"
+        android:shadowColor="@color/black"
+        app:cardBackgroundColor="#c21353"
+        app:cardCornerRadius="25dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:text="@string/siguiente"
+            android:textAlignment="center"
+            android:textColor="@color/white" />
+    </androidx.cardview.widget.CardView>
+
+    <TextView
+        android:id="@+id/signUpBankInfoTitle"
+        android:layout_width="215dp"
+        android:layout_height="31dp"
+        android:layout_marginBottom="24dp"
+        android:fontFamily="sans-serif-black"
+        android:minHeight="48dp"
+        android:text="@string/sobre_la_organizaci_n"
+        android:textAllCaps="false"
+        android:textColor="@color/white"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toTopOf="@+id/tableLayout"
+        app:layout_constraintEnd_toEndOf="@+id/tableLayout"
+        app:layout_constraintHorizontal_bias="0.11"
+        app:layout_constraintStart_toStartOf="@+id/tableLayout" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

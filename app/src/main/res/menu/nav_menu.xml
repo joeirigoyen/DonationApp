@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:title="@string/nueva_iniciativa"
+        android:icon="@drawable/ic_plus">
+    </item>
+
+    <item
+        android:title="@string/mis_iniciativas"
+        android:icon="@drawable/ic_initiative">
+    </item>
+
+    <item
+        android:title="@string/donar"
+        android:icon="@drawable/ic_donate">
+    </item>
+
+    <item
+        android:title="@string/revisar_membresia"
+        android:icon="@drawable/ic_membership">
+    </item>
+
+    <item
+        android:title="@string/mi_metodo_de_pago"
+        android:icon="@drawable/ic_method">
+    </item>
+
+    <item
+        android:title="@string/enter_project"
+        android:icon="@drawable/ic_newproject">
+    </item>
+
+    <item
+        android:title="@string/mis_proyectos"
+        android:icon="@drawable/ic_myprojects">
+    </item>
+
+    <item
+        android:title="@string/ver_organizaciones"
+        android:icon="@drawable/ic_orgs">
+    </item>
+
+    <item
+        android:title="@string/ver_inversionistas"
+        android:icon="@drawable/ic_invs">
+    </item>
+
+    <item
+        android:title="@string/cerrar_sesion"
+        android:icon="@drawable/ic_logout">
+    </item>
+
+</menu>
