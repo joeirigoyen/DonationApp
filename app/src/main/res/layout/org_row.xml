@@ -20,10 +20,11 @@
 
             <TextView
                 android:id="@+id/tvOrgName"
-                android:layout_weight="0.8"
                 android:layout_width="0dp"
-                android:layout_height="match_parent"
+                android:layout_height="42dp"
+                android:layout_marginStart="20dp"
                 android:layout_marginTop="10dp"
+                android:layout_weight="0.8"
                 android:text="Org Name"
                 android:textColor="#FFFFFF"
                 android:textSize="24sp"
@@ -42,8 +43,11 @@
         <TextView
             android:id="@+id/tvOrgDesc"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Lorem ipsum " />
+            android:layout_height="31dp"
+            android:layout_marginStart="20dp"
+            android:text="Lorem ipsum "
+            android:textColor="#E1D5D5"
+            android:textStyle="italic" />
     </LinearLayout>
 
 </androidx.cardview.widget.CardView>
