@@ -1,4 +1,4 @@
-package com.example.securityintegration.Models
+package com.example.securityintegration.Models.OrgLookup
 
 import android.graphics.Rect
 import android.view.View

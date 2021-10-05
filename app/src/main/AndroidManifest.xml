@@ -11,6 +11,10 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme.NoActionBar">
         <activity
+            android:name=".Views.Landing.MainPageActivity"
+            android:exported="true"
+            android:label="@string/title_activity_main_page" />
+        <activity
             android:name=".Views.OrgLookup.OrgsLookupActivity"
             android:exported="true" />
         <activity
@@ -20,7 +24,7 @@
         <activity
             android:name=".Views.SignUp.MainSignUpActivity"
             android:exported="true"
-            android:theme="@style/Theme.AppCompat.NoActionBar"/>
+            android:theme="@style/Theme.AppCompat.NoActionBar" />
         <activity
             android:name=".Views.DonatePayPalInfo"
             android:exported="true" />
@@ -39,6 +43,7 @@
             android:theme="@style/Theme.AppCompat.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>

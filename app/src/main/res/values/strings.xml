@@ -85,4 +85,14 @@
     <string name="nextttt">next</string>
     <string name="olvidaste_tu_contrase_a">¿Olvidaste tu contraseña?</string>
     <string name="title_activity_donate">DonateActivity</string>
+    <string name="title_activity_main_page">MainPageActivity</string>
+    <string name="title_home">Home</string>
+    <string name="title_dashboard">Dashboard</string>
+    <string name="title_notifications">Notifications</string>
+    <string name="organizaciones">Organizaciones</string>
+    <string name="eventos">Eventos</string>
+    <string name="proyectos">Proyectos</string>
+    <string name="perfil">Perfil</string>
+    <string name="organizaciones_participantes">Organizaciones participantes</string>
+    <string name="eventos_disponibles">Eventos disponibles</string>
 </resources>
