@@ -1,4 +1,4 @@
-package com.example.securityintegration.Models
+package com.example.securityintegration.Models.OrgLookup
 
 // OrgList model which gets org list
 class OrgService {

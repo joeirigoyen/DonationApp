@@ -5,7 +5,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
-import com.example.securityintegration.Models.Org
+import com.example.securityintegration.Models.OrgLookup.Org
 import com.example.securityintegration.R
 
 // Provides info to populate OrgList RecyclerView

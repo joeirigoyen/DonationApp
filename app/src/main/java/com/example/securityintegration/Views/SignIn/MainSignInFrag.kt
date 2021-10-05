@@ -12,6 +12,7 @@ import com.example.securityintegration.Views.SignUp.MainSignUpActivity
 import com.example.securityintegration.R
 import com.example.securityintegration.ViewModels.SignIn.MainSignInViewModel
 import com.example.securityintegration.Views.Landing.LandingActivity
+import com.example.securityintegration.Views.Landing.MainPageActivity
 import com.example.securityintegration.databinding.MainSignInFragmentBinding
 
 // Sign-in view administrator fragment
@@ -45,7 +46,7 @@ class MainSignInFrag : Fragment() {
             requireActivity().finish()
         }
         binding.btnLogin.setOnClickListener {
-            val intent = Intent(activity, LandingActivity::class.java)
+            val intent = Intent(activity, MainPageActivity::class.java)
             startActivity(intent)
             requireActivity().finish()
         }

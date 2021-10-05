@@ -3,11 +3,65 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/landing_navgraph"
-    app:startDestination="@id/landingFragment">
-
+    app:startDestination="@id/profileFragment">
     <fragment
-        android:id="@+id/landingFragment"
-        android:name="com.example.securityintegration.Views.Landing.LandingFragment"
-        android:label="landing_fragment"
-        tools:layout="@layout/landing_fragment" />
+        android:id="@+id/profileFragment"
+        android:name="com.example.securityintegration.Views.Profile.ProfileFragment"
+        android:label="profile_fragment"
+        tools:layout="@layout/profile_fragment" >
+        <action
+            android:id="@+id/action_profileFragment_to_eventListFragment"
+            app:destination="@id/eventListFragment" />
+        <action
+            android:id="@+id/action_profileFragment_to_projectListFragment"
+            app:destination="@id/projectListFragment" />
+        <action
+            android:id="@+id/action_profileFragment_to_orgListFragment2"
+            app:destination="@id/orgListFragment2" />
+    </fragment>
+    <fragment
+        android:id="@+id/eventListFragment"
+        android:name="com.example.securityintegration.Views.Events.EventListFragment"
+        android:label="event_list_fragment"
+        tools:layout="@layout/event_list_fragment" >
+        <action
+            android:id="@+id/action_eventListFragment_to_orgListFragment2"
+            app:destination="@id/orgListFragment2" />
+        <action
+            android:id="@+id/action_eventListFragment_to_projectListFragment"
+            app:destination="@id/projectListFragment" />
+        <action
+            android:id="@+id/action_eventListFragment_to_profileFragment"
+            app:destination="@id/profileFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/orgListFragment2"
+        android:name="com.example.securityintegration.Views.OrgLookup.OrgListFragment"
+        android:label="org_list_fragment"
+        tools:layout="@layout/org_list_fragment" >
+        <action
+            android:id="@+id/action_orgListFragment2_to_projectListFragment"
+            app:destination="@id/projectListFragment" />
+        <action
+            android:id="@+id/action_orgListFragment2_to_eventListFragment"
+            app:destination="@id/eventListFragment" />
+        <action
+            android:id="@+id/action_orgListFragment2_to_profileFragment"
+            app:destination="@id/profileFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/projectListFragment"
+        android:name="com.example.securityintegration.Views.Projects.ProjectListFragment"
+        android:label="project_list_fragment"
+        tools:layout="@layout/project_list_fragment" >
+        <action
+            android:id="@+id/action_projectListFragment_to_profileFragment"
+            app:destination="@id/profileFragment" />
+        <action
+            android:id="@+id/action_projectListFragment_to_orgListFragment2"
+            app:destination="@id/orgListFragment2" />
+        <action
+            android:id="@+id/action_projectListFragment_to_eventListFragment"
+            app:destination="@id/eventListFragment" />
+    </fragment>
 </navigation>

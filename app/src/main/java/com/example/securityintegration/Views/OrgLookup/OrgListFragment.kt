@@ -1,6 +1,5 @@
 package com.example.securityintegration.Views.OrgLookup
 
-import androidx.lifecycle.ViewModelProvider
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -8,8 +7,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.viewModels
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.example.securityintegration.Models.MarginItemDecoration
-import com.example.securityintegration.R
+import com.example.securityintegration.Models.OrgLookup.MarginItemDecoration
 import com.example.securityintegration.ViewModels.OrgListViewModel
 import com.example.securityintegration.databinding.OrgListFragmentBinding
 
@@ -19,8 +17,8 @@ class OrgListFragment : Fragment() {
         fun newInstance() = OrgListFragment()
     }
 
-    private val viewModel: OrgListViewModel by viewModels()
     private lateinit var binding: OrgListFragmentBinding
+    private val viewModel: OrgListViewModel by viewModels()
     private val adapter = OrgListAdapter(arrayListOf())
     private val space = 20
 
