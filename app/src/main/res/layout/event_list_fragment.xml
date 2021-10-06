@@ -7,7 +7,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#373737"
-    tools:context=".Views.OrgLookup.OrgListFragment">
+    tools:context=".Views.Events.EventListFragment">
 
     <com.google.android.material.appbar.AppBarLayout
         android:id="@+id/event_titlebar"

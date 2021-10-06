@@ -95,4 +95,5 @@
     <string name="perfil">Perfil</string>
     <string name="organizaciones_participantes">Organizaciones participantes</string>
     <string name="eventos_disponibles">Eventos disponibles</string>
+    <string name="proyectos_actuales">Proyectos actuales</string>
 </resources>
