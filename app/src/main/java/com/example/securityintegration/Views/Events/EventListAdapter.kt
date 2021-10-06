@@ -6,7 +6,6 @@ import android.view.ViewGroup
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.example.securityintegration.Models.EventList.Event
-import com.example.securityintegration.Models.OrgLookup.Org
 import com.example.securityintegration.R
 
 // Provides info to populate OrgList RecyclerView
@@ -14,7 +13,7 @@ class EventListAdapter (var evArray: ArrayList<Event>) : RecyclerView.Adapter<Ev
 
     // Create and provide boxes to RecyclerView
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): EventViewHolder {
-        val eventRow = LayoutInflater.from(parent.context).inflate(R.layout.event_info_fragment, parent, false)
+        val eventRow = LayoutInflater.from(parent.context).inflate(R.layout.event_row, parent, false)
         return EventViewHolder(eventRow)
     }
 

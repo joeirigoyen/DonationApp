@@ -8,7 +8,8 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.viewModels
 import com.example.securityintegration.R
-import com.example.securityintegration.ViewModels.OrgInfoViewModel
+import com.example.securityintegration.ViewModels.OrgLookup.OrgInfoViewModel
+import com.example.securityintegration.databinding.OrgInfoFragmentBinding
 
 class OrgInfoFragment : Fragment() {
 
@@ -16,13 +17,14 @@ class OrgInfoFragment : Fragment() {
         fun newInstance() = OrgInfoFragment()
     }
 
+    private lateinit var binding : OrgInfoFragmentBinding
     private val viewModel: OrgInfoViewModel by viewModels()
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
-        return inflater.inflate(R.layout.org_info_fragment, container, false)
+    ): View {
+        binding = OrgInfoFragmentBinding.inflate(layoutInflater)
+        return binding.root
     }
-
 }

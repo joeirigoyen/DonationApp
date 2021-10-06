@@ -5,16 +5,19 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.fragment.app.viewModels
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.securityintegration.Models.OrgLookup.MarginItemDecoration
-import com.example.securityintegration.ViewModels.OrgListViewModel
+import com.example.securityintegration.ViewModels.OrgLookup.OrgListViewModel
 import com.example.securityintegration.databinding.OrgListFragmentBinding
 
 class OrgListFragment : Fragment() {
 
     companion object {
         fun newInstance() = OrgListFragment()
+
     }
 
     private lateinit var binding: OrgListFragmentBinding
@@ -36,6 +39,7 @@ class OrgListFragment : Fragment() {
         configObservers()
         configAdapter()
         configEvents()
+        getOrgData()
     }
 
     private fun configEvents() {
@@ -43,8 +47,8 @@ class OrgListFragment : Fragment() {
     }
 
     private fun configObservers() {
-        viewModel.orgList.observe(viewLifecycleOwner) {
-            orgList -> adapter.update(orgList)
+        viewModel.orgList.observe(viewLifecycleOwner) { orgList ->
+            adapter.update(orgList)
         }
     }
 
@@ -57,11 +61,15 @@ class OrgListFragment : Fragment() {
         recyclerView.adapter = adapter
     }
 
-    /*override fun clickOrg (position: Int)
+    private fun getOrgData ()
     {
-        val org = adapter.orgArray[position]
-        val action = OrgListFragmentDirections.actionOrgListFragmentToOrgInfoFragment(org)
-        findNavController().navigate(action)
-    }*/
+        val recyclerView = binding.rvOrgList
+        recyclerView.adapter = adapter
+        adapter.setOnItemClickListener(object : OrgListAdapter.onItemClickListener{
+            override fun onItemClick(pos: Int) {
+                Toast.makeText(activity, pos, Toast.LENGTH_SHORT).show()
+            }
+        })
+    }
 
 }

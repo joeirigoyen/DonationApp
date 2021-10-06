@@ -7,7 +7,9 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.viewModels
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
 import com.example.securityintegration.Models.OrgLookup.MarginItemDecoration
 import com.example.securityintegration.R
 import com.example.securityintegration.ViewModels.Events.EventListViewModel
@@ -45,7 +47,10 @@ class ProjectListFragment : Fragment() {
     }
 
     private fun configEvents() {
+        // Set element info to boxes
         viewModel.getProjects()
+        // Set click listeners to RecyclerView
+
     }
 
     private fun configObservers() {
@@ -63,11 +68,9 @@ class ProjectListFragment : Fragment() {
         recyclerView.adapter = adapter
     }
 
-    /*override fun clickProject (position: Int)
+    fun clickProject (position: Int)
     {
-        val project = adapter.prArray [position]
-        val action = ProjectListFragmentDirections.actionProjectListFragmentToProjectInfoFragment(project)
-        findNavController().navigate(action)
-    }*/
+        val project = adapter.prArray[position]
+    }
 
 }

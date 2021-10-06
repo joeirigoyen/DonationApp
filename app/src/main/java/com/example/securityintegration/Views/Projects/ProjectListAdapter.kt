@@ -5,7 +5,6 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
-import com.example.securityintegration.Models.EventList.Event
 import com.example.securityintegration.Models.ProjectList.Project
 import com.example.securityintegration.R
 
@@ -14,7 +13,7 @@ class ProjectListAdapter (var prArray: ArrayList<Project>) : RecyclerView.Adapte
 
     // Create and provide boxes to RecyclerView
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ProjectViewHolder {
-        val eventRow = LayoutInflater.from(parent.context).inflate(R.layout.project_info_fragment, parent, false)
+        val eventRow = LayoutInflater.from(parent.context).inflate(R.layout.project_row, parent, false)
         return ProjectViewHolder(eventRow)
     }
 
