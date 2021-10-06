@@ -14,7 +14,7 @@ class EventListAdapter (var evArray: ArrayList<Event>) : RecyclerView.Adapter<Ev
 
     // Create and provide boxes to RecyclerView
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): EventViewHolder {
-        val eventRow = LayoutInflater.from(parent.context).inflate(R.layout.event_row, parent, false)
+        val eventRow = LayoutInflater.from(parent.context).inflate(R.layout.event_info_fragment, parent, false)
         return EventViewHolder(eventRow)
     }
 

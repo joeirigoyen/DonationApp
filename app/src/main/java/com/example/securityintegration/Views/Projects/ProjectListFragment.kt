@@ -63,4 +63,11 @@ class ProjectListFragment : Fragment() {
         recyclerView.adapter = adapter
     }
 
+    /*override fun clickProject (position: Int)
+    {
+        val project = adapter.prArray [position]
+        val action = ProjectListFragmentDirections.actionProjectListFragmentToProjectInfoFragment(project)
+        findNavController().navigate(action)
+    }*/
+
 }

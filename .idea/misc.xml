@@ -73,6 +73,10 @@
         <entry key="..\:/irigx/Documents/School/5to/ISS/Mobile/DibujandoUnTomorrow/SecurityIntegration/App/app/src/main/res/layout/sign_up_org_info_fragment.xml" value="0.23157894736842105" />
         <entry key="..\:/irigx/Documents/School/5to/ISS/Mobile/DibujandoUnTomorrow/SecurityIntegration/App/app/src/main/res/layout/sign_up_payment_method_fragment.xml" value="0.23157894736842105" />
         <entry key="..\:/irigx/Documents/School/5to/ISS/Mobile/DibujandoUnTomorrow/SecurityIntegration/App/app/src/main/res/menu/nav_menu.xml" value="0.23157894736842105" />
+        <entry key="app/src/main/res/layout/event_info_fragment.xml" value="0.16944444444444445" />
+        <entry key="app/src/main/res/layout/event_row.xml" value="0.16944444444444445" />
+        <entry key="app/src/main/res/layout/project_info_fragment.xml" value="0.16944444444444445" />
+        <entry key="app/src/main/res/layout/project_row.xml" value="0.16944444444444445" />
       </map>
     </option>
   </component>
