@@ -7,17 +7,20 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
 import androidx.fragment.app.viewModels
+import androidx.navigation.findNavController
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
 import com.example.securityintegration.Models.OrgLookup.MarginItemDecoration
+import com.example.securityintegration.Models.RowListener
 import com.example.securityintegration.ViewModels.OrgLookup.OrgListViewModel
+import com.example.securityintegration.Views.Landing.MainPageActivity
 import com.example.securityintegration.databinding.OrgListFragmentBinding
 
-class OrgListFragment : Fragment() {
+class OrgListFragment : Fragment(), RowListener {
 
     companion object {
         fun newInstance() = OrgListFragment()
-
     }
 
     private lateinit var binding: OrgListFragmentBinding
@@ -39,7 +42,7 @@ class OrgListFragment : Fragment() {
         configObservers()
         configAdapter()
         configEvents()
-        getOrgData()
+        adapter.listener = this
     }
 
     private fun configEvents() {
@@ -53,23 +56,21 @@ class OrgListFragment : Fragment() {
     }
 
     private fun configAdapter() {
+        // Get recycler view
         val recyclerView = binding.rvOrgList
+        // Set margin
         recyclerView.addItemDecoration(
             MarginItemDecoration(space)
         )
+        // Set adapter
         recyclerView.layoutManager = LinearLayoutManager(context)
         recyclerView.adapter = adapter
     }
 
-    private fun getOrgData ()
-    {
-        val recyclerView = binding.rvOrgList
-        recyclerView.adapter = adapter
-        adapter.setOnItemClickListener(object : OrgListAdapter.onItemClickListener{
-            override fun onItemClick(pos: Int) {
-                Toast.makeText(activity, pos, Toast.LENGTH_SHORT).show()
-            }
-        })
+    override fun onClick(pos: Int) {
+        // Switch screen
+        val org = adapter.orgArray[pos]
+        val action = OrgListFragmentDirections.actionOrgListFragmentToOrgInfoFragment(org)
+        findNavController().navigate(action)
     }
-
 }
