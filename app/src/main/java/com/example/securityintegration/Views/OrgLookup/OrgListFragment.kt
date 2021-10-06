@@ -57,4 +57,11 @@ class OrgListFragment : Fragment() {
         recyclerView.adapter = adapter
     }
 
+    /*override fun clickOrg (position: Int)
+    {
+        val org = adapter.orgArray[position]
+        val action = OrgListFragmentDirections.actionOrgListFragmentToOrgInfoFragment(org)
+        findNavController().navigate(action)
+    }*/
+
 }

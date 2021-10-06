@@ -14,7 +14,7 @@ class ProjectListAdapter (var prArray: ArrayList<Project>) : RecyclerView.Adapte
 
     // Create and provide boxes to RecyclerView
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ProjectViewHolder {
-        val eventRow = LayoutInflater.from(parent.context).inflate(R.layout.project_row, parent, false)
+        val eventRow = LayoutInflater.from(parent.context).inflate(R.layout.project_info_fragment, parent, false)
         return ProjectViewHolder(eventRow)
     }
 
