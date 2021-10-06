@@ -5,6 +5,7 @@ import android.os.Bundle
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
+import androidx.navigation.NavController
 import androidx.navigation.findNavController
 import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.ui.AppBarConfiguration
@@ -14,6 +15,7 @@ import com.example.securityintegration.R
 import com.example.securityintegration.Views.Events.EventListFragment
 import com.example.securityintegration.Views.Landing.MainPageActivity
 import com.example.securityintegration.Views.OrgLookup.OrgListFragment
+import com.example.securityintegration.Views.OrgLookup.OrgLookupFragment
 import com.example.securityintegration.Views.Profile.ProfileFragment
 import com.example.securityintegration.Views.Projects.ProjectListFragment
 import com.example.securityintegration.databinding.ActivityMainPageBinding
@@ -23,16 +25,20 @@ class MainPageActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityMainPageBinding
     internal var selectedFragment: Fragment? = null
+    lateinit var navView: BottomNavigationView
+    lateinit var navHostFragment: NavHostFragment
+    lateinit var navController: NavController
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         // Set bindings
         binding = ActivityMainPageBinding.inflate(layoutInflater)
         setContentView(binding.root)
+        // Set view variables
+        navView = binding.navView
+        navHostFragment = supportFragmentManager.findFragmentById(R.id.main_frag_container) as NavHostFragment
+        navController = navHostFragment.navController
 
-        val navView: BottomNavigationView = binding.navView
-        val navHostFragment = supportFragmentManager.findFragmentById(R.id.main_frag_container) as NavHostFragment
-        val navController = navHostFragment.navController
         // Passing each menu ID as a set of Ids because each menu should be considered as top level destinations.
         val appBarConfiguration = AppBarConfiguration(
             setOf(
@@ -52,7 +58,7 @@ class MainPageActivity : AppCompatActivity() {
                     return@setOnItemSelectedListener true
                 }
                 R.id.navigation_orgs -> {
-                    moveToFragment(OrgListFragment())
+                    moveToFragment(OrgLookupFragment())
                     return@setOnItemSelectedListener true
                 }
                 R.id.navigation_events -> {

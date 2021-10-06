@@ -61,6 +61,8 @@ class EventListFragment : Fragment() {
         recyclerView.adapter = adapter
     }
 
+
+
     /*override fun clickEvent (position: Int)
     {
         val event = adapter.evArray[position]

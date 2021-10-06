@@ -4,39 +4,36 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.AdapterView
+import android.widget.LinearLayout
 import android.widget.TextView
+import androidx.navigation.NavHostController
+import androidx.navigation.fragment.NavHostFragment
 import androidx.recyclerview.widget.RecyclerView
 import com.example.securityintegration.Models.OrgLookup.Org
+import com.example.securityintegration.Models.RowListener
 import com.example.securityintegration.R
 
 // Provides info to populate OrgList RecyclerView
 class OrgListAdapter (var orgArray: ArrayList<Org>) : RecyclerView.Adapter<OrgListAdapter.OrgViewHolder>() {
-
-    private lateinit var mListener : onItemClickListener
-
-    // Create interface for onItemClick
-    interface onItemClickListener {
-
-        fun onItemClick(pos: Int) {
-
-        }
-    }
-
-    fun setOnItemClickListener (listener: onItemClickListener){
-
-        mListener = listener
-
-    }
+    // Create row listener
+    var listener: RowListener? = null
 
     // Create and provide boxes to RecyclerView
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): OrgViewHolder {
         val orgRow = LayoutInflater.from(parent.context).inflate(R.layout.org_row, parent, false)
-        return OrgViewHolder(orgRow, mListener)
+        return OrgViewHolder(orgRow)
     }
 
     // Pass info from a box given it's index
     override fun onBindViewHolder(holder: OrgViewHolder, pos: Int) {
+        // Set info
         holder.set(orgArray[pos])
+        // Set onClick listener
+        val view = holder.itemView.findViewById<LinearLayout>(R.id.orgLinearLayout)
+        view.setOnClickListener {
+            // Notify click to fragment
+            listener?.onClick(pos)
+        }
     }
 
     // Return item count within the orgArray ArrayList
@@ -57,15 +54,9 @@ class OrgListAdapter (var orgArray: ArrayList<Org>) : RecyclerView.Adapter<OrgLi
     }
 
     // Represents a box within the RecyclerView where view comes from org_row.xml
-    class OrgViewHolder (view: View, listener: onItemClickListener) : RecyclerView.ViewHolder(view) {
+    class OrgViewHolder (view: View) : RecyclerView.ViewHolder(view) {
         private val tvOrg = view.findViewById<TextView>(R.id.tvOrgName)
         private val tvOrgDesc = view.findViewById<TextView>(R.id.tvOrgDesc)
-
-        init {
-            view.setOnClickListener {
-                listener.onItemClick(adapterPosition)
-            }
-        }
 
         fun set(org: Org) {
             tvOrg.text = org.name

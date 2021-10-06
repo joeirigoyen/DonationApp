@@ -20,7 +20,7 @@
         android:label="org_info_fragment"
         tools:layout="@layout/org_info_fragment" >
         <argument
-            android:name="selectedOrg"
+            android:name="selection"
             app:argType="com.example.securityintegration.Models.OrgLookup.Org" />
     </fragment>
 </navigation>
