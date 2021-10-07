@@ -1,6 +1,29 @@
 <?xml version="1.0" encoding="utf-8"?>
 <navigation xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:id="@+id/events_navgraph">
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/events_navgraph"
+    app:startDestination="@id/eventListFragment2">
 
+    <fragment
+        android:id="@+id/eventListFragment2"
+        android:name="com.example.securityintegration.Views.Events.EventListFragment"
+        android:label="event_list_fragment"
+        tools:layout="@layout/event_list_fragment" >
+        <action
+            android:id="@+id/action_eventListFragment2_to_eventInfoFragment"
+            app:destination="@id/eventInfoFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/eventInfoFragment"
+        android:name="com.example.securityintegration.Views.Events.EventInfoFragment"
+        android:label="event_info_fragment"
+        tools:layout="@layout/event_info_fragment" >
+        <argument
+            android:name="selectedEvent"
+            app:argType="com.example.securityintegration.Models.EventList.Event" />
+        <action
+            android:id="@+id/action_eventInfoFragment_to_eventListFragment22"
+            app:destination="@id/eventListFragment2" />
+    </fragment>
 </navigation>

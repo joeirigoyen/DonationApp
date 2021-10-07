@@ -22,5 +22,8 @@
         <argument
             android:name="selection"
             app:argType="com.example.securityintegration.Models.OrgLookup.Org" />
+        <action
+            android:id="@+id/action_orgInfoFragment_to_orgListFragment"
+            app:destination="@id/orgListFragment" />
     </fragment>
 </navigation>

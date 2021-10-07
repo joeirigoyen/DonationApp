@@ -11,6 +11,7 @@ import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.securityintegration.Models.OrgLookup.MarginItemDecoration
+import com.example.securityintegration.Models.RowListener
 import com.example.securityintegration.R
 import com.example.securityintegration.ViewModels.Events.EventListViewModel
 import com.example.securityintegration.ViewModels.Projects.ProjectListViewModel
@@ -19,7 +20,7 @@ import com.example.securityintegration.Views.OrgLookup.ProjectListAdapter
 import com.example.securityintegration.databinding.EventListFragmentBinding
 import com.example.securityintegration.databinding.ProjectListFragmentBinding
 
-class ProjectListFragment : Fragment() {
+class ProjectListFragment : Fragment(), RowListener {
 
     companion object {
         fun newInstance() = ProjectListFragment()
@@ -44,13 +45,12 @@ class ProjectListFragment : Fragment() {
         configObservers()
         configAdapter()
         configEvents()
+        adapter.listener = this
     }
 
     private fun configEvents() {
         // Set element info to boxes
         viewModel.getProjects()
-        // Set click listeners to RecyclerView
-
     }
 
     private fun configObservers() {
@@ -68,9 +68,9 @@ class ProjectListFragment : Fragment() {
         recyclerView.adapter = adapter
     }
 
-    fun clickProject (position: Int)
-    {
-        val project = adapter.prArray[position]
+    override fun onClick(pos: Int) {
+        val project = adapter.prArray[pos]
+        val action = ProjectListFragmentDirections.actionProjectListFragment2ToProjectInfoFragment(project)
+        findNavController().navigate(action)
     }
-
 }

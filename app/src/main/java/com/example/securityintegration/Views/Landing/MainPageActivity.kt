@@ -13,11 +13,13 @@ import androidx.navigation.ui.setupActionBarWithNavController
 import androidx.navigation.ui.setupWithNavController
 import com.example.securityintegration.R
 import com.example.securityintegration.Views.Events.EventListFragment
+import com.example.securityintegration.Views.Events.EventLookupFragment
 import com.example.securityintegration.Views.Landing.MainPageActivity
 import com.example.securityintegration.Views.OrgLookup.OrgListFragment
 import com.example.securityintegration.Views.OrgLookup.OrgLookupFragment
 import com.example.securityintegration.Views.Profile.ProfileFragment
 import com.example.securityintegration.Views.Projects.ProjectListFragment
+import com.example.securityintegration.Views.Projects.ProjectLookupFragment
 import com.example.securityintegration.databinding.ActivityMainPageBinding
 import kotlinx.coroutines.selects.select
 
@@ -62,11 +64,11 @@ class MainPageActivity : AppCompatActivity() {
                     return@setOnItemSelectedListener true
                 }
                 R.id.navigation_events -> {
-                    moveToFragment(EventListFragment())
+                    moveToFragment(EventLookupFragment())
                     return@setOnItemSelectedListener true
                 }
                 R.id.navigation_projects -> {
-                    moveToFragment(ProjectListFragment())
+                    moveToFragment(ProjectLookupFragment())
                     return@setOnItemSelectedListener true
                 }
                 else -> {

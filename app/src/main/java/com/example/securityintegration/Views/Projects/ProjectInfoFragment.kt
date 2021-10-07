@@ -6,28 +6,43 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.fragment.app.viewModels
+import androidx.navigation.fragment.navArgs
 import com.example.securityintegration.R
+import com.example.securityintegration.ViewModels.OrgLookup.OrgInfoViewModel
 import com.example.securityintegration.ViewModels.Projects.ProjectInfoViewModel
+import com.example.securityintegration.Views.OrgLookup.OrgInfoFragmentArgs
+import com.example.securityintegration.databinding.OrgInfoFragmentBinding
+import com.example.securityintegration.databinding.ProjectInfoFragmentBinding
 
 class ProjectInfoFragment : Fragment() {
 
-    companion object {
-        fun newInstance() = ProjectInfoFragment()
-    }
-
-    private lateinit var viewModel: ProjectInfoViewModel
+    private val args : ProjectInfoFragmentArgs by navArgs()
+    private lateinit var binding : ProjectInfoFragmentBinding
+    private val viewModel : ProjectInfoViewModel by viewModels()
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
-        return inflater.inflate(R.layout.project_info_fragment, container, false)
+    ): View {
+        binding = ProjectInfoFragmentBinding.inflate(layoutInflater)
+        return binding.root
     }
 
-    override fun onActivityCreated(savedInstanceState: Bundle?) {
-        super.onActivityCreated(savedInstanceState)
-        viewModel = ViewModelProvider(this).get(ProjectInfoViewModel::class.java)
-        // TODO: Use the ViewModel
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+        configView()
+        //configObservers()
+    }
+
+    private fun configObservers() {
+
+    }
+
+    private fun configView() {
+        binding.tvProjectTitle.text = args.selectedProject.name
+        binding.tvProjLookupDescription.text = args.selectedProject.desc
+        binding.tvProjectCreator.text = args.selectedProject.org.name
     }
 
 }

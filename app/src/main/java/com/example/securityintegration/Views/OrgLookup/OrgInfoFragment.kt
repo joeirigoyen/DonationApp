@@ -38,7 +38,7 @@ class OrgInfoFragment : Fragment() {
 
     private fun configView() {
         binding.tvOrgTitle.text = args.selection.name
-        binding.tvOrgLookupDescription.text = args.selection.desc
+        binding.tvOrgDescription.text = args.selection.desc
         binding.tvOriginDate.text = args.selection.creationDate.date.toString()
         binding.tvNativeCountry.text = args.selection.nativeCountry
     }
