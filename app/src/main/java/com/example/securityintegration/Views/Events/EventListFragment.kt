@@ -7,17 +7,15 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.viewModels
-import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.securityintegration.Models.OrgLookup.MarginItemDecoration
-import com.example.securityintegration.Models.RowListener
 import com.example.securityintegration.R
 import com.example.securityintegration.ViewModels.Events.EventListViewModel
 import com.example.securityintegration.Views.OrgLookup.EventListAdapter
 import com.example.securityintegration.databinding.EventListFragmentBinding
 import com.example.securityintegration.databinding.OrgListFragmentBinding
 
-class EventListFragment : Fragment(), RowListener {
+class EventListFragment : Fragment() {
 
     companion object {
         fun newInstance() = EventListFragment()
@@ -42,7 +40,6 @@ class EventListFragment : Fragment(), RowListener {
         configObservers()
         configAdapter()
         configEvents()
-        adapter.listener = this
     }
 
     private fun configEvents() {
@@ -64,10 +61,11 @@ class EventListFragment : Fragment(), RowListener {
         recyclerView.adapter = adapter
     }
 
-
-    override fun onClick(pos: Int) {
-        val event = adapter.evArray[pos]
-        val action = EventListFragmentDirections.actionEventListFragment2ToEventInfoFragment(event)
+    /*override fun clickEvent (position: Int)
+    {
+        val event = adapter.evArray[position]
+        val action = EventListFragmentDirections.actionEventListFragmentToEventInfoFragment(event)
         findNavController().navigate(action)
-    }
+    }*/
+
 }
