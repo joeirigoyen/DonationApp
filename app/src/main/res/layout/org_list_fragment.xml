@@ -5,7 +5,8 @@
     android:id="@+id/frameLayout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#373737"
+    android:background="#FFFFFF"
+    android:backgroundTint="#FFFFFF"
     tools:context=".Views.OrgLookup.OrgListFragment">
 
     <com.google.android.material.appbar.AppBarLayout
@@ -13,7 +14,7 @@
         android:layout_width="0dp"
         android:layout_height="54dp"
         android:layout_alignParentBottom="true"
-        android:background="#870909"
+        android:background="#FC3920"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
@@ -23,7 +24,7 @@
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:layout_marginEnd="0dp"
-            android:background="#870909">
+            android:background="#FC3920">
 
             <TextView
                 android:layout_width="match_parent"
@@ -43,6 +44,7 @@
         android:id="@+id/rvOrgList"
         android:layout_width="0dp"
         android:layout_height="0dp"
+        android:background="#f2f2f2"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
