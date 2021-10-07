@@ -1,13 +1,305 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/frameLayout3"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#373737"
     tools:context=".Views.Profile.ProfileFragment">
 
-    <TextView
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardView2"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="Hello" />
+        android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="32dp"
+        android:layout_marginEnd="32dp"
+        app:cardBackgroundColor="#FF786E"
+        app:cardCornerRadius="20dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/cardView">
 
-</FrameLayout>
+        <TableLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal|center_vertical"
+            android:layout_marginStart="5dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginEnd="5dp"
+            android:layout_marginBottom="20dp">
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="20dp"
+                android:layout_marginBottom="20dp">
+
+                <androidx.cardview.widget.CardView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginEnd="20dp"
+                    android:layout_weight="0.5"
+                    app:cardBackgroundColor="#F44336"
+                    app:cardCornerRadius="20dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical">
+
+                        <ImageView
+                            android:id="@+id/imageViewEvents"
+                            android:layout_width="108dp"
+                            android:layout_height="108dp"
+                            android:layout_gravity="center"
+                            android:src="@drawable/ic_events" />
+
+                        <TextView
+                            android:id="@+id/tvEventCard"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="bottom|center_horizontal"
+                            android:layout_marginLeft="10dp"
+                            android:layout_marginTop="10dp"
+                            android:layout_marginRight="10dp"
+                            android:layout_marginBottom="20dp"
+                            android:text="Mis Eventos"
+                            android:textAlignment="center"
+                            android:textColor="#FFFFFF"
+                            android:textSize="20sp"
+                            android:textStyle="bold" />
+                    </LinearLayout>
+
+                </androidx.cardview.widget.CardView>
+
+                <androidx.cardview.widget.CardView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginEnd="20dp"
+                    android:layout_weight="0.5"
+                    app:cardBackgroundColor="#F44336"
+                    app:cardCornerRadius="20dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical">
+
+                        <ImageView
+                            android:id="@+id/imageViewProjects"
+                            android:layout_width="108dp"
+                            android:layout_height="108dp"
+                            android:layout_gravity="center"
+                            android:src="@drawable/ic_events"
+                            tools:srcCompat="@drawable/ic_projects" />
+
+                        <TextView
+                            android:id="@+id/tvProjectCard"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="bottom|center_horizontal"
+                            android:layout_marginLeft="10dp"
+                            android:layout_marginTop="10dp"
+                            android:layout_marginRight="10dp"
+                            android:layout_marginBottom="20dp"
+                            android:text="Mis Proyectos"
+                            android:textAlignment="center"
+                            android:textColor="#FFFFFF"
+                            android:textSize="20sp"
+                            android:textStyle="bold" />
+                    </LinearLayout>
+
+                </androidx.cardview.widget.CardView>
+            </TableRow>
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="20dp"
+                android:layout_marginBottom="20dp">
+
+                <androidx.cardview.widget.CardView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginEnd="20dp"
+                    android:layout_weight="0.5"
+                    app:cardBackgroundColor="#F44336"
+                    app:cardCornerRadius="20dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical">
+
+                        <ImageView
+                            android:id="@+id/imageViewDonation"
+                            android:layout_width="108dp"
+                            android:layout_height="108dp"
+                            android:layout_gravity="center"
+                            android:src="@drawable/ic_events"
+                            app:srcCompat="@drawable/ic_pay" />
+
+                        <TextView
+                            android:id="@+id/tvDonationsCard"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="bottom|center_horizontal"
+                            android:layout_marginLeft="10dp"
+                            android:layout_marginTop="10dp"
+                            android:layout_marginRight="10dp"
+                            android:layout_marginBottom="20dp"
+                            android:text="Mis Donaciones"
+                            android:textAlignment="center"
+                            android:textColor="#FFFFFF"
+                            android:textSize="20sp"
+                            android:textStyle="bold" />
+                    </LinearLayout>
+
+                </androidx.cardview.widget.CardView>
+
+                <androidx.cardview.widget.CardView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginEnd="20dp"
+                    android:layout_weight="0.5"
+                    app:cardBackgroundColor="#F44336"
+                    app:cardCornerRadius="20dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical">
+
+                        <ImageView
+                            android:id="@+id/imageViewSettings"
+                            android:layout_width="108dp"
+                            android:layout_height="108dp"
+                            android:layout_gravity="center"
+                            android:src="@drawable/ic_events"
+                            tools:srcCompat="@drawable/ic_settings" />
+
+                        <TextView
+                            android:id="@+id/tvSettingsCard"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="bottom|center_horizontal"
+                            android:layout_marginLeft="10dp"
+                            android:layout_marginTop="10dp"
+                            android:layout_marginRight="10dp"
+                            android:layout_marginBottom="20dp"
+                            android:text="Ajustes"
+                            android:textAlignment="center"
+                            android:textColor="#FFFFFF"
+                            android:textSize="20sp"
+                            android:textStyle="bold" />
+                    </LinearLayout>
+
+                </androidx.cardview.widget.CardView>
+            </TableRow>
+
+        </TableLayout>
+    </androidx.cardview.widget.CardView>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardView"
+        android:layout_width="0dp"
+        android:layout_height="126dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="32dp"
+        android:layout_marginEnd="24dp"
+        app:cardBackgroundColor="#FF3B3B"
+        app:cardCornerRadius="20dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:id="@+id/imageView4"
+                android:layout_width="84dp"
+                android:layout_height="84dp"
+                android:layout_gravity="center_vertical"
+                android:src="@drawable/ic_person" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/tvProfileName"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Nombre del usuario"
+                    android:textColor="#FFFFFF"
+                    android:textSize="24sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/tvProfileUsername"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="/@username"
+                    android:textColor="#FFFFFF"
+                    android:textStyle="italic" />
+            </LinearLayout>
+        </LinearLayout>
+
+    </androidx.cardview.widget.CardView>
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="32dp"
+        android:layout_marginEnd="32dp"
+        android:layout_marginBottom="32dp"
+        app:cardBackgroundColor="#FF7373"
+        app:cardCornerRadius="20dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/cardView2"
+        app:layout_constraintVertical_bias="0.0">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical" >
+
+            <TextView
+                android:id="@+id/tvProfileProgress"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:text="Mi progreso"
+                android:textAlignment="center"
+                android:textColor="#FFFFFF"
+                android:textSize="24sp"
+                android:textStyle="bold" />
+
+            <ProgressBar
+                android:id="@+id/progressBar2"
+                style="?android:attr/progressBarStyle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:backgroundTint="#FF0000"
+                android:progressTint="#FF0000" />
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
