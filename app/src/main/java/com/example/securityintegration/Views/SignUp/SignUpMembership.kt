@@ -50,7 +50,7 @@ class SignUpMembership : Fragment() {
                 viewModel.setSelectedBtnId(selectionStr, "membership")
                 Toast.makeText(activity, selectionStr, Toast.LENGTH_LONG).show()
                 // Navigate
-                findNavController().navigate(R.id.action_signUpMembership_to_signUpPaymentMethod)
+                findNavController().navigate(R.id.action_signUpMembership_to_signUpNewPassword)
             } else {
                 Toast.makeText(activity, "Por favor selecciona una opción válida.", Toast.LENGTH_SHORT).show()
             }

@@ -47,19 +47,11 @@
         android:label="sign_up_membership_fragment"
         tools:layout="@layout/sign_up_membership_fragment" >
         <action
-            android:id="@+id/action_signUpMembership_to_signUpPaymentMethod"
-            app:destination="@id/signUpPaymentMethod" />
+            android:id="@+id/action_signUpMembership_to_signUpNewPassword"
+            app:destination="@id/signUpNewPassword" />
     </fragment>
     <fragment
         android:id="@+id/signUpNewPassword"
         android:name="com.example.securityintegration.Views.SignUp.SignUpNewPassword"
         android:label="SignUpNewPassword" />
-    <fragment
-        android:id="@+id/signUpPaymentMethod"
-        android:name="com.example.securityintegration.Views.SignUp.SignUpPaymentMethod"
-        android:label="SignUpPaymentMethod" >
-        <action
-            android:id="@+id/action_signUpPaymentMethod_to_signUpNewPassword"
-            app:destination="@id/signUpNewPassword" />
-    </fragment>
 </navigation>
