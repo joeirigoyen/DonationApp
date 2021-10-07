@@ -124,7 +124,7 @@
 
     <TextView
         android:id="@+id/signUpBankInfoTitle"
-        android:layout_width="dp"
+        android:layout_width="300dp"
         android:layout_height="31dp"
         android:layout_marginBottom="24dp"
         android:fontFamily="sans-serif-black"
