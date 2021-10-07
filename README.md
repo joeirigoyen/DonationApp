@@ -6,7 +6,7 @@
   - **Jared Flores** - *Database and design*
   - **Eduardo Rodríguez** - *Database and security*
   - **Rebeca Rojas** - *Database and security*
-  - **Diego Ulibarri** - *Documenting*
+  - **Diego Ulibarri** - *Documenting and design*
  
  ## Abstract
  This project has been created for Dibujando Un Mañana, in order to help the institution devtabaseelop an app to connect with other institutions which would like to help by making donations. 
