@@ -81,7 +81,7 @@
         android:elevation="2dp"
         android:shadowColor="@color/black"
         app:cardBackgroundColor="@color/btn_change"
-        app:cardCornerRadius="25dp"
+        app:cardCornerRadius="13dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.502"
         app:layout_constraintStart_toStartOf="parent"
