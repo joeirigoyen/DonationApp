@@ -1,6 +1,29 @@
 <?xml version="1.0" encoding="utf-8"?>
 <navigation xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:id="@+id/projects_navgraph">
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/projects_navgraph"
+    app:startDestination="@id/projectListFragment2">
 
+    <fragment
+        android:id="@+id/projectListFragment2"
+        android:name="com.example.securityintegration.Views.Projects.ProjectListFragment"
+        android:label="project_list_fragment"
+        tools:layout="@layout/project_list_fragment" >
+        <action
+            android:id="@+id/action_projectListFragment2_to_projectInfoFragment"
+            app:destination="@id/projectInfoFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/projectInfoFragment"
+        android:name="com.example.securityintegration.Views.Projects.ProjectInfoFragment"
+        android:label="project_info_fragment"
+        tools:layout="@layout/project_info_fragment" >
+        <argument
+            android:name="selectedProject"
+            app:argType="com.example.securityintegration.Models.ProjectList.Project" />
+        <action
+            android:id="@+id/action_projectInfoFragment_to_projectListFragment2"
+            app:destination="@id/projectListFragment2" />
+    </fragment>
 </navigation>
