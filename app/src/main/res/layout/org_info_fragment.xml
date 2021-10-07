@@ -119,4 +119,45 @@
 
     </LinearLayout>
 
+    <EditText
+        android:id="@+id/idEdtAmount"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:layout_marginEnd="32dp"
+        android:autofillHints="testHint"
+        android:background="@drawable/custom_btn"
+        android:drawableStart="@drawable/ic_donate"
+        android:drawablePadding="8dp"
+        android:ems="15"
+        android:hint="@string/monto_a_donar"
+        android:inputType="numberDecimal"
+        android:minHeight="48dp"
+        android:padding="12dp"
+        android:textColor="#85878B"
+        android:textColorHint="#999B9C9F"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout2"
+        app:layout_constraintVertical_bias="0.19"
+        tools:ignore="TextContrastCheck" />
+
+    <Button
+        android:id="@+id/idBtnPay"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/idEdtAmount"
+        android:layout_centerInParent="true"
+        android:layout_marginBottom="4dp"
+        android:text="@string/donarbtn"
+        android:onClick="makePayment"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/idEdtAmount"
+        app:layout_constraintVertical_bias="0.07999998" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

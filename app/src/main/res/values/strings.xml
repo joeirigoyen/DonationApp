@@ -96,4 +96,6 @@
     <string name="organizaciones_participantes">Organizaciones participantes</string>
     <string name="eventos_disponibles">Eventos disponibles</string>
     <string name="proyectos_actuales">Proyectos actuales</string>
+    <string name="monto_a_donar">Monto a donar</string>
+    <string name="donarbtn">Donar</string>
 </resources>

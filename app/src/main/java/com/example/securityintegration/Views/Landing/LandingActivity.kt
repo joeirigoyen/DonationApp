@@ -1,10 +1,15 @@
 package com.example.securityintegration.Views.Landing
 
+import android.app.Activity
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.widget.Toast
+import androidx.activity.result.contract.ActivityResultContracts
 import androidx.activity.viewModels
 import com.example.securityintegration.R
 import com.example.securityintegration.ViewModels.Landing.LandingViewModel
+import com.paypal.android.sdk.payments.PaymentActivity
 
 class LandingActivity : AppCompatActivity() {
 
