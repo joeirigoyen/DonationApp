@@ -38,11 +38,14 @@
                 android:layout_marginBottom="20dp">
 
                 <androidx.cardview.widget.CardView
+                    android:id="@+id/btnMyEvents"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:layout_marginStart="20dp"
                     android:layout_marginEnd="20dp"
                     android:layout_weight="0.5"
+                    android:clickable="true"
+                    android:focusable="true"
                     app:cardBackgroundColor="#F44336"
                     app:cardCornerRadius="20dp">
 
@@ -77,11 +80,14 @@
                 </androidx.cardview.widget.CardView>
 
                 <androidx.cardview.widget.CardView
+                    android:id="@+id/btnMyProjects"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:layout_marginStart="20dp"
                     android:layout_marginEnd="20dp"
                     android:layout_weight="0.5"
+                    android:clickable="true"
+                    android:focusable="true"
                     app:cardBackgroundColor="#F44336"
                     app:cardCornerRadius="20dp">
 
@@ -124,11 +130,14 @@
                 android:layout_marginBottom="20dp">
 
                 <androidx.cardview.widget.CardView
+                    android:id="@+id/btnMyDonations"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:layout_marginStart="20dp"
                     android:layout_marginEnd="20dp"
                     android:layout_weight="0.5"
+                    android:clickable="true"
+                    android:focusable="true"
                     app:cardBackgroundColor="#F44336"
                     app:cardCornerRadius="20dp">
 
@@ -164,11 +173,14 @@
                 </androidx.cardview.widget.CardView>
 
                 <androidx.cardview.widget.CardView
+                    android:id="@+id/btnProfileSettings"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:layout_marginStart="20dp"
                     android:layout_marginEnd="20dp"
                     android:layout_weight="0.5"
+                    android:clickable="true"
+                    android:focusable="true"
                     app:cardBackgroundColor="#F44336"
                     app:cardCornerRadius="20dp">
 

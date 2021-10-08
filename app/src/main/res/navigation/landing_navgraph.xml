@@ -3,45 +3,27 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/landing_navgraph"
-    app:startDestination="@id/profileFragment">
+    app:startDestination="@id/profileFragment2">
+    <include app:graph="@navigation/events_navgraph" />
+    <include app:graph="@navigation/profile_navgraph" />
+    <include app:graph="@navigation/orgs_navgraph" />
+    <include app:graph="@navigation/projects_navgraph" />
     <fragment
-        android:id="@+id/profileFragment"
+        android:id="@+id/profileFragment2"
         android:name="com.example.securityintegration.Views.Profile.ProfileFragment"
         android:label="profile_fragment"
         tools:layout="@layout/profile_fragment" >
         <action
-            android:id="@+id/action_profileFragment_to_projectListFragment"
-            app:destination="@id/projectListFragment" />
-        <action
-            android:id="@+id/action_profileFragment_to_orgListFragment2"
-            app:destination="@id/orgListFragment2" />
-        <action
-            android:id="@+id/action_profileFragment_to_events_navgraph"
+            android:id="@+id/action_profileFragment2_to_events_navgraph"
             app:destination="@id/events_navgraph" />
+        <action
+            android:id="@+id/action_profileFragment2_to_projects_navgraph"
+            app:destination="@id/projects_navgraph" />
+        <action
+            android:id="@+id/action_profileFragment2_to_profile_navgraph"
+            app:destination="@id/profile_navgraph" />
+        <action
+            android:id="@+id/action_profileFragment2_to_orgs_navgraph"
+            app:destination="@id/orgs_navgraph" />
     </fragment>
-    <fragment
-        android:id="@+id/orgListFragment2"
-        android:name="com.example.securityintegration.Views.OrgLookup.OrgListFragment"
-        android:label="org_list_fragment"
-        tools:layout="@layout/org_list_fragment" >
-        <action
-            android:id="@+id/action_orgListFragment2_to_projectListFragment"
-            app:destination="@id/projectListFragment" />
-        <action
-            android:id="@+id/action_orgListFragment2_to_profileFragment"
-            app:destination="@id/profileFragment" />
-    </fragment>
-    <fragment
-        android:id="@+id/projectListFragment"
-        android:name="com.example.securityintegration.Views.Projects.ProjectListFragment"
-        android:label="project_list_fragment"
-        tools:layout="@layout/project_list_fragment" >
-        <action
-            android:id="@+id/action_projectListFragment_to_profileFragment"
-            app:destination="@id/profileFragment" />
-        <action
-            android:id="@+id/action_projectListFragment_to_orgListFragment2"
-            app:destination="@id/orgListFragment2" />
-    </fragment>
-    <include app:graph="@navigation/events_navgraph" />
 </navigation>

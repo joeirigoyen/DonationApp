@@ -70,7 +70,7 @@ class OrgListFragment : Fragment(), RowListener {
     override fun onClick(pos: Int) {
         // Switch screen
         val org = adapter.orgArray[pos]
-        val action = OrgListFragmentDirections.actionOrgListFragmentToOrgInfoFragment(org)
+        val action = OrgListFragmentDirections.actionOrgListFragmentToOrgInfoFragment3(org)
         findNavController().navigate(action)
     }
 }
