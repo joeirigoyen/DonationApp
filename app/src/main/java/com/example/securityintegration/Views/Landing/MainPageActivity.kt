@@ -2,6 +2,9 @@ package com.example.securityintegration.Views.Landing
 
 import android.media.metrics.Event
 import android.os.Bundle
+import android.util.Log
+import android.widget.EditText
+import android.widget.Toast
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
@@ -22,6 +25,18 @@ import com.example.securityintegration.Views.Profile.ProfileFragment
 import com.example.securityintegration.Views.Projects.ProjectListFragment
 import com.example.securityintegration.Views.Projects.ProjectLookupFragment
 import com.example.securityintegration.databinding.ActivityMainPageBinding
+import com.paypal.checkout.approve.OnApprove
+import com.paypal.checkout.cancel.OnCancel
+import com.paypal.checkout.createorder.CreateOrder
+import com.paypal.checkout.createorder.CurrencyCode
+import com.paypal.checkout.createorder.OrderIntent
+import com.paypal.checkout.createorder.UserAction
+import com.paypal.checkout.error.OnError
+import com.paypal.checkout.order.Amount
+import com.paypal.checkout.order.AppContext
+import com.paypal.checkout.order.Order
+import com.paypal.checkout.order.PurchaseUnit
+import com.paypal.checkout.paymentbutton.PayPalButton
 import kotlinx.coroutines.selects.select
 
 class MainPageActivity : AppCompatActivity() {
@@ -29,8 +44,6 @@ class MainPageActivity : AppCompatActivity() {
     private lateinit var binding: ActivityMainPageBinding
     internal var selectedFragment: Fragment? = null
     lateinit var navView: BottomNavigationView
-    lateinit var navHostFragment: NavHostFragment
-    lateinit var navController: NavController
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -39,8 +52,6 @@ class MainPageActivity : AppCompatActivity() {
         setContentView(binding.root)
         // Set view variables
         navView = binding.navView
-        navHostFragment = supportFragmentManager.findFragmentById(R.id.main_frag_container) as NavHostFragment
-        navController = navHostFragment.navController
 
         // Passing each menu ID as a set of Ids because each menu should be considered as top level destinations.
         val appBarConfiguration = AppBarConfiguration(

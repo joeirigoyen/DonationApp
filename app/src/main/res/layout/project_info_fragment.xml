@@ -92,4 +92,24 @@
 
     </LinearLayout>
 
+    <ToggleButton
+        android:id="@+id/btnRegisterToProject"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="64dp"
+        android:layout_marginEnd="64dp"
+        android:background="@drawable/toggle_rect_off"
+        android:checked="false"
+        android:text="¡Quiero participar!"
+        android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+        android:textColor="#FFFFFF"
+        android:textOff="¡Quiero participar!"
+        android:textOn="Dejar de participar"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout2"
+        app:layout_constraintVertical_bias="0.07999998" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

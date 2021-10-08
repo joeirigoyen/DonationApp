@@ -53,7 +53,7 @@
             android:weightSum="1">
 
             <TextView
-                android:id="@+id/tvProjectDesc"
+                android:id="@+id/tvProjectCreator"
                 android:layout_width="223dp"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="20dp"
@@ -63,7 +63,7 @@
                 android:textStyle="bold" />
 
             <TextView
-                android:id="@+id/tvProjectCreator"
+                android:id="@+id/tvProjectDesc"
                 android:layout_width="match_parent"
                 android:layout_height="31dp"
                 android:layout_marginStart="20dp"
