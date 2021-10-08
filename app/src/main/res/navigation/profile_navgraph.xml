@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/profile_navgraph"
+    app:startDestination="@id/profileFragment">
+
+    <fragment
+        android:id="@+id/profileFragment"
+        android:name="com.example.securityintegration.Views.Profile.ProfileFragment"
+        android:label="profile_fragment"
+        tools:layout="@layout/profile_fragment" >
+        <action
+            android:id="@+id/action_profileFragment_to_myProjectsFragment"
+            app:destination="@id/myProjectsFragment" />
+        <action
+            android:id="@+id/action_profileFragment_to_myDonationsFragment"
+            app:destination="@id/myDonationsFragment" />
+        <action
+            android:id="@+id/action_profileFragment_to_myEventsFragment"
+            app:destination="@id/myEventsFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/myProjectsFragment"
+        android:name="com.example.securityintegration.Views.Profile.MyProjects.MyProjectsFragment"
+        android:label="my_projects_fragment"
+        tools:layout="@layout/my_projects_fragment" >
+        <action
+            android:id="@+id/action_myProjectsFragment_to_projectInfoFragment2"
+            app:destination="@id/projectInfoFragment2" />
+        <action
+            android:id="@+id/action_myProjectsFragment_to_profileFragment"
+            app:destination="@id/profileFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/myDonationsFragment"
+        android:name="com.example.securityintegration.Views.Profile.MyDonations.MyDonationsFragment"
+        android:label="my_donations_fragment"
+        tools:layout="@layout/my_donations_fragment" >
+        <action
+            android:id="@+id/action_myDonationsFragment_to_profileFragment"
+            app:destination="@id/profileFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/myEventsFragment"
+        android:name="com.example.securityintegration.Views.Profile.MyEvents.MyEventsFragment"
+        android:label="my_events_fragment"
+        tools:layout="@layout/my_events_fragment" >
+        <action
+            android:id="@+id/action_myEventsFragment_to_profileFragment"
+            app:destination="@id/profileFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/projectInfoFragment2"
+        android:name="com.example.securityintegration.Views.Projects.ProjectInfoFragment"
+        android:label="project_info_fragment"
+        tools:layout="@layout/project_info_fragment" >
+        <argument
+            android:name="selectedProject"
+            app:argType="com.example.securityintegration.Models.ProjectList.Project" />
+        <action
+            android:id="@+id/action_projectInfoFragment2_to_myProjectsFragment"
+            app:destination="@id/myProjectsFragment" />
+    </fragment>
+</navigation>

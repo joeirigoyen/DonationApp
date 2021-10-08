@@ -17,6 +17,7 @@ import com.example.securityintegration.Views.Events.EventLookupFragment
 import com.example.securityintegration.Views.Landing.MainPageActivity
 import com.example.securityintegration.Views.OrgLookup.OrgListFragment
 import com.example.securityintegration.Views.OrgLookup.OrgLookupFragment
+import com.example.securityintegration.Views.Profile.MyProjects.ProfileLookupFragment
 import com.example.securityintegration.Views.Profile.ProfileFragment
 import com.example.securityintegration.Views.Projects.ProjectListFragment
 import com.example.securityintegration.Views.Projects.ProjectLookupFragment
@@ -51,12 +52,12 @@ class MainPageActivity : AppCompatActivity() {
             )
         )
         // Switch to profile fragment by default
-        moveToFragment(ProfileFragment())
+        moveToFragment(ProfileLookupFragment())
         // Set up NavBar events
         navView.setOnItemSelectedListener { item ->
             when (item.itemId) {
                 R.id.navigation_profile -> {
-                    moveToFragment(ProfileFragment())
+                    moveToFragment(ProfileLookupFragment())
                     return@setOnItemSelectedListener true
                 }
                 R.id.navigation_orgs -> {

@@ -1,77 +1,63 @@
 package com.example.securityintegration.Models.ProjectList
 
+import android.widget.Toast
 import com.example.securityintegration.Models.OrgLookup.Org
 import com.example.securityintegration.Models.OrgLookup.OrgService
 import com.example.securityintegration.Models.User.User
+import com.example.securityintegration.Models.User.UserService
 import java.sql.Date
+import kotlin.coroutines.coroutineContext
 
 class ProjectService {
 
     var orgs : List<Org> = OrgService().getOrgs()
+    var users : List<User> = UserService().getUsers()
+    var projects : ArrayList<Project> = arrayListOf(
+        Project("Dona por una dona", "Lorem dona", orgs[0], listOf(
+            users[0], users[1], users[2]
+        )),
+        Project("Futbol con causa", "Lorem dona", orgs[0], listOf(
+            users[0], users[1], users[2]
+        )),
+        Project("Proyecto D", "Lorem dona", orgs[0], listOf(
+            users[0], users[1], users[2]
+        )),
+        Project("Proyecto E", "Lorem dona", orgs[0], listOf(
+            users[0], users[1], users[2]
+        )),
+        Project("Dona por una dona", "Lorem dona", orgs[0], listOf(
+            users[0], users[1], users[2]
+        )),
+        Project("Futbol con causa", "Lorem dona", orgs[0], listOf(
+            users[0], users[1], users[2]
+        )),
+        Project("Proyecto D", "Lorem dona", orgs[0], listOf(
+            users[0], users[1], users[2]
+        )),
+        Project("Proyecto E", "Lorem dona", orgs[0], listOf(
+            users[0], users[1], users[2]
+        )),
+        Project("Dona por una dona", "Lorem dona", orgs[0], listOf(
+            users[0], users[1], users[2]
+        )),
+        Project("Futbol con causa", "Lorem dona", orgs[0], listOf(
+            users[0], users[1], users[2]
+        )),
+        Project("Proyecto D", "Lorem dona", orgs[0], listOf(
+            users[0], users[1], users[2]
+        )),
+        Project("Proyecto E", "Lorem dona", orgs[0], listOf(
+            users[0], users[1], users[2]
+        ))
+    )
 
     fun getProjects() : List<Project> {
-        return arrayListOf(
-            Project("Dona por una dona", "Lorem dona", orgs[0], listOf(
-                User("Youthan", "Irigoyen", "Usuario", Date(121135), "youthan@gmail.com", "hello"),
-                User("Eduardo", "Irigoyen", "Usuario", Date(121135), "eduardo@gmail.com", "hello"),
-                User("Jared", "Irigoyen", "Usuario", Date(121135), "jared@gmail.com", "hello")
-            )),
-            Project("Futbol con causa", "Lorem dona", orgs[0], listOf(
-                User("Youthan", "Irigoyen", "Usuario", Date(121135), "youthan@gmail.com", "hello"),
-                User("Eduardo", "Irigoyen", "Usuario", Date(121135), "eduardo@gmail.com", "hello"),
-                User("Jared", "Irigoyen", "Usuario", Date(121135), "jared@gmail.com", "hello")
-            )),
-            Project("Proyecto D", "Lorem dona", orgs[0], listOf(
-                User("Youthan", "Irigoyen", "Usuario", Date(121135), "youthan@gmail.com", "hello"),
-                User("Eduardo", "Irigoyen", "Usuario", Date(121135), "eduardo@gmail.com", "hello"),
-                User("Jared", "Irigoyen", "Usuario", Date(121135), "jared@gmail.com", "hello")
-            )),
-            Project("Proyecto E", "Lorem dona", orgs[0], listOf(
-                User("Youthan", "Irigoyen", "Usuario", Date(121135), "youthan@gmail.com", "hello"),
-                User("Eduardo", "Irigoyen", "Usuario", Date(121135), "eduardo@gmail.com", "hello"),
-                User("Jared", "Irigoyen", "Usuario", Date(121135), "jared@gmail.com", "hello")
-            )),
-            Project("Dona por una dona", "Lorem dona", orgs[0], listOf(
-                User("Youthan", "Irigoyen", "Usuario", Date(121135), "youthan@gmail.com", "hello"),
-                User("Eduardo", "Irigoyen", "Usuario", Date(121135), "eduardo@gmail.com", "hello"),
-                User("Jared", "Irigoyen", "Usuario", Date(121135), "jared@gmail.com", "hello")
-            )),
-            Project("Futbol con causa", "Lorem dona", orgs[0], listOf(
-                User("Youthan", "Irigoyen", "Usuario", Date(121135), "youthan@gmail.com", "hello"),
-                User("Eduardo", "Irigoyen", "Usuario", Date(121135), "eduardo@gmail.com", "hello"),
-                User("Jared", "Irigoyen", "Usuario", Date(121135), "jared@gmail.com", "hello")
-            )),
-            Project("Proyecto D", "Lorem dona", orgs[0], listOf(
-                User("Youthan", "Irigoyen", "Usuario", Date(121135), "youthan@gmail.com", "hello"),
-                User("Eduardo", "Irigoyen", "Usuario", Date(121135), "eduardo@gmail.com", "hello"),
-                User("Jared", "Irigoyen", "Usuario", Date(121135), "jared@gmail.com", "hello")
-            )),
-            Project("Proyecto E", "Lorem dona", orgs[0], listOf(
-                User("Youthan", "Irigoyen", "Usuario", Date(121135), "youthan@gmail.com", "hello"),
-                User("Eduardo", "Irigoyen", "Usuario", Date(121135), "eduardo@gmail.com", "hello"),
-                User("Jared", "Irigoyen", "Usuario", Date(121135), "jared@gmail.com", "hello")
-            )),
-            Project("Dona por una dona", "Lorem dona", orgs[0], listOf(
-                User("Youthan", "Irigoyen", "Usuario", Date(121135), "youthan@gmail.com", "hello"),
-                User("Eduardo", "Irigoyen", "Usuario", Date(121135), "eduardo@gmail.com", "hello"),
-                User("Jared", "Irigoyen", "Usuario", Date(121135), "jared@gmail.com", "hello")
-            )),
-            Project("Futbol con causa", "Lorem dona", orgs[0], listOf(
-                User("Youthan", "Irigoyen", "Usuario", Date(121135), "youthan@gmail.com", "hello"),
-                User("Eduardo", "Irigoyen", "Usuario", Date(121135), "eduardo@gmail.com", "hello"),
-                User("Jared", "Irigoyen", "Usuario", Date(121135), "jared@gmail.com", "hello")
-            )),
-            Project("Proyecto D", "Lorem dona", orgs[0], listOf(
-                User("Youthan", "Irigoyen", "Usuario", Date(121135), "youthan@gmail.com", "hello"),
-                User("Eduardo", "Irigoyen", "Usuario", Date(121135), "eduardo@gmail.com", "hello"),
-                User("Jared", "Irigoyen", "Usuario", Date(121135), "jared@gmail.com", "hello")
-            )),
-            Project("Proyecto E", "Lorem dona", orgs[0], listOf(
-                User("Youthan", "Irigoyen", "Usuario", Date(121135), "youthan@gmail.com", "hello"),
-                User("Eduardo", "Irigoyen", "Usuario", Date(121135), "eduardo@gmail.com", "hello"),
-                User("Jared", "Irigoyen", "Usuario", Date(121135), "jared@gmail.com", "hello")
-            ))
-        )
+        return projects
+    }
+
+    fun getProjects(user: User) : List<Project> {
+        println("${users[0]} != $user")
+        return projects
     }
 
 }

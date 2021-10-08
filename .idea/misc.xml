@@ -9,38 +9,27 @@
         <entry key="..\:/Programacion/Android_studio/SecurityIntegration/app/src/main/res/drawable/blue_wave.xml" value="0.3880208333333333" />
         <entry key="..\:/Programacion/Android_studio/SecurityIntegration/app/src/main/res/drawable/custom_btn.xml" value="0.3880208333333333" />
         <entry key="..\:/Programacion/Android_studio/SecurityIntegration/app/src/main/res/drawable/custom_button.xml" value="0.225" />
-        <entry key="..\:/Programacion/Android_studio/SecurityIntegration/app/src/main/res/drawable/darkorange_wave.xml" value="0.3880208333333333" />
         <entry key="..\:/Programacion/Android_studio/SecurityIntegration/app/src/main/res/drawable/darkpink_wave.xml" value="0.21574074074074073" />
         <entry key="..\:/Programacion/Android_studio/SecurityIntegration/app/src/main/res/drawable/green_wave.xml" value="0.4" />
         <entry key="..\:/Programacion/Android_studio/SecurityIntegration/app/src/main/res/drawable/orange_wave.xml" value="0.3880208333333333" />
         <entry key="..\:/Programacion/Android_studio/SecurityIntegration/app/src/main/res/drawable/purple_wave.xml" value="0.21574074074074073" />
         <entry key="..\:/Programacion/Android_studio/SecurityIntegration/app/src/main/res/layout/Subdirs/SignUpRes/drawable/ic_calendar_icon.xml" value="0.21574074074074073" />
         <entry key="..\:/Programacion/Android_studio/SecurityIntegration/app/src/main/res/layout/Subdirs/SignUpRes/drawable/ic_google_icon.xml" value="0.3880208333333333" />
-        <entry key="..\:/Programacion/Android_studio/SecurityIntegration/app/src/main/res/layout/Subdirs/SignUpRes/drawable/ic_halfcircle.xml" value="0.3880208333333333" />
         <entry key="..\:/Programacion/Android_studio/SecurityIntegration/app/src/main/res/layout/Subdirs/SignUpRes/drawable/ic_mail_icon.xml" value="0.3880208333333333" />
-        <entry key="..\:/Programacion/Android_studio/SecurityIntegration/app/src/main/res/layout/Subdirs/SignUpRes/drawable/ic_organization_icon.xml" value="0.3880208333333333" />
         <entry key="..\:/Programacion/Android_studio/SecurityIntegration/app/src/main/res/layout/Subdirs/SignUpRes/drawable/ic_question_icon.xml" value="0.21574074074074073" />
         <entry key="..\:/Programacion/Android_studio/SecurityIntegration/app/src/main/res/layout/Subdirs/SignUpRes/drawable/ic_security_icon.xml" value="0.3880208333333333" />
         <entry key="..\:/Programacion/Android_studio/SecurityIntegration/app/src/main/res/layout/Subdirs/SignUpRes/drawable/ic_user_icon.xml" value="0.3880208333333333" />
         <entry key="..\:/Programacion/Android_studio/SecurityIntegration/app/src/main/res/layout/Subdirs/SignUpRes/drawable/ic_username_icon.xml" value="0.21574074074074073" />
         <entry key="..\:/Programacion/Android_studio/SecurityIntegration/app/src/main/res/layout/Subdirs/SignUpRes/drawable/ic_wave.xml" value="0.3880208333333333" />
-        <entry key="..\:/Programacion/Android_studio/SecurityIntegration/app/src/main/res/layout/activity_donate.xml" value="0.371875" />
         <entry key="..\:/Programacion/Android_studio/SecurityIntegration/app/src/main/res/layout/activity_landing.xml" value="0.371875" />
         <entry key="..\:/Programacion/Android_studio/SecurityIntegration/app/src/main/res/layout/activity_main_page.xml" value="0.371875" />
         <entry key="..\:/Programacion/Android_studio/SecurityIntegration/app/src/main/res/layout/activity_main_sign_up.xml" value="0.371875" />
         <entry key="..\:/Programacion/Android_studio/SecurityIntegration/app/src/main/res/layout/activity_orgs_lookup.xml" value="0.371875" />
         <entry key="..\:/Programacion/Android_studio/SecurityIntegration/app/src/main/res/layout/event_info_fragment.xml" value="0.371875" />
-        <entry key="..\:/Programacion/Android_studio/SecurityIntegration/app/src/main/res/layout/event_list_fragment.xml" value="0.371875" />
-        <entry key="..\:/Programacion/Android_studio/SecurityIntegration/app/src/main/res/layout/event_lookup_fragment.xml" value="0.371875" />
-        <entry key="..\:/Programacion/Android_studio/SecurityIntegration/app/src/main/res/layout/event_row.xml" value="0.371875" />
         <entry key="..\:/Programacion/Android_studio/SecurityIntegration/app/src/main/res/layout/landing_fragment.xml" value="0.371875" />
         <entry key="..\:/Programacion/Android_studio/SecurityIntegration/app/src/main/res/layout/main_sign_in_fragment.xml" value="0.33" />
         <entry key="..\:/Programacion/Android_studio/SecurityIntegration/app/src/main/res/layout/main_sign_up_fragment.xml" value="0.371875" />
         <entry key="..\:/Programacion/Android_studio/SecurityIntegration/app/src/main/res/layout/org_info_fragment.xml" value="0.371875" />
-        <entry key="..\:/Programacion/Android_studio/SecurityIntegration/app/src/main/res/layout/org_list_fragment.xml" value="0.371875" />
-        <entry key="..\:/Programacion/Android_studio/SecurityIntegration/app/src/main/res/layout/org_row.xml" value="0.371875" />
-        <entry key="..\:/Programacion/Android_studio/SecurityIntegration/app/src/main/res/layout/project_list_fragment.xml" value="0.371875" />
-        <entry key="..\:/Programacion/Android_studio/SecurityIntegration/app/src/main/res/layout/project_row.xml" value="0.5" />
         <entry key="..\:/Programacion/Android_studio/SecurityIntegration/app/src/main/res/layout/recover_password_fragment.xml" value="0.371875" />
         <entry key="..\:/Programacion/Android_studio/SecurityIntegration/app/src/main/res/layout/recover_password_new_password_fragment.xml" value="0.371875" />
         <entry key="..\:/Programacion/Android_studio/SecurityIntegration/app/src/main/res/layout/recover_password_s_q_fragment.xml" value="0.371875" />
@@ -65,6 +54,7 @@
         <entry key="..\:/irigx/Documents/School/5to/ISS/Mobile/DibujandoUnTomorrow/SecurityIntegration/App/app/src/main/res/layout/activity_login2.xml" value="0.26358695652173914" />
         <entry key="..\:/irigx/Documents/School/5to/ISS/Mobile/DibujandoUnTomorrow/SecurityIntegration/App/app/src/main/res/layout/activity_login_screen.xml" value="0.26992753623188404" />
         <entry key="..\:/irigx/Documents/School/5to/ISS/Mobile/DibujandoUnTomorrow/SecurityIntegration/App/app/src/main/res/layout/activity_main.xml" value="0.25" />
+        <entry key="..\:/irigx/Documents/School/5to/ISS/Mobile/DibujandoUnTomorrow/SecurityIntegration/App/app/src/main/res/layout/activity_main_page.xml" value="0.15493421052631579" />
         <entry key="..\:/irigx/Documents/School/5to/ISS/Mobile/DibujandoUnTomorrow/SecurityIntegration/App/app/src/main/res/layout/activity_main_sign_up.xml" value="0.23157894736842105" />
         <entry key="..\:/irigx/Documents/School/5to/ISS/Mobile/DibujandoUnTomorrow/SecurityIntegration/App/app/src/main/res/layout/activity_main_sign_up_activity.xml" value="0.23157894736842105" />
         <entry key="..\:/irigx/Documents/School/5to/ISS/Mobile/DibujandoUnTomorrow/SecurityIntegration/App/app/src/main/res/layout/activity_main_sign_upa_ctivity.xml" value="0.23157894736842105" />
@@ -88,6 +78,7 @@
         <entry key="..\:/irigx/Documents/School/5to/ISS/Mobile/DibujandoUnTomorrow/SecurityIntegration/App/app/src/main/res/layout/content_donate.xml" value="0.12960526315789472" />
         <entry key="..\:/irigx/Documents/School/5to/ISS/Mobile/DibujandoUnTomorrow/SecurityIntegration/App/app/src/main/res/layout/content_sign_in_authentication.xml" value="0.23157894736842105" />
         <entry key="..\:/irigx/Documents/School/5to/ISS/Mobile/DibujandoUnTomorrow/SecurityIntegration/App/app/src/main/res/layout/delete.xml" value="0.23157894736842105" />
+        <entry key="..\:/irigx/Documents/School/5to/ISS/Mobile/DibujandoUnTomorrow/SecurityIntegration/App/app/src/main/res/layout/event_info_fragment.xml" value="0.12960526315789472" />
         <entry key="..\:/irigx/Documents/School/5to/ISS/Mobile/DibujandoUnTomorrow/SecurityIntegration/App/app/src/main/res/layout/event_list_fragment.xml" value="0.1799863387978142" />
         <entry key="..\:/irigx/Documents/School/5to/ISS/Mobile/DibujandoUnTomorrow/SecurityIntegration/App/app/src/main/res/layout/event_lookup_fragment.xml" value="0.12960526315789472" />
         <entry key="..\:/irigx/Documents/School/5to/ISS/Mobile/DibujandoUnTomorrow/SecurityIntegration/App/app/src/main/res/layout/event_row.xml" value="0.23157894736842105" />
@@ -106,11 +97,21 @@
         <entry key="..\:/irigx/Documents/School/5to/ISS/Mobile/DibujandoUnTomorrow/SecurityIntegration/App/app/src/main/res/layout/landing_fragment.xml" value="0.23157894736842105" />
         <entry key="..\:/irigx/Documents/School/5to/ISS/Mobile/DibujandoUnTomorrow/SecurityIntegration/App/app/src/main/res/layout/main_sign_in_fragment.xml" value="0.25" />
         <entry key="..\:/irigx/Documents/School/5to/ISS/Mobile/DibujandoUnTomorrow/SecurityIntegration/App/app/src/main/res/layout/main_sign_up_fragment.xml" value="0.23157894736842105" />
+        <entry key="..\:/irigx/Documents/School/5to/ISS/Mobile/DibujandoUnTomorrow/SecurityIntegration/App/app/src/main/res/layout/my_events_fragment.xml" value="0.23157894736842105" />
+        <entry key="..\:/irigx/Documents/School/5to/ISS/Mobile/DibujandoUnTomorrow/SecurityIntegration/App/app/src/main/res/layout/my_orgs_fragment.xml" value="0.23157894736842105" />
+        <entry key="..\:/irigx/Documents/School/5to/ISS/Mobile/DibujandoUnTomorrow/SecurityIntegration/App/app/src/main/res/layout/my_project_info_fragment.xml" value="0.23157894736842105" />
+        <entry key="..\:/irigx/Documents/School/5to/ISS/Mobile/DibujandoUnTomorrow/SecurityIntegration/App/app/src/main/res/layout/my_project_lookup_fragment.xml" value="0.23157894736842105" />
+        <entry key="..\:/irigx/Documents/School/5to/ISS/Mobile/DibujandoUnTomorrow/SecurityIntegration/App/app/src/main/res/layout/my_projects_fragment.xml" value="0.23157894736842105" />
         <entry key="..\:/irigx/Documents/School/5to/ISS/Mobile/DibujandoUnTomorrow/SecurityIntegration/App/app/src/main/res/layout/org_info_fragment.xml" value="0.23157894736842105" />
         <entry key="..\:/irigx/Documents/School/5to/ISS/Mobile/DibujandoUnTomorrow/SecurityIntegration/App/app/src/main/res/layout/org_list_fragment.xml" value="0.18" />
+        <entry key="..\:/irigx/Documents/School/5to/ISS/Mobile/DibujandoUnTomorrow/SecurityIntegration/App/app/src/main/res/layout/org_lookup_fragment.xml" value="0.15493421052631579" />
         <entry key="..\:/irigx/Documents/School/5to/ISS/Mobile/DibujandoUnTomorrow/SecurityIntegration/App/app/src/main/res/layout/org_row.xml" value="0.22" />
         <entry key="..\:/irigx/Documents/School/5to/ISS/Mobile/DibujandoUnTomorrow/SecurityIntegration/App/app/src/main/res/layout/profile_fragment.xml" value="0.23157894736842105" />
+        <entry key="..\:/irigx/Documents/School/5to/ISS/Mobile/DibujandoUnTomorrow/SecurityIntegration/App/app/src/main/res/layout/profile_lookup_fragment.xml" value="0.23157894736842105" />
+        <entry key="..\:/irigx/Documents/School/5to/ISS/Mobile/DibujandoUnTomorrow/SecurityIntegration/App/app/src/main/res/layout/profile_to_my_projects_fragment.xml" value="0.12960526315789472" />
+        <entry key="..\:/irigx/Documents/School/5to/ISS/Mobile/DibujandoUnTomorrow/SecurityIntegration/App/app/src/main/res/layout/project_info_fragment.xml" value="0.23157894736842105" />
         <entry key="..\:/irigx/Documents/School/5to/ISS/Mobile/DibujandoUnTomorrow/SecurityIntegration/App/app/src/main/res/layout/project_list_fragment.xml" value="0.23157894736842105" />
+        <entry key="..\:/irigx/Documents/School/5to/ISS/Mobile/DibujandoUnTomorrow/SecurityIntegration/App/app/src/main/res/layout/project_lookup_fragment.xml" value="0.23157894736842105" />
         <entry key="..\:/irigx/Documents/School/5to/ISS/Mobile/DibujandoUnTomorrow/SecurityIntegration/App/app/src/main/res/layout/project_row.xml" value="0.23157894736842105" />
         <entry key="..\:/irigx/Documents/School/5to/ISS/Mobile/DibujandoUnTomorrow/SecurityIntegration/App/app/src/main/res/layout/recover_password_fragment.xml" value="0.23157894736842105" />
         <entry key="..\:/irigx/Documents/School/5to/ISS/Mobile/DibujandoUnTomorrow/SecurityIntegration/App/app/src/main/res/layout/recover_password_new_password_fragment.xml" value="0.23157894736842105" />

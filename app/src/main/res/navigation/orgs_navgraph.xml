@@ -11,7 +11,7 @@
         android:label="org_list_fragment"
         tools:layout="@layout/org_list_fragment" >
         <action
-            android:id="@+id/action_orgListFragment_to_orgInfoFragment"
+            android:id="@+id/action_orgListFragment_to_orgInfoFragment3"
             app:destination="@id/orgInfoFragment" />
     </fragment>
     <fragment
@@ -19,11 +19,11 @@
         android:name="com.example.securityintegration.Views.OrgLookup.OrgInfoFragment"
         android:label="org_info_fragment"
         tools:layout="@layout/org_info_fragment" >
-        <argument
-            android:name="selection"
-            app:argType="com.example.securityintegration.Models.OrgLookup.Org" />
         <action
             android:id="@+id/action_orgInfoFragment_to_orgListFragment"
             app:destination="@id/orgListFragment" />
+        <argument
+            android:name="selectedOrg"
+            app:argType="com.example.securityintegration.Models.OrgLookup.Org" />
     </fragment>
 </navigation>
