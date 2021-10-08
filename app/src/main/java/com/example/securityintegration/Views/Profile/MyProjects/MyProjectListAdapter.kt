@@ -9,7 +9,6 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.securityintegration.Models.ProjectList.Project
 import com.example.securityintegration.Models.RowListener
 import com.example.securityintegration.R
-import com.example.securityintegration.Views.OrgLookup.ProjectListAdapter
 
 class MyProjectListAdapter (var prArray: ArrayList<Project>) : RecyclerView.Adapter<MyProjectListAdapter.MyProjectViewHolder>() {
 
@@ -47,8 +46,8 @@ class MyProjectListAdapter (var prArray: ArrayList<Project>) : RecyclerView.Adap
     // Represents a box within the RecyclerView where view comes from event_row.xml
     class MyProjectViewHolder (view: View) : RecyclerView.ViewHolder(view) {
         private val tvProject = view.findViewById<TextView>(R.id.tvProjectName)
-        private val tvProjectCreator = view.findViewById<TextView>(R.id.tvProjectCreator)
-        private val tvProjectDesc = view.findViewById<TextView>(R.id.tvProjectDesc)
+        private val tvProjectCreator = view.findViewById<TextView>(R.id.tvProjectDesc)
+        private val tvProjectDesc = view.findViewById<TextView>(R.id.tvProjectCreator)
 
         fun set(project: Project) {
             tvProject.text = project.name

@@ -44,7 +44,12 @@
         <entry key="..\:/irigx/Documents/School/5to/ISS/Mobile/DibujandoUnTomorrow/SecurityIntegration/App/app/src/main/res/drawable/inputcontainer.xml" value="0.24177631578947367" />
         <entry key="..\:/irigx/Documents/School/5to/ISS/Mobile/DibujandoUnTomorrow/SecurityIntegration/App/app/src/main/res/drawable/inputshape.xml" value="0.287109375" />
         <entry key="..\:/irigx/Documents/School/5to/ISS/Mobile/DibujandoUnTomorrow/SecurityIntegration/App/app/src/main/res/drawable/login_button_bk.xml" value="0.3828125" />
+        <entry key="..\:/irigx/Documents/School/5to/ISS/Mobile/DibujandoUnTomorrow/SecurityIntegration/App/app/src/main/res/drawable/purple_wave.xml" value="0.24177631578947367" />
+        <entry key="..\:/irigx/Documents/School/5to/ISS/Mobile/DibujandoUnTomorrow/SecurityIntegration/App/app/src/main/res/drawable/toggle_rect.xml" value="0.24177631578947367" />
+        <entry key="..\:/irigx/Documents/School/5to/ISS/Mobile/DibujandoUnTomorrow/SecurityIntegration/App/app/src/main/res/drawable/toggle_rect_off.xml" value="0.24177631578947367" />
+        <entry key="..\:/irigx/Documents/School/5to/ISS/Mobile/DibujandoUnTomorrow/SecurityIntegration/App/app/src/main/res/drawable/toggle_rect_on.xml" value="0.24177631578947367" />
         <entry key="..\:/irigx/Documents/School/5to/ISS/Mobile/DibujandoUnTomorrow/SecurityIntegration/App/app/src/main/res/layout-v31/activity_login.xml" value="0.26358695652173914" />
+        <entry key="..\:/irigx/Documents/School/5to/ISS/Mobile/DibujandoUnTomorrow/SecurityIntegration/App/app/src/main/res/layout/Subdirs/SignUpRes/drawable/ic_mail_icon.xml" value="0.24177631578947367" />
         <entry key="..\:/irigx/Documents/School/5to/ISS/Mobile/DibujandoUnTomorrow/SecurityIntegration/App/app/src/main/res/layout/activity_donate.xml" value="0.22" />
         <entry key="..\:/irigx/Documents/School/5to/ISS/Mobile/DibujandoUnTomorrow/SecurityIntegration/App/app/src/main/res/layout/activity_donate_credit_card_info.xml" value="0.25" />
         <entry key="..\:/irigx/Documents/School/5to/ISS/Mobile/DibujandoUnTomorrow/SecurityIntegration/App/app/src/main/res/layout/activity_donate_pay_pal_info.xml" value="0.25" />
@@ -78,7 +83,8 @@
         <entry key="..\:/irigx/Documents/School/5to/ISS/Mobile/DibujandoUnTomorrow/SecurityIntegration/App/app/src/main/res/layout/content_donate.xml" value="0.12960526315789472" />
         <entry key="..\:/irigx/Documents/School/5to/ISS/Mobile/DibujandoUnTomorrow/SecurityIntegration/App/app/src/main/res/layout/content_sign_in_authentication.xml" value="0.23157894736842105" />
         <entry key="..\:/irigx/Documents/School/5to/ISS/Mobile/DibujandoUnTomorrow/SecurityIntegration/App/app/src/main/res/layout/delete.xml" value="0.23157894736842105" />
-        <entry key="..\:/irigx/Documents/School/5to/ISS/Mobile/DibujandoUnTomorrow/SecurityIntegration/App/app/src/main/res/layout/event_info_fragment.xml" value="0.12960526315789472" />
+        <entry key="..\:/irigx/Documents/School/5to/ISS/Mobile/DibujandoUnTomorrow/SecurityIntegration/App/app/src/main/res/layout/donation_row.xml" value="0.33" />
+        <entry key="..\:/irigx/Documents/School/5to/ISS/Mobile/DibujandoUnTomorrow/SecurityIntegration/App/app/src/main/res/layout/event_info_fragment.xml" value="0.2" />
         <entry key="..\:/irigx/Documents/School/5to/ISS/Mobile/DibujandoUnTomorrow/SecurityIntegration/App/app/src/main/res/layout/event_list_fragment.xml" value="0.1799863387978142" />
         <entry key="..\:/irigx/Documents/School/5to/ISS/Mobile/DibujandoUnTomorrow/SecurityIntegration/App/app/src/main/res/layout/event_lookup_fragment.xml" value="0.12960526315789472" />
         <entry key="..\:/irigx/Documents/School/5to/ISS/Mobile/DibujandoUnTomorrow/SecurityIntegration/App/app/src/main/res/layout/event_row.xml" value="0.23157894736842105" />
@@ -97,6 +103,7 @@
         <entry key="..\:/irigx/Documents/School/5to/ISS/Mobile/DibujandoUnTomorrow/SecurityIntegration/App/app/src/main/res/layout/landing_fragment.xml" value="0.23157894736842105" />
         <entry key="..\:/irigx/Documents/School/5to/ISS/Mobile/DibujandoUnTomorrow/SecurityIntegration/App/app/src/main/res/layout/main_sign_in_fragment.xml" value="0.25" />
         <entry key="..\:/irigx/Documents/School/5to/ISS/Mobile/DibujandoUnTomorrow/SecurityIntegration/App/app/src/main/res/layout/main_sign_up_fragment.xml" value="0.23157894736842105" />
+        <entry key="..\:/irigx/Documents/School/5to/ISS/Mobile/DibujandoUnTomorrow/SecurityIntegration/App/app/src/main/res/layout/my_donations_fragment.xml" value="0.23157894736842105" />
         <entry key="..\:/irigx/Documents/School/5to/ISS/Mobile/DibujandoUnTomorrow/SecurityIntegration/App/app/src/main/res/layout/my_events_fragment.xml" value="0.23157894736842105" />
         <entry key="..\:/irigx/Documents/School/5to/ISS/Mobile/DibujandoUnTomorrow/SecurityIntegration/App/app/src/main/res/layout/my_orgs_fragment.xml" value="0.23157894736842105" />
         <entry key="..\:/irigx/Documents/School/5to/ISS/Mobile/DibujandoUnTomorrow/SecurityIntegration/App/app/src/main/res/layout/my_project_info_fragment.xml" value="0.23157894736842105" />

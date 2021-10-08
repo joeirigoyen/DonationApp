@@ -19,6 +19,9 @@
         <action
             android:id="@+id/action_profileFragment_to_myEventsFragment"
             app:destination="@id/myEventsFragment" />
+        <action
+            android:id="@+id/action_profileFragment_to_myEventsFragment2"
+            app:destination="@id/myEventsFragment" />
     </fragment>
     <fragment
         android:id="@+id/myProjectsFragment"
@@ -49,6 +52,9 @@
         <action
             android:id="@+id/action_myEventsFragment_to_profileFragment"
             app:destination="@id/profileFragment" />
+        <action
+            android:id="@+id/action_myEventsFragment_to_eventInfoFragment2"
+            app:destination="@id/eventInfoFragment2" />
     </fragment>
     <fragment
         android:id="@+id/projectInfoFragment2"
@@ -61,5 +67,16 @@
         <action
             android:id="@+id/action_projectInfoFragment2_to_myProjectsFragment"
             app:destination="@id/myProjectsFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/eventInfoFragment2"
+        android:name="com.example.securityintegration.Views.Events.EventInfoFragment"
+        android:label="event_info_fragment"
+        tools:layout="@layout/event_info_fragment" >
+        <action
+            android:id="@+id/action_eventInfoFragment2_to_myEventsFragment"
+            app:destination="@id/myEventsFragment" />
+        <argument android:name="selectedEvent"
+            app:argType="com.example.securityintegration.Models.EventList.Event" />
     </fragment>
 </navigation>

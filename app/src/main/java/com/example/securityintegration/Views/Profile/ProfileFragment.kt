@@ -38,5 +38,11 @@ class ProfileFragment : Fragment() {
         binding.btnMyProjects.setOnClickListener {
             findNavController().navigate(R.id.action_profileFragment_to_myProjectsFragment)
         }
+        binding.btnMyDonations.setOnClickListener {
+            findNavController().navigate(R.id.action_profileFragment_to_myDonationsFragment)
+        }
+        binding.btnMyEvents.setOnClickListener {
+            findNavController().navigate(R.id.action_profileFragment_to_myEventsFragment)
+        }
     }
 }
