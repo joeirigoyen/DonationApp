@@ -23,7 +23,7 @@ class DonationService {
     )
 
     fun getDonations(user: User): List<Donation> {
-        return donations.filter { it.userId == user.userId }
+        return donations
     }
 
 }

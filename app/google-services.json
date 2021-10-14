@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "497911785568",
+    "project_id": "securityintegration-327715",
+    "storage_bucket": "securityintegration-327715.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:497911785568:android:394565a8fa7e890a507b05",
+        "android_client_info": {
+          "package_name": "com.example.securityintegration"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "497911785568-7lscnuk6gdnn4p3dkcopr1h9hqtdu2pt.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCoau7xf-AFF_fesqOnPU1JM7zAUIrGBfY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "497911785568-7lscnuk6gdnn4p3dkcopr1h9hqtdu2pt.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

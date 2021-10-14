@@ -44,5 +44,6 @@ class EventInfoFragment : Fragment() {
         binding.tvEventDate.text = args.selectedEvent.date.toString()
         binding.tvEventOrg.text = args.selectedEvent.creator.name
         binding.tvEventDescription.text = args.selectedEvent.desc
+        // Switch button visibility according to user type
     }
 }
