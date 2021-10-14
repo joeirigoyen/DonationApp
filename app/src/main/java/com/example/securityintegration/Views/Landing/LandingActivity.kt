@@ -9,7 +9,6 @@ import androidx.activity.result.contract.ActivityResultContracts
 import androidx.activity.viewModels
 import com.example.securityintegration.R
 import com.example.securityintegration.ViewModels.Landing.LandingViewModel
-import com.paypal.android.sdk.payments.PaymentActivity
 
 class LandingActivity : AppCompatActivity() {
 

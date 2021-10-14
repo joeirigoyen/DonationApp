@@ -8,9 +8,12 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
 import androidx.fragment.app.viewModels
+import com.example.securityintegration.Models.User.User
 import com.example.securityintegration.Views.SignIn.MainActivity
 import com.example.securityintegration.ViewModels.SignUp.MainSignUpViewModel
 import com.example.securityintegration.databinding.SignUpNewPasswordFragmentBinding
+import com.google.firebase.database.ktx.database
+import com.google.firebase.ktx.Firebase
 
 class SignUpNewPassword : Fragment() {
 
@@ -18,10 +21,12 @@ class SignUpNewPassword : Fragment() {
         fun newInstance() = SignUpNewPassword()
     }
 
+    private val bd = Firebase.database
     private val viewModel : MainSignUpViewModel by viewModels(
         ownerProducer = {requireActivity()}
     )
     private lateinit var binding: SignUpNewPasswordFragmentBinding
+
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -35,13 +40,42 @@ class SignUpNewPassword : Fragment() {
         super.onViewCreated(view, savedInstanceState)
         // Button events
         binding.btnNext.setOnClickListener {
-            if (!binding.etEmail.text.isEmpty() && viewModel.isValidEmail(binding.etEmail.text.toString())) {
-                if (!binding.etNewPW.text.isEmpty() && !binding.etConfirmPW.text.isEmpty()) {
+            if (!binding.etEmail.text.isEmpty()) {
+                if (!binding.etNewPW.text.isEmpty() && !binding.etConfirmPW.text.isEmpty() && !binding.etSecurityQuestion.text.isEmpty() && !binding.etSecurityQuestionAnswer.text.isEmpty()) {
+                    viewModel.secQuestion = binding.etSecurityQuestion.text.toString()
+                    viewModel.secAnswer = binding.etSecurityQuestionAnswer.text.toString()
                     if (binding.etNewPW.text.toString() == binding.etConfirmPW.text.toString()) {
-                        Toast.makeText(activity, "Cuenta creada con éxito.", Toast.LENGTH_LONG).show()
-                        val intent = Intent(activity, MainActivity::class.java)
-                        startActivity(intent)
-                        requireActivity().finish()
+                        // Add info to viewModel
+                            if (isValidEmail(binding.etEmail.text.toString())) {
+                                viewModel.email = binding.etEmail.text.toString()
+                                if (isValidPassword(binding.etNewPW.text.toString())) {
+                                    viewModel.password = binding.etNewPW.text.toString()
+                                    // Add everything to Firebase
+                                    val user = User(
+                                        viewModel.names,
+                                        viewModel.firstLastName,
+                                        viewModel.secondLastName,
+                                        viewModel.country,
+                                        viewModel.accType,
+                                        viewModel.birthDate,
+                                        viewModel.email,
+                                        viewModel.password,
+                                        viewModel.secQuestion,
+                                        viewModel.secAnswer
+                                    )
+                                    val ref = bd.getReference("Users/${viewModel.username}")
+                                    ref.setValue(user)
+                                    // Go to sign-in page
+                                    Toast.makeText(activity, "Cuenta creada con éxito.", Toast.LENGTH_LONG).show()
+                                    val intent = Intent(activity, MainActivity::class.java)
+                                    startActivity(intent)
+                                    requireActivity().finish()
+                                } else {
+                                    Toast.makeText(requireContext(), "La contraseña debe tener al menos 8 caracteres (hasta 32 caracteres), al menos un número y una letra mayúscula.", Toast.LENGTH_SHORT).show()
+                                }
+                            } else {
+                                Toast.makeText(requireContext(), "Introduce un correo válido.", Toast.LENGTH_SHORT).show()
+                            }
                     } else {
                         Toast.makeText(activity, "Las contraseñas no coinciden.", Toast.LENGTH_SHORT).show()
                     }
@@ -55,9 +89,14 @@ class SignUpNewPassword : Fragment() {
         }
     }
 
-    override fun onActivityCreated(savedInstanceState: Bundle?) {
-        super.onActivityCreated(savedInstanceState)
-        // TODO: Use the ViewModel
+    fun isValidPassword(password : String) : Boolean {
+        val pattern = "^(?=.*[a-z])(?=.*[A-Z])(?=.*\\d)(?=.*[@$!%*?&])[A-Za-z\\d@$!%*?&]{8,}$"
+        val matcher = Regex(pattern)
+        return matcher.matches(password)
+    }
+
+    fun isValidEmail(email: String) : Boolean {
+        return android.util.Patterns.EMAIL_ADDRESS.matcher(email).matches()
     }
 
 }

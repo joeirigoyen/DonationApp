@@ -11,7 +11,6 @@ import androidx.navigation.fragment.navArgs
 import com.example.securityintegration.R
 import com.example.securityintegration.ViewModels.Projects.ProjectInfoViewModel
 import com.example.securityintegration.databinding.ProjectInfoFragmentBinding
-import okio.ByteString.Companion.decodeHex
 
 class ProjectInfoFragment : Fragment() {
 

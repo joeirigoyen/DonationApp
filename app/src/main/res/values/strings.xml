@@ -77,7 +77,6 @@
     <string name="recupera_tu_contrase_a">Recupera tu contraseña</string>
     <string name="listo">¡Listo!</string>
     <string name="te_hemos_enviado_un_correo_con_las_instrucciones_para_recuperar_tu_contrase_a">Te hemos enviado un correo con las instrucciones para recuperar tu contraseña.</string>
-    <string name="pregunta_de_seguridad">Pregunta de seguridad</string>
     <string name="s_lo_necesitamos_que_nos_ayudes_llenando_la_siguiente_informaci_n">Sólo necesitamos que nos ayudes llenando la siguiente información</string>
     <string name="a_continuaci_n_introduce_tu_nueva_contrase_a">A continuación introduce tu nueva contraseña:</string>
     <string name="recuperemos_tu_contrase_a">Recuperemos tu contraseña</string>
@@ -97,4 +96,7 @@
     <string name="proyectos_actuales">Proyectos actuales</string>
     <string name="monto_a_donar">Monto a donar</string>
     <string name="donarbtn">Donar</string>
+    <string name="pregunta_de_seguridad">Pregunta de seguridad</string>
+    <string name="respuesta">Respuesta</string>
+    <string name="pa_s">País de origen</string>
 </resources>
