@@ -1,6 +1,5 @@
 package com.example.securityintegration.Views.Projects
 
-import androidx.lifecycle.ViewModelProvider
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -9,15 +8,10 @@ import android.view.ViewGroup
 import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
-import androidx.recyclerview.widget.RecyclerView
 import com.example.securityintegration.Models.OrgLookup.MarginItemDecoration
-import com.example.securityintegration.Models.RowListener
-import com.example.securityintegration.R
-import com.example.securityintegration.ViewModels.Events.EventListViewModel
+import com.example.securityintegration.Models.EventList.RowListener
 import com.example.securityintegration.ViewModels.Projects.ProjectListViewModel
-import com.example.securityintegration.Views.OrgLookup.EventListAdapter
 import com.example.securityintegration.Views.OrgLookup.ProjectListAdapter
-import com.example.securityintegration.databinding.EventListFragmentBinding
 import com.example.securityintegration.databinding.ProjectListFragmentBinding
 
 class ProjectListFragment : Fragment(), RowListener {

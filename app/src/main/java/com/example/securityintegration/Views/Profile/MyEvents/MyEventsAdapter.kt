@@ -7,7 +7,7 @@ import android.widget.LinearLayout
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.example.securityintegration.Models.EventList.Event
-import com.example.securityintegration.Models.RowListener
+import com.example.securityintegration.Models.EventList.RowListener
 import com.example.securityintegration.R
 
 class MyEventsAdapter (var evArray: ArrayList<Event>) : RecyclerView.Adapter<MyEventsAdapter.MyEventsViewHolder>() {
@@ -32,7 +32,7 @@ class MyEventsAdapter (var evArray: ArrayList<Event>) : RecyclerView.Adapter<MyE
     }
 
     // Refresh changes on orgArray
-    fun update(evList: List<Event>?) {
+    fun setData(evList: List<Event>?) {
         // Free memory
         evArray.clear()
         // Update elements
@@ -50,9 +50,9 @@ class MyEventsAdapter (var evArray: ArrayList<Event>) : RecyclerView.Adapter<MyE
         private val tvEventDate = view.findViewById<TextView>(R.id.tvEventDate)
 
         fun set(event: Event) {
-            tvEvent.text = event.name
-            tvEventCreator.text = event.creator.name
-            tvEventDate.text = event.date.toString()
+            tvEvent.text = event.nombre
+            tvEventCreator.text = event.org_creadora
+            tvEventDate.text = event.fecha_evento
         }
     }
 

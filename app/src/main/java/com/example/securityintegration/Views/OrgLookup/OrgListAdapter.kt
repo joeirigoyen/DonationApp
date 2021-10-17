@@ -3,14 +3,11 @@ package com.example.securityintegration.Views.OrgLookup
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.AdapterView
 import android.widget.LinearLayout
 import android.widget.TextView
-import androidx.navigation.NavHostController
-import androidx.navigation.fragment.NavHostFragment
 import androidx.recyclerview.widget.RecyclerView
 import com.example.securityintegration.Models.OrgLookup.Org
-import com.example.securityintegration.Models.RowListener
+import com.example.securityintegration.Models.EventList.RowListener
 import com.example.securityintegration.R
 
 // Provides info to populate OrgList RecyclerView

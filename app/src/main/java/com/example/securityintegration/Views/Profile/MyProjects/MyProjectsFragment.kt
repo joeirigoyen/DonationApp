@@ -9,12 +9,10 @@ import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.securityintegration.Models.OrgLookup.MarginItemDecoration
-import com.example.securityintegration.Models.RowListener
-import com.example.securityintegration.Models.User.User
-import com.example.securityintegration.Models.User.UserService
+import com.example.securityintegration.Models.EventList.RowListener
+import com.example.securityintegration.Models.User.APIService
 import com.example.securityintegration.ViewModels.Profile.MyProjectsViewModel
 import com.example.securityintegration.databinding.MyProjectsFragmentBinding
-import java.sql.Date
 
 class MyProjectsFragment : Fragment(), RowListener {
 
@@ -53,7 +51,7 @@ class MyProjectsFragment : Fragment(), RowListener {
     }
 
     private fun configEvents() {
-        viewModel.getProjects(UserService().getUsers()[0])
+        viewModel.getProjects()
     }
 
     private fun configObservers() {

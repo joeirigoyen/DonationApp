@@ -4,4 +4,4 @@ import com.example.securityintegration.Models.OrgLookup.Org
 import java.io.Serializable
 import java.util.*
 
-class Event (val name: String, val desc: String, val date: Date, val creator: Org) : Serializable
+data class Event (val id_event: Int, val nombre: String, val descripcion: String, val fecha_evento: String, val org_creadora: String) : Serializable

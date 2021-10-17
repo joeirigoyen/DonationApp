@@ -1,24 +1,17 @@
 package com.example.securityintegration.Views.Profile.MyDonations
 
-import androidx.lifecycle.ViewModelProvider
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.viewModels
-import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.securityintegration.Models.OrgLookup.MarginItemDecoration
-import com.example.securityintegration.Models.RowListener
-import com.example.securityintegration.Models.User.UserService
-import com.example.securityintegration.R
+import com.example.securityintegration.Models.EventList.RowListener
+import com.example.securityintegration.Models.User.APIService
 import com.example.securityintegration.ViewModels.Profile.MyDonationsViewModel
-import com.example.securityintegration.ViewModels.Projects.ProjectListViewModel
-import com.example.securityintegration.Views.OrgLookup.ProjectListAdapter
-import com.example.securityintegration.Views.Projects.ProjectListFragmentDirections
 import com.example.securityintegration.databinding.MyDonationsFragmentBinding
-import com.example.securityintegration.databinding.ProjectListFragmentBinding
 
 class MyDonationsFragment : Fragment(), RowListener {
 
@@ -30,7 +23,7 @@ class MyDonationsFragment : Fragment(), RowListener {
     private val viewModel: MyDonationsViewModel by viewModels()
     private val adapter = MyDonationsAdapter(arrayListOf())
     private val space = 20
-    private val users = UserService().getUsers()
+    //private val users = APIService().getUsers()
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -51,7 +44,7 @@ class MyDonationsFragment : Fragment(), RowListener {
 
     private fun configEvents() {
         // Set element info to boxes
-        viewModel.getDonations(users[0])
+        //viewModel.getDonations(users[0])
     }
 
     private fun configObservers() {
