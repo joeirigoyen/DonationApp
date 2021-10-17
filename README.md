@@ -9,7 +9,7 @@
   - **Diego Ulibarri** - *Project documenting and app design*
  
  ## Abstract
-This project has been created for Dibujando Un Mañana, in order to support the institution by developing an app which connects it with other institutions that would like to help by making donations to different organizations. It has been made using mainly the Android Studio software with some external libraries that will be referred to in an upcoming document that covers the whole specifics of the app. This is a project that does not have any commercial interests as it is merely an academic practice that will be evaluated by the formerly mentioned organization.
+This project has been created for Dibujando Un Mañana, in order to support the institution by developing an app which connects it with people that would like to help by making donations the different participating organizations. It has been made using mainly the Android Studio software with some external libraries that will be referred to in an upcoming document that covers the whole specifics of the app. This is a project that does not have any commercial interests as it is merely an academic practice that will be evaluated by the formerly mentioned organization.
 
 ## Main sections
  - **Organizations:** This section displays a list of the current participating insitutions. Once one of them is clicked, some information about it is displayed, as well as the option to make a donation by directly typing in the amount to be given. These payments do not go directly into any of our servers as the official PayPal API is being used to receive them, which makes it highly secure. (Currently the payments are made to a "sandbox" account that does not actually receive any kind of money).
