@@ -37,7 +37,7 @@ npm install express
 ``` 
 npm install body-parser
 ``` 
- - You might also want to install the ***nodemon*** plug-in to run the server right after saving your server without having to manually re-run it.
+ - You might also want to install the ***nodemon*** plug-in to run the server right after saving your changes to the scripts without having to manually re-run it.
  - Have the ***SQL Services*** running in your machine, otherwise the server will not be able to connect to the localhost.
  - Optionally you might also want to download Microsoft's SQL Manager Service to visualize the project's database internally.
 ### 2. Installing the project:
