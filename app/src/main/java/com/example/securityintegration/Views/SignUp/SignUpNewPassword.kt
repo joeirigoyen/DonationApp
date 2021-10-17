@@ -50,21 +50,8 @@ class SignUpNewPassword : Fragment() {
                                 viewModel.email = binding.etEmail.text.toString()
                                 if (isValidPassword(binding.etNewPW.text.toString())) {
                                     viewModel.password = binding.etNewPW.text.toString()
-                                    // Add everything to Firebase
-                                    val user = User(
-                                        viewModel.names,
-                                        viewModel.firstLastName,
-                                        viewModel.secondLastName,
-                                        viewModel.country,
-                                        viewModel.accType,
-                                        viewModel.birthDate,
-                                        viewModel.email,
-                                        viewModel.password,
-                                        viewModel.secQuestion,
-                                        viewModel.secAnswer
-                                    )
-                                    val ref = bd.getReference("Users/${viewModel.username}")
-                                    ref.setValue(user)
+                                    // Add everything to database
+
                                     // Go to sign-in page
                                     Toast.makeText(activity, "Cuenta creada con éxito.", Toast.LENGTH_LONG).show()
                                     val intent = Intent(activity, MainActivity::class.java)

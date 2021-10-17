@@ -7,7 +7,7 @@ import android.widget.LinearLayout
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.example.securityintegration.Models.ProjectList.Project
-import com.example.securityintegration.Models.RowListener
+import com.example.securityintegration.Models.EventList.RowListener
 import com.example.securityintegration.R
 
 // Provides info to populate OrgList RecyclerView

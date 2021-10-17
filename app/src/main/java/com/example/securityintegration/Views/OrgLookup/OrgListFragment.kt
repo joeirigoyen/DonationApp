@@ -5,16 +5,12 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Toast
 import androidx.fragment.app.viewModels
-import androidx.navigation.findNavController
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
-import androidx.recyclerview.widget.RecyclerView
 import com.example.securityintegration.Models.OrgLookup.MarginItemDecoration
-import com.example.securityintegration.Models.RowListener
+import com.example.securityintegration.Models.EventList.RowListener
 import com.example.securityintegration.ViewModels.OrgLookup.OrgListViewModel
-import com.example.securityintegration.Views.Landing.MainPageActivity
 import com.example.securityintegration.databinding.OrgListFragmentBinding
 
 class OrgListFragment : Fragment(), RowListener {

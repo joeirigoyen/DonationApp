@@ -40,10 +40,10 @@ class EventInfoFragment : Fragment() {
     }
 
     private fun configView() {
-        binding.tvEventTitle.text = args.selectedEvent.name
-        binding.tvEventDate.text = args.selectedEvent.date.toString()
-        binding.tvEventOrg.text = args.selectedEvent.creator.name
-        binding.tvEventDescription.text = args.selectedEvent.desc
+        binding.tvEventTitle.text = args.selectedEvent.nombre
+        binding.tvEventDate.text = args.selectedEvent.fecha_evento
+        binding.tvEventOrg.text = args.selectedEvent.org_creadora
+        binding.tvEventDescription.text = args.selectedEvent.descripcion
         // Switch button visibility according to user type
     }
 }

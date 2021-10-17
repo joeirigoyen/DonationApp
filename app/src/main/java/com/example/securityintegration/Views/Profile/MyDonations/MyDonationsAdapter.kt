@@ -1,20 +1,14 @@
 package com.example.securityintegration.Views.Profile.MyDonations
 
-import androidx.lifecycle.ViewModelProvider
-import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.LinearLayout
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
-import com.example.securityintegration.Models.ProjectList.Project
-import com.example.securityintegration.Models.RowListener
+import com.example.securityintegration.Models.EventList.RowListener
 import com.example.securityintegration.Models.User.Donation
 import com.example.securityintegration.R
-import com.example.securityintegration.ViewModels.Profile.MyDonationsAdapterViewModel
-import com.example.securityintegration.Views.Profile.MyProjects.MyProjectListAdapter
 
 class MyDonationsAdapter (var donArray: ArrayList<Donation>) : RecyclerView.Adapter<MyDonationsAdapter.MyDonationsViewHolder>() {
 

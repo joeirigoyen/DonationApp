@@ -7,7 +7,7 @@ import android.widget.LinearLayout
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.example.securityintegration.Models.ProjectList.Project
-import com.example.securityintegration.Models.RowListener
+import com.example.securityintegration.Models.EventList.RowListener
 import com.example.securityintegration.R
 
 class MyProjectListAdapter (var prArray: ArrayList<Project>) : RecyclerView.Adapter<MyProjectListAdapter.MyProjectViewHolder>() {

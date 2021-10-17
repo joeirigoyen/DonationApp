@@ -1,21 +1,22 @@
 package com.example.securityintegration.Views.Events
 
-import androidx.lifecycle.ViewModelProvider
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.viewModels
+import androidx.lifecycle.Observer
+import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.securityintegration.Models.OrgLookup.MarginItemDecoration
-import com.example.securityintegration.Models.RowListener
-import com.example.securityintegration.R
-import com.example.securityintegration.ViewModels.Events.EventListViewModel
+import com.example.securityintegration.Models.EventList.RowListener
+import com.example.securityintegration.Models.User.APIService
+import com.example.securityintegration.ViewModels.API.APIViewModel
+import com.example.securityintegration.ViewModels.API.ViewModelFactory
 import com.example.securityintegration.Views.OrgLookup.EventListAdapter
 import com.example.securityintegration.databinding.EventListFragmentBinding
-import com.example.securityintegration.databinding.OrgListFragmentBinding
 
 class EventListFragment : Fragment(), RowListener {
 
@@ -24,9 +25,17 @@ class EventListFragment : Fragment(), RowListener {
     }
 
     private lateinit var binding: EventListFragmentBinding
-    private val viewModel: EventListViewModel by viewModels()
+    private lateinit var viewModel: APIViewModel
     private val adapter = EventListAdapter(arrayListOf())
     private val space = 20
+
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        val service = APIService()
+        val viewModelFactory = ViewModelFactory(service)
+
+        viewModel = ViewModelProvider(requireActivity(), viewModelFactory).get(APIViewModel::class.java)
+    }
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -50,9 +59,12 @@ class EventListFragment : Fragment(), RowListener {
     }
 
     private fun configObservers() {
-        viewModel.eventList.observe(viewLifecycleOwner) {
-                eventList -> adapter.update(eventList)
-        }
+        viewModel.getEvents()
+        viewModel.myEventsResponse.observe(viewLifecycleOwner, Observer { response ->
+            if (response.isSuccessful) {
+                response.body()?.let { adapter.setData(it)}
+            }
+        })
     }
 
     private fun configAdapter() {

@@ -7,7 +7,7 @@ import android.widget.LinearLayout
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.example.securityintegration.Models.EventList.Event
-import com.example.securityintegration.Models.RowListener
+import com.example.securityintegration.Models.EventList.RowListener
 import com.example.securityintegration.R
 
 // Provides info to populate OrgList RecyclerView
@@ -39,7 +39,7 @@ class EventListAdapter (var evArray: ArrayList<Event>) : RecyclerView.Adapter<Ev
     }
 
     // Refresh changes on orgArray
-    fun update(evList: List<Event>?) {
+    fun setData(evList: List<Event>?) {
         // Free memory
         evArray.clear()
         // Update elements
@@ -57,9 +57,9 @@ class EventListAdapter (var evArray: ArrayList<Event>) : RecyclerView.Adapter<Ev
         private val tvEventCreator = view.findViewById<TextView>(R.id.tvEventCreator)
 
         fun set(event: Event) {
-            tvEvent.text = event.name
-            tvEventDate.text = event.date.toString()
-            tvEventCreator.text = event.creator.name
+            tvEvent.text = event.nombre
+            tvEventDate.text = event.fecha_evento
+            tvEventCreator.text = event.org_creadora
         }
     }
 }

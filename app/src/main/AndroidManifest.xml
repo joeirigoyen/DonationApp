@@ -5,7 +5,8 @@
     <uses-permission android:name="android.permission.INTERNET"/>
 
     <application
-        android:name=".Models.SecurityIntegrationPayments"
+        android:name=".Models.API.SecurityIntegrationPayments"
+        android:usesCleartextTraffic="true"
         android:allowBackup="true"
         android:fullBackupOnly="true"
         android:icon="@mipmap/ic_launcher"
