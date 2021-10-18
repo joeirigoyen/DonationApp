@@ -1,9 +1,6 @@
 package com.example.securityintegration.Models.ProjectList
 
-import com.example.securityintegration.Models.OrgLookup.Org
-import com.example.securityintegration.Models.OrgLookup.OrgService
 import com.example.securityintegration.Models.User.User
-import com.example.securityintegration.Models.User.APIService
 
 class ProjectService {
 

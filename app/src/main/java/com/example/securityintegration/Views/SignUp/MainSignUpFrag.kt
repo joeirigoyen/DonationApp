@@ -10,6 +10,7 @@ import android.widget.RadioButton
 import android.widget.RadioGroup
 import android.widget.Toast
 import androidx.fragment.app.viewModels
+import androidx.navigation.NavDirections
 import androidx.navigation.fragment.findNavController
 import com.example.securityintegration.Views.SignIn.MainActivity
 import com.example.securityintegration.R
@@ -53,27 +54,23 @@ class MainSignUpFrag : Fragment() {
         binding.btnNext.setOnClickListener {
             selection = radioGroup.checkedRadioButtonId
             val selectedBtn : RadioButton = requireActivity().findViewById(selection)
-            val selectionStr : String = selectedBtn.text.toString()
-            Toast.makeText(activity, "$selection", Toast.LENGTH_LONG).show()
+            val action : NavDirections
+            val passedArg: Int
             if (selection != -1) {
-                // Set selection id in viewModel
-                viewModel.setSelectedBtnId(selectionStr, "account")
-                Toast.makeText(activity, selectionStr, Toast.LENGTH_LONG).show()
-                // Start navigation
-                when (viewModel.getSelectedBtnId("account")) {
-                    getString(R.string.soy_un_inversionista_social), getString(R.string.busco_contactar_con_inversionistas_y_o_organizaciones)-> findNavController().navigate(R.id.action_mainSignUpFrag_to_signUpGeneralInfo)
-                    getString(R.string.represento_a_una_organizaci_n) -> findNavController().navigate(R.id.action_mainSignUpFrag_to_signUpOrgInfo)
-                    else -> Toast.makeText(activity, "Por favor selecciona una opción válida.", Toast.LENGTH_SHORT).show()
+                // Go to next page
+                if (selectedBtn.text.toString() == resources.getString(R.string.soy_un_inversionista_social)) {
+                    passedArg = 1
+                    action = MainSignUpFragDirections.actionMainSignUpFragToSignUpGeneralInfo(passedArg)
+                    findNavController().navigate(action)
+                } else if (selectedBtn.text.toString() ==resources.getString(R.string.represento_a_una_organizaci_n)) {
+                    passedArg = 2
+                    action = MainSignUpFragDirections.actionMainSignUpFragToSignUpOrgInfo(passedArg)
+                    findNavController().navigate(action)
                 }
             } else {
                 Toast.makeText(activity, "Por favor selecciona una opción válida.", Toast.LENGTH_SHORT).show()
             }
         }
-    }
-
-    override fun onActivityCreated(savedInstanceState: Bundle?) {
-        super.onActivityCreated(savedInstanceState)
-        // TODO: Use the ViewModel
     }
 
 }

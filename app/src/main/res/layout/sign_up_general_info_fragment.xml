@@ -16,8 +16,8 @@
 
     <TableLayout
         android:id="@+id/tableLayout"
-        android:layout_width="360dp"
-        android:layout_height="340dp"
+        android:layout_width="358dp"
+        android:layout_height="385dp"
         android:padding="@dimen/element_large_spacing"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -164,6 +164,32 @@
                 android:drawableStart="@drawable/ic_country"
                 android:drawablePadding="8dp"
                 android:hint="@string/pa_s"
+                android:inputType="text"
+                android:minHeight="48dp"
+                android:padding="12dp"
+                android:textColor="#85878B"
+                android:textColorHint="#999B9C9F"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                tools:ignore="TextContrastCheck" />
+
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="12dp">
+
+            <EditText
+                android:id="@+id/etRFC"
+                android:layout_width="182dp"
+                android:layout_height="48dp"
+                android:layout_weight="0.7"
+                android:autofillHints="testHint"
+                android:background="@drawable/custom_btn"
+                android:drawableStart="@drawable/ic_username"
+                android:drawablePadding="8dp"
+                android:hint="@string/rfc"
                 android:inputType="text"
                 android:minHeight="48dp"
                 android:padding="12dp"

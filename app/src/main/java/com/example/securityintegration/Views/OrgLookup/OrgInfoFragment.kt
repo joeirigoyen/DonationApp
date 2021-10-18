@@ -56,10 +56,10 @@ class OrgInfoFragment : Fragment() {
     }
 
     private fun configView() {
-        binding.tvOrgTitle.text = args.selectedOrg.name
-        binding.tvOrgDescription.text = args.selectedOrg.desc
-        binding.tvOriginDate.text = args.selectedOrg.creationDate.date.toString()
-        binding.tvNativeCountry.text = args.selectedOrg.nativeCountry
+        binding.tvOrgTitle.text = args.selectedOrg.nombre
+        binding.tvOrgDescription.text = args.selectedOrg.descripcion
+        binding.tvOriginDate.text = args.selectedOrg.fecha_nacimiento
+        binding.tvNativeCountry.text = args.selectedOrg.pais
     }
 
     private fun configButtons() {

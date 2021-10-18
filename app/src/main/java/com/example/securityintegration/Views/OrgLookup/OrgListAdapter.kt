@@ -6,12 +6,12 @@ import android.view.ViewGroup
 import android.widget.LinearLayout
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
-import com.example.securityintegration.Models.OrgLookup.Org
 import com.example.securityintegration.Models.EventList.RowListener
+import com.example.securityintegration.Models.User.User
 import com.example.securityintegration.R
 
 // Provides info to populate OrgList RecyclerView
-class OrgListAdapter (var orgArray: ArrayList<Org>) : RecyclerView.Adapter<OrgListAdapter.OrgViewHolder>() {
+class OrgListAdapter (var orgArray: ArrayList<User>) : RecyclerView.Adapter<OrgListAdapter.OrgViewHolder>() {
     // Create row listener
     var listener: RowListener? = null
 
@@ -39,7 +39,7 @@ class OrgListAdapter (var orgArray: ArrayList<Org>) : RecyclerView.Adapter<OrgLi
     }
 
     // Refresh changes on orgArray
-    fun update(orgList: List<Org>?) {
+    fun setData(orgList: List<User>?) {
         // Free memory
         orgArray.clear()
         // Update elements
@@ -55,9 +55,9 @@ class OrgListAdapter (var orgArray: ArrayList<Org>) : RecyclerView.Adapter<OrgLi
         private val tvOrg = view.findViewById<TextView>(R.id.tvOrgName)
         private val tvOrgDesc = view.findViewById<TextView>(R.id.tvOrgDesc)
 
-        fun set(org: Org) {
-            tvOrg.text = org.name
-            tvOrgDesc.text = org.desc
+        fun set(org: User) {
+            tvOrg.text = org.nombre
+            tvOrgDesc.text = org.descripcion
         }
     }
 }

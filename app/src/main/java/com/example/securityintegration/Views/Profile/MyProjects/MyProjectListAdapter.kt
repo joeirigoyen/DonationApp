@@ -50,9 +50,9 @@ class MyProjectListAdapter (var prArray: ArrayList<Project>) : RecyclerView.Adap
         private val tvProjectDesc = view.findViewById<TextView>(R.id.tvProjectCreator)
 
         fun set(project: Project) {
-            tvProject.text = project.name
-            tvProjectCreator.text = project.org.name
-            tvProjectDesc.text = project.desc
+            tvProject.text = project.nombre
+            tvProjectCreator.text = project.org_creadora
+            tvProjectDesc.text = project.descripcion
         }
     }
 

@@ -5,12 +5,15 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.fragment.app.viewModels
+import androidx.lifecycle.Observer
+import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.securityintegration.Models.OrgLookup.MarginItemDecoration
 import com.example.securityintegration.Models.EventList.RowListener
-import com.example.securityintegration.ViewModels.OrgLookup.OrgListViewModel
+import com.example.securityintegration.Models.API.APIService
+import com.example.securityintegration.ViewModels.API.APIViewModel
+import com.example.securityintegration.ViewModels.API.ViewModelFactory
 import com.example.securityintegration.databinding.OrgListFragmentBinding
 
 class OrgListFragment : Fragment(), RowListener {
@@ -20,9 +23,17 @@ class OrgListFragment : Fragment(), RowListener {
     }
 
     private lateinit var binding: OrgListFragmentBinding
-    private val viewModel: OrgListViewModel by viewModels()
+    private lateinit var viewModel: APIViewModel
     private val adapter = OrgListAdapter(arrayListOf())
     private val space = 20
+
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        val service = APIService()
+        val viewModelFactory = ViewModelFactory(service)
+
+        viewModel = ViewModelProvider(requireActivity(), viewModelFactory).get(APIViewModel::class.java)
+    }
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -37,18 +48,16 @@ class OrgListFragment : Fragment(), RowListener {
         // Observers, events and adapter
         configObservers()
         configAdapter()
-        configEvents()
         adapter.listener = this
     }
 
-    private fun configEvents() {
-        viewModel.getOrgs()
-    }
-
     private fun configObservers() {
-        viewModel.orgList.observe(viewLifecycleOwner) { orgList ->
-            adapter.update(orgList)
-        }
+        viewModel.getOrgs()
+        viewModel.orgsResponse.observe(viewLifecycleOwner, Observer { response ->
+            if (response.isSuccessful) {
+                response.body()?.let { adapter.setData(it) }
+            }
+        })
     }
 
     private fun configAdapter() {
