@@ -78,6 +78,10 @@ class MainSignInFrag : Fragment() {
                                 if (response.body()?.message!! == "true") {
                                     startActivity(intent)
                                     requireActivity().finish()
+                                } else if (response.body()?.message!! == "inexistent") {
+                                    Toast.makeText(requireContext(), "El nombre de usuario no existe.", Toast.LENGTH_SHORT).show()
+                                } else if (response.body()?.message!! == "false") {
+                                    Toast.makeText(requireContext(), "Las credenciales son incorrectas.", Toast.LENGTH_SHORT).show()
                                 }
                             }
                             override fun onFailure(call: Call<LoginResponse>, t: Throwable) {

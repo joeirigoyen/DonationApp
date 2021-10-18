@@ -90,7 +90,7 @@
                 android:drawablePadding="8dp"
                 android:ems="15"
                 android:hint="@string/pa_s_de_origen"
-                android:inputType="number"
+                android:inputType="text"
                 android:minHeight="48dp"
                 android:padding="16dp"
                 android:textColor="#85878B"
