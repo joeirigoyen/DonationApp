@@ -2,9 +2,11 @@ package com.example.securityintegration.Models.API
 
 import com.example.securityintegration.Models.EventList.Event
 import com.example.securityintegration.Models.ProjectList.Project
+import com.example.securityintegration.Models.User.LoginInputResponse
 import com.example.securityintegration.Models.User.LoginResponse
 import com.example.securityintegration.Models.User.User
 import com.example.securityintegration.Models.User.UserResponse
+import retrofit2.Call
 import retrofit2.Response
 
 class APIService {
@@ -37,7 +39,7 @@ class APIService {
         return RetrofitInstance.api.postProject(projId, projName, projDesc, projOrg)
     }
 
-    suspend fun postLogin(login: LoginResponse): Response<LoginResponse> {
+    fun postLogin(login: LoginInputResponse): Call<LoginResponse> {
         return RetrofitInstance.api.postLogin(login)
     }
 

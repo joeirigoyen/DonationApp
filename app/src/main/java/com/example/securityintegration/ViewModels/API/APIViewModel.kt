@@ -8,6 +8,7 @@ import com.example.securityintegration.Models.EventList.Event
 import com.example.securityintegration.Models.ProjectList.Project
 import com.example.securityintegration.Models.User.User
 import com.example.securityintegration.Models.API.APIService
+import com.example.securityintegration.Models.User.LoginInputResponse
 import com.example.securityintegration.Models.User.LoginResponse
 import com.example.securityintegration.Models.User.UserResponse
 import kotlinx.coroutines.launch
@@ -61,10 +62,9 @@ class APIViewModel(private val service: APIService) : ViewModel() {
         }
     }
 
-    fun postLogin(login: LoginResponse) {
+    fun postLogin(login: LoginInputResponse) {
         viewModelScope.launch {
-            val response = service.postLogin(login)
-            loginResponse.value = response
+            service.postLogin(login)
         }
     }
 

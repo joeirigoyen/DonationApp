@@ -2,6 +2,7 @@ package com.example.securityintegration.Models.API
 
 import com.example.securityintegration.Models.EventList.Event
 import com.example.securityintegration.Models.ProjectList.Project
+import com.example.securityintegration.Models.User.LoginInputResponse
 import com.example.securityintegration.Models.User.LoginResponse
 import com.example.securityintegration.Models.User.User
 import com.example.securityintegration.Models.User.UserResponse
@@ -41,5 +42,5 @@ interface APIInterface {
 
     @Headers("Content-Type: application/json")
     @POST("usuario/loginUsuario")
-    suspend fun postLogin(@Body loginResponse: LoginResponse) : Response<LoginResponse>
+    fun postLogin(@Body user: LoginInputResponse) : Call<LoginResponse>
 }

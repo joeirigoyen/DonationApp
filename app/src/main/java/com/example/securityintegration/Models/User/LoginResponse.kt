@@ -1,3 +1,3 @@
 package com.example.securityintegration.Models.User
 
-data class LoginResponse(val usuario: String, val password: String)
+data class LoginResponse(val message: String)
