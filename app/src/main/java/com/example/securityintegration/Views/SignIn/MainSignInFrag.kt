@@ -76,6 +76,10 @@ class MainSignInFrag : Fragment() {
                                 response: Response<LoginResponse>
                             ) {
                                 if (response.body()?.message!! == "true") {
+                                    Log.d("BODY", response.body().toString())
+                                    intent.putExtra("username", response.body()?.username!!)
+                                    intent.putExtra("names", response.body()?.names!!)
+                                    intent.putExtra("accType", response.body()?.accType!!)
                                     startActivity(intent)
                                     requireActivity().finish()
                                 } else if (response.body()?.message!! == "inexistent") {

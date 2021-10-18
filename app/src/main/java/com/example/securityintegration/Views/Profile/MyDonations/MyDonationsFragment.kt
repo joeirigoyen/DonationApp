@@ -5,11 +5,19 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.fragment.app.viewModels
+import androidx.lifecycle.Observer
+import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.example.securityintegration.Models.API.APIService
 import com.example.securityintegration.Models.OrgLookup.MarginItemDecoration
 import com.example.securityintegration.Models.EventList.RowListener
+import com.example.securityintegration.Models.User.DonationInput
+import com.example.securityintegration.ViewModels.API.APIViewModel
+import com.example.securityintegration.ViewModels.API.ViewModelFactory
 import com.example.securityintegration.ViewModels.Profile.MyDonationsViewModel
+import com.example.securityintegration.Views.Landing.MainPageActivity
 import com.example.securityintegration.databinding.MyDonationsFragmentBinding
 
 class MyDonationsFragment : Fragment(), RowListener {
@@ -19,9 +27,10 @@ class MyDonationsFragment : Fragment(), RowListener {
     }
 
     private lateinit var binding: MyDonationsFragmentBinding
-    private val viewModel: MyDonationsViewModel by viewModels()
+    private lateinit var viewModel: APIViewModel
     private val adapter = MyDonationsAdapter(arrayListOf())
     private val space = 20
+    lateinit var act : MainPageActivity
     //private val users = APIService().getUsers()
 
     override fun onCreateView(
@@ -32,23 +41,35 @@ class MyDonationsFragment : Fragment(), RowListener {
         return binding.root
     }
 
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        val service = APIService()
+        val viewModelFactory = ViewModelFactory(service)
+
+        viewModel = ViewModelProvider(requireActivity(), viewModelFactory).get(APIViewModel::class.java)
+    }
+
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        // Observers, events and adapter
-        configObservers()
+        // Events and adapter
         configAdapter()
         configEvents()
         adapter.listener = this
     }
 
     private fun configEvents() {
-        // Set element info to boxes
-        //viewModel.getDonations(users[0])
-    }
-
-    private fun configObservers() {
-        viewModel.donationList.observe(viewLifecycleOwner) {
-                projectList -> adapter.update(projectList)
+        // Get activity variables
+        if (activity != null) {
+            act = activity as MainPageActivity
+            val user = DonationInput(act.accUsername)
+            viewModel.postGetDonations(user)
+            viewModel.donationsResponse.observe(viewLifecycleOwner, Observer { response ->
+                if (response.isSuccessful) {
+                    response.body()?.let {
+                        adapter.update(it)
+                    }
+                }
+            })
         }
     }
 

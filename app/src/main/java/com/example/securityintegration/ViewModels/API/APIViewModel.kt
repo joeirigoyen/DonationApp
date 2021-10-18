@@ -6,11 +6,8 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.example.securityintegration.Models.EventList.Event
 import com.example.securityintegration.Models.ProjectList.Project
-import com.example.securityintegration.Models.User.User
 import com.example.securityintegration.Models.API.APIService
-import com.example.securityintegration.Models.User.LoginInputResponse
-import com.example.securityintegration.Models.User.LoginResponse
-import com.example.securityintegration.Models.User.UserResponse
+import com.example.securityintegration.Models.User.*
 import kotlinx.coroutines.launch
 import retrofit2.Response
 
@@ -22,6 +19,8 @@ class APIViewModel(private val service: APIService) : ViewModel() {
     val myProjectsResponse : MutableLiveData<Response<List<Project>>> = MutableLiveData()
     val orgsResponse : MutableLiveData<Response<List<User>>> = MutableLiveData()
     val loginResponse : MutableLiveData<Response<LoginResponse>> = MutableLiveData()
+    val donationsResponse : MutableLiveData<Response<List<Donation>>> = MutableLiveData()
+    val donationResponse : MutableLiveData<Response<Donation>> = MutableLiveData()
 
     fun getEvents() {
         viewModelScope.launch {
@@ -52,6 +51,20 @@ class APIViewModel(private val service: APIService) : ViewModel() {
             } catch (e: com.google.gson.stream.MalformedJsonException) {
                 Log.e("CUSTOM ERROR", "Found error at viewModel")
             }
+        }
+    }
+
+    fun postGetDonations(user: DonationInput) {
+        viewModelScope.launch {
+            val response = service.postGetDonations(user)
+            donationsResponse.value = response
+        }
+    }
+
+    fun postDonation(donation: DonationCreator) {
+        viewModelScope.launch {
+            val response = service.postDonation(donation)
+            donationResponse.value = response
         }
     }
 

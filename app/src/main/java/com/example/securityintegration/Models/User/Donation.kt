@@ -4,4 +4,4 @@ import com.example.securityintegration.Models.OrgLookup.Org
 import java.math.BigDecimal
 import java.sql.Date
 
-class Donation (val userId: Int, val destination: Org, val amount: BigDecimal, val date: Date)
+data class Donation (val id_donacion: Int, val cantidad: Float, val fundacion: String, val fecha: String, val id_usuario: String)
