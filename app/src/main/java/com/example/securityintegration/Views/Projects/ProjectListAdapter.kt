@@ -36,7 +36,7 @@ class ProjectListAdapter (var prArray: ArrayList<Project>) : RecyclerView.Adapte
     }
 
     // Refresh changes on orgArray
-    fun update(prList: List<Project>?) {
+    fun setData(prList: List<Project>?) {
         // Free memory
         prArray.clear()
         // Update elements
@@ -54,9 +54,9 @@ class ProjectListAdapter (var prArray: ArrayList<Project>) : RecyclerView.Adapte
         private val tvProjectDesc = view.findViewById<TextView>(R.id.tvProjectDesc)
 
         fun set(project: Project) {
-            tvProject.text = project.name
-            tvProjectCreator.text = project.org.name
-            tvProjectDesc.text = project.desc
+            tvProject.text = project.nombre
+            tvProjectCreator.text = project.org_creadora
+            tvProjectDesc.text = project.descripcion
         }
     }
 }

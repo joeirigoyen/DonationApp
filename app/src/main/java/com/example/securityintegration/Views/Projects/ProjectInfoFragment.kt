@@ -45,9 +45,9 @@ class ProjectInfoFragment : Fragment() {
     }
 
     private fun configView() {
-        binding.tvProjectTitle.text = args.selectedProject.name
-        binding.tvProjLookupDescription.text = args.selectedProject.desc
-        binding.tvProjectCreator.text = args.selectedProject.org.name
+        binding.tvProjectTitle.text = args.selectedProject.nombre
+        binding.tvProjLookupDescription.text = args.selectedProject.descripcion
+        binding.tvProjectCreator.text = args.selectedProject.org_creadora
     }
 
 }

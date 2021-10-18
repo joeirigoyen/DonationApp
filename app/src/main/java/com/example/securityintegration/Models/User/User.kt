@@ -1,6 +1,7 @@
 package com.example.securityintegration.Models.User
 
 import com.paypal.pyplcheckout.addshipping.model.Country
+import java.io.Serializable
 import java.sql.Date
 
 data class User (
@@ -8,10 +9,13 @@ data class User (
     var apellidoPaterno: String,
     var apellidoMaterno: String,
     var fecha_nacimiento: String,
-    var tipo: String,
+    var tipo: Int,
     var rfc: String,
     var email: String,
     var password: String,
-    var membresiumIdMembresia: String,
+    var usuario: String,
+    var membresiumIdMembresia: Int,
     var sec_q: String,
-    var sec_a: String)
+    var sec_a: String,
+    var pais: String,
+    var descripcion: String) : Serializable

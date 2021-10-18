@@ -99,4 +99,8 @@
     <string name="pregunta_de_seguridad">Pregunta de seguridad</string>
     <string name="respuesta">Respuesta</string>
     <string name="pa_s">País de origen</string>
+    <string name="rfc">RFC</string>
+    <string name="nombre_de_usuario">Nombre de usuario</string>
+    <string name="fecha_de_creaci_n">Fecha de creación</string>
+    <string name="cu_ntanos_brevemente_sobre_ti">¡Cuéntanos brevemente sobre ti!</string>
 </resources>

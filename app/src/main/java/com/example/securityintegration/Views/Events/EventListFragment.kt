@@ -5,14 +5,13 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.fragment.app.viewModels
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.securityintegration.Models.OrgLookup.MarginItemDecoration
 import com.example.securityintegration.Models.EventList.RowListener
-import com.example.securityintegration.Models.User.APIService
+import com.example.securityintegration.Models.API.APIService
 import com.example.securityintegration.ViewModels.API.APIViewModel
 import com.example.securityintegration.ViewModels.API.ViewModelFactory
 import com.example.securityintegration.Views.OrgLookup.EventListAdapter
@@ -50,12 +49,7 @@ class EventListFragment : Fragment(), RowListener {
         // Observers, events and adapter
         configObservers()
         configAdapter()
-        configEvents()
         adapter.listener = this
-    }
-
-    private fun configEvents() {
-        viewModel.getEvents()
     }
 
     private fun configObservers() {

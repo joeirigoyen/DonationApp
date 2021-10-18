@@ -9,7 +9,6 @@ import androidx.fragment.app.viewModels
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.securityintegration.Models.OrgLookup.MarginItemDecoration
 import com.example.securityintegration.Models.EventList.RowListener
-import com.example.securityintegration.Models.User.APIService
 import com.example.securityintegration.ViewModels.Profile.MyDonationsViewModel
 import com.example.securityintegration.databinding.MyDonationsFragmentBinding
 

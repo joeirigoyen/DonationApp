@@ -28,6 +28,10 @@
         <action
             android:id="@+id/action_signUpOrgInfo_to_signUpMembership"
             app:destination="@id/signUpMembership" />
+        <argument
+            android:name="accType"
+            app:argType="integer"
+            android:defaultValue="1" />
     </fragment>
     <fragment
         android:id="@+id/signUpGeneralInfo"
@@ -37,9 +41,10 @@
         <action
             android:id="@+id/action_signUpGeneralInfo_to_signUpMembership"
             app:destination="@id/signUpMembership" />
-        <action
-            android:id="@+id/action_signUpGeneralInfo_to_signUpNewPassword"
-            app:destination="@id/signUpNewPassword" />
+        <argument
+            android:name="accType"
+            app:argType="integer"
+            android:defaultValue="1" />
     </fragment>
     <fragment
         android:id="@+id/signUpMembership"
@@ -49,9 +54,72 @@
         <action
             android:id="@+id/action_signUpMembership_to_signUpNewPassword"
             app:destination="@id/signUpNewPassword" />
+        <argument
+            android:name="names"
+            app:argType="string" />
+        <argument
+            android:name="lastname1"
+            app:argType="string"
+            android:defaultValue='""' />
+        <argument
+            android:name="lastname2"
+            app:argType="string"
+            android:defaultValue='""' />
+        <argument
+            android:name="username"
+            app:argType="string" />
+        <argument
+            android:name="birthdate"
+            app:argType="string" />
+        <argument
+            android:name="country"
+            app:argType="string" />
+        <argument
+            android:name="rfc"
+            app:argType="string" />
+        <argument android:name="desc"
+            app:argType="string"
+            android:defaultValue='""' />
+        <argument
+            android:name="accType"
+            app:argType="integer" />
     </fragment>
     <fragment
         android:id="@+id/signUpNewPassword"
         android:name="com.example.securityintegration.Views.SignUp.SignUpNewPassword"
-        android:label="SignUpNewPassword" />
+        android:label="SignUpNewPassword" >
+        <argument
+            android:name="names"
+            app:argType="string" />
+        <argument
+            android:name="lastname1"
+            app:argType="string"
+            android:defaultValue='""' />
+        <argument
+            android:name="lastname2"
+            app:argType="string"
+            android:defaultValue='""' />
+        <argument
+            android:name="username"
+            app:argType="string" />
+        <argument
+            android:name="birthdate"
+            app:argType="string" />
+        <argument
+            android:name="country"
+            app:argType="string" />
+        <argument
+            android:name="rfc"
+            app:argType="string" />
+        <argument
+            android:name="desc"
+            app:argType="string"
+            android:defaultValue='""' />
+        <argument
+            android:name="accType"
+            app:argType="integer" />
+        <argument
+            android:name="memType"
+            app:argType="integer" />
+    </fragment>
 </navigation>
