@@ -57,6 +57,7 @@
         android:layout_height="171dp"
         android:layout_marginTop="68dp"
         android:contentDescription="@string/icon_desc"
+        android:tintMode="multiply"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
@@ -101,8 +102,8 @@
 
     <RadioGroup
         android:id="@+id/accTypesRGroup"
-        android:layout_width="310dp"
-        android:layout_height="169dp"
+        android:layout_width="317dp"
+        android:layout_height="111dp"
         android:layout_marginTop="16dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.504"
@@ -131,17 +132,6 @@
             android:textColor="#000000"
             android:textSize="16sp"
             tools:ignore="TouchTargetSizeCheck" />
-
-        <RadioButton
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="12dp"
-            android:buttonTint="#50000000"
-            android:minHeight="48dp"
-            android:text="@string/busco_contactar_con_inversionistas_y_o_organizaciones"
-            android:textColor="#000000"
-            android:textSize="16sp"
-            tools:ignore="TouchTargetSizeCheck,TextContrastCheck" />
 
     </RadioGroup>
 

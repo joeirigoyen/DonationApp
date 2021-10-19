@@ -4,7 +4,7 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import com.example.securityintegration.Models.ProjectList.Project
 import com.example.securityintegration.Models.ProjectList.ProjectService
-import com.example.securityintegration.Models.User.User
+import com.example.securityintegration.Models.User.Login.User
 
 class MyProjectsViewModel : ViewModel() {
 

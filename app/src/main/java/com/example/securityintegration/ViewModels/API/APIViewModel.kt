@@ -7,7 +7,17 @@ import androidx.lifecycle.viewModelScope
 import com.example.securityintegration.Models.EventList.Event
 import com.example.securityintegration.Models.ProjectList.Project
 import com.example.securityintegration.Models.API.APIService
+import com.example.securityintegration.Models.EventList.EventCreator
 import com.example.securityintegration.Models.User.*
+import com.example.securityintegration.Models.User.Donation.Donation
+import com.example.securityintegration.Models.User.Donation.DonationCreator
+import com.example.securityintegration.Models.User.Donation.DonationInput
+import com.example.securityintegration.Models.User.Login.LoginInputResponse
+import com.example.securityintegration.Models.User.Login.LoginResponse
+import com.example.securityintegration.Models.User.Login.User
+import com.example.securityintegration.Models.User.Login.UserResponse
+import com.example.securityintegration.Models.User.Recovery.RecoveryRequest
+import com.example.securityintegration.Models.User.Recovery.RecoveryResponse
 import kotlinx.coroutines.launch
 import retrofit2.Response
 
@@ -21,6 +31,12 @@ class APIViewModel(private val service: APIService) : ViewModel() {
     val loginResponse : MutableLiveData<Response<LoginResponse>> = MutableLiveData()
     val donationsResponse : MutableLiveData<Response<List<Donation>>> = MutableLiveData()
     val donationResponse : MutableLiveData<Response<Donation>> = MutableLiveData()
+    val eventResponse : MutableLiveData<Response<Event>> = MutableLiveData()
+    val recoveryResponse : MutableLiveData<Response<RecoveryResponse>> = MutableLiveData()
+    val userExistsResponse : MutableLiveData<Response<UserExistsResponse>> = MutableLiveData()
+    val questionResponse : MutableLiveData<Response<QuestionResponse>> = MutableLiveData()
+    val validateQuestionResponse : MutableLiveData<Response<ValidateQuestionResponse>> = MutableLiveData()
+    val newPasswordResponse : MutableLiveData<Response<NewPasswordResponse>> = MutableLiveData()
 
     fun getEvents() {
         viewModelScope.launch {
@@ -65,6 +81,49 @@ class APIViewModel(private val service: APIService) : ViewModel() {
         viewModelScope.launch {
             val response = service.postDonation(donation)
             donationResponse.value = response
+        }
+    }
+
+    fun postEvent(event: EventCreator) {
+        viewModelScope.launch {
+            val response = service.postEvent(event)
+            eventResponse.value = response
+        }
+    }
+
+    fun postUserExists(user: UserExistsRequest) {
+        viewModelScope.launch {
+            val response = service.postUserExists(user)
+            userExistsResponse.value = response
+        }
+    }
+
+    fun postGetQuestion(request: QuestionRequest) {
+        viewModelScope.launch {
+            val response = service.postGetQuestion(request)
+            questionResponse.value = response
+        }
+    }
+
+    fun postValidateQuestion(request: ValidateQuestionRequest) {
+        viewModelScope.launch {
+            val response = service.postValidateQuestion(request)
+            validateQuestionResponse.value = response
+        }
+    }
+
+    fun putNewPassword(request: NewPasswordRequest) {
+        viewModelScope.launch {
+            val response = service.putNewPassword(request)
+            newPasswordResponse.value = response
+            Log.e("diego", response.toString())
+        }
+    }
+
+    fun validateRecovery(request: RecoveryRequest) {
+        viewModelScope.launch {
+            val response = service.validateRecovery(request)
+            recoveryResponse.value = response
         }
     }
 

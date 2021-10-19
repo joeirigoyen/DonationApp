@@ -4,7 +4,7 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import com.example.securityintegration.Models.EventList.Event
 import com.example.securityintegration.Models.EventList.EventService
-import com.example.securityintegration.Models.User.User
+import com.example.securityintegration.Models.User.Login.User
 
 class EventListViewModel : ViewModel() {
     private val model = EventService()

@@ -10,8 +10,7 @@ import android.widget.Toast
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.navArgs
 import com.example.securityintegration.Models.API.APIService
-import com.example.securityintegration.Models.User.User
-import com.example.securityintegration.Models.User.UserResponse
+import com.example.securityintegration.Models.User.Login.UserResponse
 import com.example.securityintegration.ViewModels.API.APIViewModel
 import com.example.securityintegration.ViewModels.API.ViewModelFactory
 import com.example.securityintegration.Views.SignIn.MainActivity
@@ -105,6 +104,7 @@ class SignUpNewPassword : Fragment() {
                                     }
                                     // Go to sign-in page
                                     val intent = Intent(activity, MainActivity::class.java)
+                                    Toast.makeText(requireContext(), "Cuenta creada con éxito.", Toast.LENGTH_SHORT).show()
                                     startActivity(intent)
                                     requireActivity().finish()
                                 } else {

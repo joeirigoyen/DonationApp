@@ -27,6 +27,9 @@
         <action
             android:id="@+id/action_recoverPasswordSQFrag_to_recoverPasswordNewPassword"
             app:destination="@id/recoverPasswordNewPassword" />
+        <argument
+            android:name="email"
+            app:argType="string" />
     </fragment>
     <fragment
         android:id="@+id/recoverPasswordNewPassword"
@@ -35,5 +38,11 @@
         <action
             android:id="@+id/action_recoverPasswordNewPassword_to_mainSignInFrag"
             app:destination="@id/mainSignInFrag" />
+        <argument
+            android:name="email"
+            app:argType="string" />
+        <argument
+            android:name="sec_a"
+            app:argType="string" />
     </fragment>
 </navigation>

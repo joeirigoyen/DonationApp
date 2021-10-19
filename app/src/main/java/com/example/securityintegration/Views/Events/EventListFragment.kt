@@ -14,6 +14,7 @@ import com.example.securityintegration.Models.EventList.RowListener
 import com.example.securityintegration.Models.API.APIService
 import com.example.securityintegration.ViewModels.API.APIViewModel
 import com.example.securityintegration.ViewModels.API.ViewModelFactory
+import com.example.securityintegration.Views.Landing.MainPageActivity
 import com.example.securityintegration.Views.OrgLookup.EventListAdapter
 import com.example.securityintegration.databinding.EventListFragmentBinding
 
@@ -25,6 +26,7 @@ class EventListFragment : Fragment(), RowListener {
 
     private lateinit var binding: EventListFragmentBinding
     private lateinit var viewModel: APIViewModel
+    lateinit var act : MainPageActivity
     private val adapter = EventListAdapter(arrayListOf())
     private val space = 20
 
@@ -48,8 +50,24 @@ class EventListFragment : Fragment(), RowListener {
         super.onViewCreated(view, savedInstanceState)
         // Observers, events and adapter
         configObservers()
+        configEvents()
         configAdapter()
         adapter.listener = this
+    }
+
+    private fun configEvents() {
+        if (activity != null) {
+            act = activity as MainPageActivity
+            if (act.accType == 2) {
+                binding.btnAddEvent.visibility = View.VISIBLE
+                binding.btnAddEvent.setOnClickListener {
+                    val action = EventListFragmentDirections.actionEventListFragmentToCreateEventFragment()
+                    findNavController().navigate(action)
+                }
+            } else {
+                binding.btnAddEvent.visibility = View.INVISIBLE
+            }
+        }
     }
 
     private fun configObservers() {

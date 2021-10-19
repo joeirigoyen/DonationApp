@@ -5,18 +5,15 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Toast
-import androidx.fragment.app.viewModels
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.securityintegration.Models.API.APIService
 import com.example.securityintegration.Models.OrgLookup.MarginItemDecoration
 import com.example.securityintegration.Models.EventList.RowListener
-import com.example.securityintegration.Models.User.DonationInput
+import com.example.securityintegration.Models.User.Donation.DonationInput
 import com.example.securityintegration.ViewModels.API.APIViewModel
 import com.example.securityintegration.ViewModels.API.ViewModelFactory
-import com.example.securityintegration.ViewModels.Profile.MyDonationsViewModel
 import com.example.securityintegration.Views.Landing.MainPageActivity
 import com.example.securityintegration.databinding.MyDonationsFragmentBinding
 

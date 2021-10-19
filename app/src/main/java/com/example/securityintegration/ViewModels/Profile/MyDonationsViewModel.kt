@@ -2,10 +2,8 @@ package com.example.securityintegration.ViewModels.Profile
 
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
-import com.example.securityintegration.Models.User.Donation
-import com.example.securityintegration.Models.User.DonationInput
-import com.example.securityintegration.Models.User.DonationService
-import com.example.securityintegration.Models.User.User
+import com.example.securityintegration.Models.User.Donation.Donation
+import com.example.securityintegration.Models.User.Donation.DonationService
 
 class MyDonationsViewModel : ViewModel() {
 
