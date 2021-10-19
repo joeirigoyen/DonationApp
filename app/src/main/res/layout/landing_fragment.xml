@@ -5,8 +5,8 @@
     android:id="@+id/constLayout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#2E2E2E"
-    tools:context=".Views.Landing.LandingFragment" >
+    android:background="#f2f2f2"
+    tools:context=".Views.Landing.LandingFragment">
 
     <Button
         android:id="@+id/bntOrgLookup"
