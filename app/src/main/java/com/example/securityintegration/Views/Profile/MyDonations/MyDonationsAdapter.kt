@@ -1,5 +1,6 @@
 package com.example.securityintegration.Views.Profile.MyDonations
 
+import android.annotation.SuppressLint
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -49,10 +50,11 @@ class MyDonationsAdapter (var donArray: ArrayList<Donation>) : RecyclerView.Adap
         private val tvAmount = view.findViewById<TextView>(R.id.tvDonationAmount)
         private val tvDate = view.findViewById<TextView>(R.id.tvDonationDate)
 
+        @SuppressLint("SetTextI18n")
         fun set(donation: Donation) {
-            tvDestination.text = "Donaste a ${donation.destination.name}"
-            tvAmount.text = "\$${donation.amount.toEngineeringString()}"
-            tvDate.text = donation.date.toString()
+            tvDestination.text = "Donaste a ${donation.fundacion}"
+            tvAmount.text = "\$${donation.cantidad} USD"
+            tvDate.text = donation.fecha
         }
     }
 

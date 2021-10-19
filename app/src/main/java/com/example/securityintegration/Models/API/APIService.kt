@@ -2,10 +2,7 @@ package com.example.securityintegration.Models.API
 
 import com.example.securityintegration.Models.EventList.Event
 import com.example.securityintegration.Models.ProjectList.Project
-import com.example.securityintegration.Models.User.LoginInputResponse
-import com.example.securityintegration.Models.User.LoginResponse
-import com.example.securityintegration.Models.User.User
-import com.example.securityintegration.Models.User.UserResponse
+import com.example.securityintegration.Models.User.*
 import retrofit2.Call
 import retrofit2.Response
 
@@ -31,6 +28,10 @@ class APIService {
         return RetrofitInstance.api.getOrgs()
     }
 
+    suspend fun postGetDonations(user: DonationInput) : Response<List<Donation>> {
+        return RetrofitInstance.api.getDonations(user)
+    }
+
     suspend fun postUser(user: UserResponse) : Response<UserResponse> {
         return RetrofitInstance.api.postUser(user)
     }
@@ -41,6 +42,10 @@ class APIService {
 
     fun postLogin(login: LoginInputResponse): Call<LoginResponse> {
         return RetrofitInstance.api.postLogin(login)
+    }
+
+    suspend fun postDonation(donation: DonationCreator) : Response<Donation> {
+        return RetrofitInstance.api.postDonation(donation)
     }
 
 }

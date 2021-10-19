@@ -2,10 +2,7 @@ package com.example.securityintegration.Models.API
 
 import com.example.securityintegration.Models.EventList.Event
 import com.example.securityintegration.Models.ProjectList.Project
-import com.example.securityintegration.Models.User.LoginInputResponse
-import com.example.securityintegration.Models.User.LoginResponse
-import com.example.securityintegration.Models.User.User
-import com.example.securityintegration.Models.User.UserResponse
+import com.example.securityintegration.Models.User.*
 import retrofit2.Call
 import retrofit2.Response
 import retrofit2.http.*
@@ -43,4 +40,12 @@ interface APIInterface {
     @Headers("Content-Type: application/json")
     @POST("usuario/loginUsuario")
     fun postLogin(@Body user: LoginInputResponse) : Call<LoginResponse>
+
+    @Headers("Content-Type: application/json")
+    @POST("donacion/verDonaciones")
+    suspend fun getDonations(@Body user: DonationInput) : Response<List<Donation>>
+
+    @Headers("Content-Type: application/json")
+    @POST("donacion/agregarDonacion")
+    suspend fun postDonation(@Body donation: DonationCreator) : Response<Donation>
 }

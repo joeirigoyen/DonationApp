@@ -2,6 +2,7 @@ package com.example.securityintegration.Views.OrgLookup
 
 import android.app.Activity
 import android.content.Intent
+import android.os.Build
 import androidx.lifecycle.ViewModelProvider
 import android.os.Bundle
 import android.util.Log
@@ -13,10 +14,16 @@ import android.widget.Button
 import android.widget.EditText
 import android.widget.Toast
 import androidx.activity.result.contract.ActivityResultContracts
+import androidx.annotation.RequiresApi
 import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.navArgs
+import com.example.securityintegration.Models.API.APIService
+import com.example.securityintegration.Models.User.DonationCreator
 import com.example.securityintegration.R
+import com.example.securityintegration.ViewModels.API.APIViewModel
+import com.example.securityintegration.ViewModels.API.ViewModelFactory
 import com.example.securityintegration.ViewModels.OrgLookup.OrgInfoViewModel
+import com.example.securityintegration.Views.Landing.MainPageActivity
 import com.example.securityintegration.databinding.OrgInfoFragmentBinding
 import com.paypal.checkout.approve.OnApprove
 import com.paypal.checkout.cancel.OnCancel
@@ -30,16 +37,21 @@ import com.paypal.checkout.order.AppContext
 import com.paypal.checkout.order.Order
 import com.paypal.checkout.order.PurchaseUnit
 import com.paypal.checkout.paymentbutton.PayPalButton
+import java.lang.IllegalStateException
 import java.math.BigDecimal
+import java.sql.Date
+import java.text.SimpleDateFormat
+import java.time.LocalDateTime
+import java.time.format.DateTimeFormatter
+import java.time.format.FormatStyle
 
 class OrgInfoFragment : Fragment() {
 
     // Set binding, viewModel and fragment args
     private lateinit var binding : OrgInfoFragmentBinding
-    private val viewModel : OrgInfoViewModel by viewModels()
+    private lateinit var viewModel : APIViewModel
     private val args : OrgInfoFragmentArgs by navArgs()
-    // Set PayPal configuration
-    private val clientKey : String = "Af-trtxiJXuajGbGYbvIC4jEcBLwiysZBd1w2AWSQY-1JZfM3qIqX9oxU5XrOBCBI68EkTnhkgC1eff7"
+    lateinit var act : MainPageActivity
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -49,6 +61,15 @@ class OrgInfoFragment : Fragment() {
         return binding.root
     }
 
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        val service = APIService()
+        val viewModelFactory = ViewModelFactory(service)
+
+        viewModel = ViewModelProvider(requireActivity(), viewModelFactory).get(APIViewModel::class.java)
+    }
+
+    @RequiresApi(Build.VERSION_CODES.O)
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         configView()
@@ -62,11 +83,13 @@ class OrgInfoFragment : Fragment() {
         binding.tvNativeCountry.text = args.selectedOrg.pais
     }
 
+    @RequiresApi(Build.VERSION_CODES.O)
     private fun configButtons() {
         // Set PayPal button
-        val amountEdt = requireActivity().findViewById<EditText>(R.id.idEdtAmount)
-        val payPalButton = requireActivity().findViewById<PayPalButton>(R.id.payPalButton)
-        if (amountEdt.text != null) {
+        if (activity != null) {
+            act = activity as MainPageActivity
+            val amountEdt = requireActivity().findViewById<EditText>(R.id.idEdtAmount)
+            val payPalButton = requireActivity().findViewById<PayPalButton>(R.id.payPalButton)
             payPalButton?.setup(
                 createOrder = CreateOrder { createOrderActions ->
                     val order = Order(
@@ -78,7 +101,7 @@ class OrgInfoFragment : Fragment() {
                             PurchaseUnit(
                                 amount = Amount(
                                     currencyCode = CurrencyCode.USD,
-                                    value = amountEdt?.text.toString()
+                                    value = amountEdt?.text.toString() ?: "0"
                                 )
                             )
                         )
@@ -89,6 +112,9 @@ class OrgInfoFragment : Fragment() {
                     approval.orderActions.capture { captureOrderResult ->
                         Log.i("CaptureOrder", "CaptureOrderResult: $captureOrderResult")
                         Toast.makeText(requireContext(), "¡Gracias por tu donación de \$${amountEdt.text}!", Toast.LENGTH_SHORT).show()
+                        val date = LocalDateTime.now().format(DateTimeFormatter.ofPattern("dd-MM-yyyy HH:mm:ss"))
+                        val donation = DonationCreator(amountEdt?.text.toString().toFloat(), binding.tvOrgTitle.text.toString(), date, act.accUsername)
+                        viewModel.postDonation(donation)
                     }
                 },
                 onCancel = OnCancel {
@@ -98,9 +124,6 @@ class OrgInfoFragment : Fragment() {
                     Toast.makeText(requireContext(), "Error en la compra", Toast.LENGTH_SHORT).show()
                 }
             )
-        } else {
-            Toast.makeText(requireContext(), "Por favor especifica un monto.", Toast.LENGTH_SHORT).show()
         }
     }
-
 }
