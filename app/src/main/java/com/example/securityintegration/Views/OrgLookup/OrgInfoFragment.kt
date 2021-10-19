@@ -1,7 +1,5 @@
 package com.example.securityintegration.Views.OrgLookup
 
-import android.app.Activity
-import android.content.Intent
 import android.os.Build
 import androidx.lifecycle.ViewModelProvider
 import android.os.Bundle
@@ -10,19 +8,15 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Button
 import android.widget.EditText
 import android.widget.Toast
-import androidx.activity.result.contract.ActivityResultContracts
 import androidx.annotation.RequiresApi
-import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.navArgs
 import com.example.securityintegration.Models.API.APIService
-import com.example.securityintegration.Models.User.DonationCreator
+import com.example.securityintegration.Models.User.Donation.DonationCreator
 import com.example.securityintegration.R
 import com.example.securityintegration.ViewModels.API.APIViewModel
 import com.example.securityintegration.ViewModels.API.ViewModelFactory
-import com.example.securityintegration.ViewModels.OrgLookup.OrgInfoViewModel
 import com.example.securityintegration.Views.Landing.MainPageActivity
 import com.example.securityintegration.databinding.OrgInfoFragmentBinding
 import com.paypal.checkout.approve.OnApprove
@@ -37,13 +31,8 @@ import com.paypal.checkout.order.AppContext
 import com.paypal.checkout.order.Order
 import com.paypal.checkout.order.PurchaseUnit
 import com.paypal.checkout.paymentbutton.PayPalButton
-import java.lang.IllegalStateException
-import java.math.BigDecimal
-import java.sql.Date
-import java.text.SimpleDateFormat
 import java.time.LocalDateTime
 import java.time.format.DateTimeFormatter
-import java.time.format.FormatStyle
 
 class OrgInfoFragment : Fragment() {
 
@@ -90,6 +79,13 @@ class OrgInfoFragment : Fragment() {
             act = activity as MainPageActivity
             val amountEdt = requireActivity().findViewById<EditText>(R.id.idEdtAmount)
             val payPalButton = requireActivity().findViewById<PayPalButton>(R.id.payPalButton)
+            if (act.accType == 2) {
+                amountEdt.visibility = View.GONE
+                payPalButton.visibility = View.GONE
+            } else {
+                amountEdt.visibility = View.VISIBLE
+                payPalButton.visibility = View.VISIBLE
+            }
             payPalButton?.setup(
                 createOrder = CreateOrder { createOrderActions ->
                     val order = Order(

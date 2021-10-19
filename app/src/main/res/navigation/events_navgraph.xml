@@ -13,6 +13,9 @@
         <action
             android:id="@+id/action_eventListFragment_to_eventInfoFragment"
             app:destination="@id/eventInfoFragment" />
+        <action
+            android:id="@+id/action_eventListFragment_to_createEventFragment"
+            app:destination="@id/createEventFragment" />
     </fragment>
     <fragment
         android:id="@+id/eventInfoFragment"
@@ -25,5 +28,13 @@
         <argument
             android:name="selectedEvent"
             app:argType="com.example.securityintegration.Models.EventList.Event" />
+    </fragment>
+    <fragment
+        android:id="@+id/createEventFragment"
+        android:name="com.example.securityintegration.Views.Profile.MyEvents.CreateEventFragment"
+        android:label="CreateEventFragment" >
+        <action
+            android:id="@+id/action_createEventFragment_to_eventListFragment"
+            app:destination="@id/eventListFragment" />
     </fragment>
 </navigation>

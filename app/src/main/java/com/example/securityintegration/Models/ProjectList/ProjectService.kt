@@ -1,6 +1,6 @@
 package com.example.securityintegration.Models.ProjectList
 
-import com.example.securityintegration.Models.User.User
+import com.example.securityintegration.Models.User.Login.User
 
 class ProjectService {
 

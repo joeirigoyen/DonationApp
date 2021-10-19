@@ -8,13 +8,12 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
-import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
 import com.example.securityintegration.Models.API.APIService
 import com.example.securityintegration.Models.API.RetrofitInstance
-import com.example.securityintegration.Models.User.LoginInputResponse
-import com.example.securityintegration.Models.User.LoginResponse
+import com.example.securityintegration.Models.User.Login.LoginInputResponse
+import com.example.securityintegration.Models.User.Login.LoginResponse
 import com.example.securityintegration.Views.SignUp.MainSignUpActivity
 import com.example.securityintegration.R
 import com.example.securityintegration.ViewModels.API.APIViewModel

@@ -8,7 +8,7 @@ import android.widget.LinearLayout
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.example.securityintegration.Models.EventList.RowListener
-import com.example.securityintegration.Models.User.Donation
+import com.example.securityintegration.Models.User.Donation.Donation
 import com.example.securityintegration.R
 
 class MyDonationsAdapter (var donArray: ArrayList<Donation>) : RecyclerView.Adapter<MyDonationsAdapter.MyDonationsViewHolder>() {

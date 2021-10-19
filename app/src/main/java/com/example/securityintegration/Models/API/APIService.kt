@@ -1,8 +1,18 @@
 package com.example.securityintegration.Models.API
 
 import com.example.securityintegration.Models.EventList.Event
+import com.example.securityintegration.Models.EventList.EventCreator
 import com.example.securityintegration.Models.ProjectList.Project
 import com.example.securityintegration.Models.User.*
+import com.example.securityintegration.Models.User.Donation.Donation
+import com.example.securityintegration.Models.User.Donation.DonationCreator
+import com.example.securityintegration.Models.User.Donation.DonationInput
+import com.example.securityintegration.Models.User.Login.LoginInputResponse
+import com.example.securityintegration.Models.User.Login.LoginResponse
+import com.example.securityintegration.Models.User.Login.User
+import com.example.securityintegration.Models.User.Login.UserResponse
+import com.example.securityintegration.Models.User.Recovery.RecoveryRequest
+import com.example.securityintegration.Models.User.Recovery.RecoveryResponse
 import retrofit2.Call
 import retrofit2.Response
 
@@ -46,6 +56,30 @@ class APIService {
 
     suspend fun postDonation(donation: DonationCreator) : Response<Donation> {
         return RetrofitInstance.api.postDonation(donation)
+    }
+
+    suspend fun postEvent(event: EventCreator) : Response<Event> {
+        return RetrofitInstance.api.postEvent(event)
+    }
+
+    suspend fun validateRecovery(request: RecoveryRequest) : Response<RecoveryResponse> {
+        return RetrofitInstance.api.validateRecovery(request)
+    }
+
+    suspend fun postUserExists(user: UserExistsRequest): Response<UserExistsResponse> {
+        return RetrofitInstance.api.postUserExists(user)
+    }
+
+    suspend fun postGetQuestion(request: QuestionRequest) : Response<QuestionResponse> {
+        return RetrofitInstance.api.postGetQuestion(request)
+    }
+
+    suspend fun postValidateQuestion(request: ValidateQuestionRequest): Response<ValidateQuestionResponse> {
+        return RetrofitInstance.api.postValidateQuestion(request)
+    }
+
+    suspend fun putNewPassword(request: NewPasswordRequest) : Response<NewPasswordResponse> {
+        return RetrofitInstance.api.putNewPassword(request)
     }
 
 }
