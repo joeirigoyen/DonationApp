@@ -30,17 +30,16 @@ class APIViewModel(private val service: APIService) : ViewModel() {
     val myProjectResponse : MutableLiveData<Response<Project>> = MutableLiveData()
     val myProjectsResponse : MutableLiveData<Response<List<Project>>> = MutableLiveData()
     val orgsResponse : MutableLiveData<Response<List<User>>> = MutableLiveData()
-    val loginResponse : MutableLiveData<Response<LoginResponse>> = MutableLiveData()
     val donationsResponse : MutableLiveData<Response<List<Donation>>> = MutableLiveData()
     val donationResponse : MutableLiveData<Response<Donation>> = MutableLiveData()
     val eventResponse : MutableLiveData<Response<Event>> = MutableLiveData()
-    val recoveryResponse : MutableLiveData<Response<RecoveryResponse>> = MutableLiveData()
     val userExistsResponse : MutableLiveData<Response<UserExistsResponse>> = MutableLiveData()
     val questionResponse : MutableLiveData<Response<QuestionResponse>> = MutableLiveData()
     val validateQuestionResponse : MutableLiveData<Response<ValidateQuestionResponse>> = MutableLiveData()
     val newPasswordResponse : MutableLiveData<Response<NewPasswordResponse>> = MutableLiveData()
     val eventFromResponse : MutableLiveData<Response<List<Event>>> = MutableLiveData()
     val projectFromResponse : MutableLiveData<Response<List<Project>>> = MutableLiveData()
+    val usernameResponse : MutableLiveData<Response<UserExistsResponse>> = MutableLiveData()
 
     fun getEvents() {
         viewModelScope.launch {
@@ -145,16 +144,10 @@ class APIViewModel(private val service: APIService) : ViewModel() {
         }
     }
 
-    fun validateRecovery(request: RecoveryRequest) {
+    fun getUsernameExists(user: UsernameRequest) {
         viewModelScope.launch {
-            val response = service.validateRecovery(request)
-            recoveryResponse.value = response
-        }
-    }
-
-    fun postLogin(login: LoginInputResponse) {
-        viewModelScope.launch {
-            service.postLogin(login)
+            val response = service.getUsernameExists(user)
+            usernameResponse.value = response
         }
     }
 

@@ -92,4 +92,8 @@ class APIService {
         return RetrofitInstance.api.getProjectsFrom(user)
     }
 
+    suspend fun getUsernameExists(user: UsernameRequest) : Response<UserExistsResponse> {
+        return RetrofitInstance.api.getUsernameExists(user)
+    }
+
 }
