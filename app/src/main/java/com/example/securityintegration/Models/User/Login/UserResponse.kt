@@ -1,3 +1,7 @@
+/*
+* Autor: Raúl Youthan Irigoyen Osorio
+* */
+
 package com.example.securityintegration.Models.User.Login
 
 data class UserResponse (

@@ -1,3 +1,7 @@
+/*
+* Autor: Raúl Youthan Irigoyen Osorio
+* */
+
 package com.example.securityintegration.Views.SignUp
 
 import android.content.Intent
@@ -7,6 +11,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
+import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.navArgs
 import com.example.securityintegration.Models.API.APIService
@@ -48,7 +53,6 @@ class SignUpNewPassword : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         // Button events
-        Toast.makeText(requireContext(), args.names, Toast.LENGTH_SHORT).show()
         binding.btnNext.setOnClickListener {
             if (!binding.etEmail.text.isEmpty()) {
                 if (!binding.etNewPW.text.isEmpty() && !binding.etConfirmPW.text.isEmpty() && !binding.etSecurityQuestion.text.isEmpty() && !binding.etSecurityQuestionAnswer.text.isEmpty()) {
@@ -57,7 +61,7 @@ class SignUpNewPassword : Fragment() {
                             if (isValidEmail(binding.etEmail.text.toString())) {
                                 if (isValidPassword(binding.etNewPW.text.toString())) {
                                     // Add everything to database
-                                    if (args.accType == 1) {
+                                    if (args.accType == 1 || args.accType == 2) {
                                         val user = UserResponse(
                                             args.names,
                                             args.lastname1,
@@ -76,39 +80,25 @@ class SignUpNewPassword : Fragment() {
                                         )
                                         try {
                                             viewModel.postUser(user)
-                                        } catch (e: com.google.gson.stream.MalformedJsonException) {
-                                            Toast.makeText(requireContext(), "Cuenta creada con éxito.", Toast.LENGTH_SHORT).show()
-                                        }
-                                    } else if (args.accType == 2) {
-                                        val user = UserResponse(
-                                            args.names,
-                                            args.lastname1,
-                                            args.lastname2,
-                                            args.birthdate,
-                                            args.accType,
-                                            args.rfc,
-                                            binding.etEmail.text.toString(),
-                                            binding.etNewPW.text.toString(),
-                                            args.username,
-                                            args.memType,
-                                            binding.etSecurityQuestion.text.toString(),
-                                            binding.etSecurityQuestionAnswer.text.toString(),
-                                            args.country,
-                                            args.desc
-                                        )
-                                        try {
-                                            viewModel.postUser(user)
+                                            viewModel.myUserResponse.observe(viewLifecycleOwner, Observer { response ->
+                                                if (response.isSuccessful) {
+                                                    if (response.body()?.status!! == "failed") {
+                                                        Toast.makeText(requireContext(), "Verifique que los datos ingresados hayan sido correctos", Toast.LENGTH_SHORT).show()
+                                                    } else {
+                                                        // Go to sign-in page
+                                                        val intent = Intent(activity, MainActivity::class.java)
+                                                        Toast.makeText(requireContext(), "Cuenta creada con éxito.", Toast.LENGTH_SHORT).show()
+                                                        startActivity(intent)
+                                                        requireActivity().finish()
+                                                    }
+                                                }
+                                            })
                                         } catch (e: com.google.gson.stream.MalformedJsonException) {
                                             Toast.makeText(requireContext(), "Cuenta creada con éxito.", Toast.LENGTH_SHORT).show()
                                         }
                                     }
-                                    // Go to sign-in page
-                                    val intent = Intent(activity, MainActivity::class.java)
-                                    Toast.makeText(requireContext(), "Cuenta creada con éxito.", Toast.LENGTH_SHORT).show()
-                                    startActivity(intent)
-                                    requireActivity().finish()
                                 } else {
-                                    Toast.makeText(requireContext(), "La contraseña debe tener al menos 8 caracteres (hasta 32 caracteres), al menos un número y una letra mayúscula.", Toast.LENGTH_SHORT).show()
+                                    Toast.makeText(requireContext(), "La contraseña debe tener al menos 8 caracteres (hasta 32 caracteres), al menos un número, una letra mayúscula y un símbolo.", Toast.LENGTH_SHORT).show()
                                 }
                             } else {
                                 Toast.makeText(requireContext(), "Introduce un correo válido.", Toast.LENGTH_SHORT).show()
@@ -127,7 +117,7 @@ class SignUpNewPassword : Fragment() {
     }
 
     fun isValidPassword(password : String) : Boolean {
-        val pattern = "^(?=.*[a-z])(?=.*[A-Z])(?=.*\\d)(?=.*[@$!%*?&])[A-Za-z\\d@$!%*?&]{8,}$"
+        val pattern = "^(?=.*[a-z])(?=.*[A-Z])(?=.*\\d)(?=.*[@$!%*?&._#/=,;:¡¿|°¬'¨~^-])[A-Za-z\\d@$!%*?&]{8,}$"
         val matcher = Regex(pattern)
         return matcher.matches(password)
     }

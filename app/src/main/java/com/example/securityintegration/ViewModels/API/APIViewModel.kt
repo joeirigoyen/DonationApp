@@ -14,9 +14,7 @@ import com.example.securityintegration.Models.User.*
 import com.example.securityintegration.Models.User.Donation.Donation
 import com.example.securityintegration.Models.User.Donation.DonationCreator
 import com.example.securityintegration.Models.User.Donation.DonationInput
-import com.example.securityintegration.Models.User.Login.LoginInputResponse
-import com.example.securityintegration.Models.User.Login.LoginResponse
-import com.example.securityintegration.Models.User.Login.User
+import com.example.securityintegration.Models.User.Login.*
 import com.example.securityintegration.Models.User.Login.UserResponse
 import com.example.securityintegration.Models.User.Recovery.RecoveryRequest
 import com.example.securityintegration.Models.User.Recovery.RecoveryResponse
@@ -25,7 +23,7 @@ import retrofit2.Response
 
 class APIViewModel(private val service: APIService) : ViewModel() {
 
-    val myUserResponse : MutableLiveData<Response<UserResponse>> = MutableLiveData()
+    val myUserResponse : MutableLiveData<Response<SignUpResponse>> = MutableLiveData()
     val myEventsResponse : MutableLiveData<Response<List<Event>>> = MutableLiveData()
     val myProjectResponse : MutableLiveData<Response<Project>> = MutableLiveData()
     val myProjectsResponse : MutableLiveData<Response<List<Project>>> = MutableLiveData()
@@ -40,6 +38,7 @@ class APIViewModel(private val service: APIService) : ViewModel() {
     val eventFromResponse : MutableLiveData<Response<List<Event>>> = MutableLiveData()
     val projectFromResponse : MutableLiveData<Response<List<Project>>> = MutableLiveData()
     val usernameResponse : MutableLiveData<Response<UserExistsResponse>> = MutableLiveData()
+    val validDateResponse : MutableLiveData<Response<SignUpResponse>> = MutableLiveData()
 
     fun getEvents() {
         viewModelScope.launch {
@@ -148,6 +147,13 @@ class APIViewModel(private val service: APIService) : ViewModel() {
         viewModelScope.launch {
             val response = service.getUsernameExists(user)
             usernameResponse.value = response
+        }
+    }
+
+    fun isValidDate(fecha_nacimiento: ValidDateRequest) {
+        viewModelScope.launch {
+            val response = service.isValidDate(fecha_nacimiento)
+            validDateResponse.value = response
         }
     }
 

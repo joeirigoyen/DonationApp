@@ -1,3 +1,8 @@
+/*
+* Autor: Raúl Youthan Irigoyen Osorio
+* */
+
+
 package com.example.securityintegration.Models.API
 
 import com.example.securityintegration.Models.EventList.Event
@@ -9,9 +14,7 @@ import com.example.securityintegration.Models.User.*
 import com.example.securityintegration.Models.User.Donation.Donation
 import com.example.securityintegration.Models.User.Donation.DonationCreator
 import com.example.securityintegration.Models.User.Donation.DonationInput
-import com.example.securityintegration.Models.User.Login.LoginInputResponse
-import com.example.securityintegration.Models.User.Login.LoginResponse
-import com.example.securityintegration.Models.User.Login.User
+import com.example.securityintegration.Models.User.Login.*
 import com.example.securityintegration.Models.User.Login.UserResponse
 import com.example.securityintegration.Models.User.Recovery.RecoveryRequest
 import com.example.securityintegration.Models.User.Recovery.RecoveryResponse
@@ -25,7 +28,7 @@ interface APIInterface {
 
     @Headers("Accept: application/json")
     @POST("usuario/agregarUsuario")
-    suspend fun postUser(@Body user: UserResponse) : Response<UserResponse>
+    suspend fun postUser(@Body user: UserResponse) : Response<SignUpResponse>
 
     @Headers("Content-Type: application/json")
     @POST("proyecto/agregarProyecto")
@@ -90,4 +93,8 @@ interface APIInterface {
     @Headers("Content-Type: application/json")
     @POST("usuario/existeUsername")
     suspend fun getUsernameExists(@Body user: UsernameRequest) : Response<UserExistsResponse>
+
+    @Headers("Content-Type: application/json")
+    @PUT("usuario/checkDate")
+    suspend fun isValidDate(@Body fecha_nacimiento: ValidDateRequest) : Response<SignUpResponse>
 }

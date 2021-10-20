@@ -34,7 +34,9 @@
             android:defaultValue="1" />
         <action
             android:id="@+id/action_signUpOrgInfo_self"
-            app:destination="@id/signUpOrgInfo" />
+            app:destination="@id/signUpOrgInfo"
+            app:popUpTo="@id/sign_up_navgraph"
+            app:popUpToInclusive="true" />
     </fragment>
     <fragment
         android:id="@+id/signUpGeneralInfo"
@@ -50,7 +52,9 @@
             android:defaultValue="1" />
         <action
             android:id="@+id/action_signUpGeneralInfo_self"
-            app:destination="@id/signUpGeneralInfo" />
+            app:destination="@id/signUpGeneralInfo"
+            app:popUpTo="@id/sign_up_navgraph"
+            app:popUpToInclusive="true" />
     </fragment>
     <fragment
         android:id="@+id/signUpMembership"
