@@ -1,6 +1,7 @@
 package com.example.securityintegration.Views.Profile
 
 import android.annotation.SuppressLint
+import android.content.Intent
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -14,6 +15,7 @@ import androidx.navigation.fragment.findNavController
 import com.example.securityintegration.R
 import com.example.securityintegration.ViewModels.Profile.ProfileViewModel
 import com.example.securityintegration.Views.Landing.MainPageActivity
+import com.example.securityintegration.Views.SignIn.MainActivity
 import com.example.securityintegration.databinding.ProfileFragmentBinding
 
 class ProfileFragment : Fragment() {
@@ -23,11 +25,7 @@ class ProfileFragment : Fragment() {
     }
 
     private lateinit var binding : ProfileFragmentBinding
-    private lateinit var arg : String
-    private val viewModel : ProfileViewModel by viewModels()
 
-    lateinit var navHostFragment: NavHostFragment
-    lateinit var navController: NavController
     lateinit var act : MainPageActivity
 
     override fun onCreateView(
@@ -75,8 +73,9 @@ class ProfileFragment : Fragment() {
         }
 
         binding.btnProfileSettings.setOnClickListener {
-            val action = ProfileFragmentDirections.actionProfileFragmentToSignInNavgraph()
-            findNavController().navigate(action)
+            val intent = Intent(activity, MainActivity::class.java)
+            startActivity(intent)
+            requireActivity().finish()
         }
     }
 }

@@ -60,7 +60,7 @@ class SignUpOrgInfo : Fragment() {
                             val action = SignUpOrgInfoDirections.actionSignUpOrgInfoSelf(args.accType)
                             findNavController().navigate(action)
                         } else {
-                            val action = SignUpOrgInfoDirections.actionSignUpOrgInfoToSignUpMembership(binding.etOrgName.text.toString(), lastname1="", lastname2="", binding.etOrgUsername.text.toString(), binding.etOrgBirthdate.text.toString(), binding.etCountryOrg.text.toString(), binding.etOrgRFC.text.toString(), desc="", args.accType)
+                            val action = SignUpOrgInfoDirections.actionSignUpOrgInfoToSignUpMembership(binding.etOrgName.text.toString(), lastname1="", lastname2="", binding.etOrgUsername.text.toString(), binding.etOrgBirthdate.text.toString(), binding.etCountryOrg.text.toString(), binding.etOrgRFC.text.toString(), binding.etOrgDescription.text.toString(), args.accType)
                             findNavController().navigate(action)
                         }
                     }

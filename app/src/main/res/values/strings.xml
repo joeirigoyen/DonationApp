@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">SecurityIntegration</string>
+    <string name="app_name">Dibujando un mañana</string>
     <string name="title_activity_login">LoginActivity</string>
     <string name="icon_desc">"Ask org if we can add a totally white logo"</string>
     <string name="username">Nombre de usuario</string>
