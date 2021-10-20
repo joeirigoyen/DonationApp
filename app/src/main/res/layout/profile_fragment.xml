@@ -31,11 +31,12 @@
                 android:layout_width="84dp"
                 android:layout_height="84dp"
                 android:layout_gravity="center_vertical"
-                android:background="@drawable/ic_initiative"
+                android:layout_marginLeft="16dp"
+                android:background="@drawable/ic_person"
                 android:backgroundTint="#FFFFFF"
                 android:src="@drawable/ic_person"
-                app:srcCompat="@drawable/ic_initiative"
-                tools:srcCompat="@drawable/ic_initiative" />
+                app:srcCompat="@drawable/ic_person"
+                tools:srcCompat="@tools:sample/avatars" />
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -45,8 +46,9 @@
 
                 <TextView
                     android:id="@+id/tvProfileName"
-                    android:layout_width="match_parent"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_marginLeft="8dp"
                     android:text="Nombre del usuario"
                     android:textColor="#000000"
                     android:textSize="24sp"
@@ -54,8 +56,9 @@
 
                 <TextView
                     android:id="@+id/tvProfileUsername"
-                    android:layout_width="match_parent"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_marginLeft="8dp"
                     android:text="/@username"
                     android:textColor="#000000"
                     android:textStyle="italic" />

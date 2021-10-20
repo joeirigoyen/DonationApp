@@ -20,13 +20,12 @@
     <TableLayout
         android:id="@+id/tableLayout"
         android:layout_width="366dp"
-        android:layout_height="498dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
         android:padding="@dimen/element_large_spacing"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.68">
+        app:layout_constraintTop_toBottomOf="@+id/signUpBankInfoTitle">
 
         <TableRow
             android:layout_width="match_parent"
@@ -203,16 +202,16 @@
         android:id="@+id/signUpBankInfoTitle"
         android:layout_width="300dp"
         android:layout_height="31dp"
-        android:layout_marginBottom="24dp"
+        android:layout_marginTop="120dp"
         android:fontFamily="sans-serif-black"
         android:minHeight="48dp"
         android:text="@string/sobre_la_organizaci_n"
         android:textAllCaps="false"
         android:textColor="@color/black"
         android:textSize="24sp"
-        app:layout_constraintBottom_toTopOf="@+id/tableLayout"
         app:layout_constraintEnd_toEndOf="@+id/tableLayout"
         app:layout_constraintHorizontal_bias="0.11"
-        app:layout_constraintStart_toStartOf="@+id/tableLayout" />
+        app:layout_constraintStart_toStartOf="@+id/tableLayout"
+        app:layout_constraintTop_toTopOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
