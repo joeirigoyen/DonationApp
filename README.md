@@ -39,7 +39,7 @@ npm install body-parser
 ``` 
  - You might also want to install the ***nodemon*** plug-in to run the server right after saving your changes to the scripts without having to manually re-run it.
  - Have the ***SQL Services*** running in your machine, otherwise the server will not be able to connect to the localhost.
- - Optionally you might also want to download Microsoft's SQL Manager Service or any MySQL-compatible software to visualize the project's database internally.
+ - Optionally you might also want to download Microsoft's SQL Manager Service or any other MySQL-compatible software to visualize the project's database internally.
 ### 2. Installing the project:
 To install the project simply clone it to your local machine or download the repository as a .zip file and extract it on an empty directory in order to let Android Studio recognize it as an Android project. (**Warning:** *Do not run the project if you have not completed the steps that follow*). 
 
