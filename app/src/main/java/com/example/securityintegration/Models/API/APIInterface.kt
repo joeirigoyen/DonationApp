@@ -4,6 +4,7 @@ import com.example.securityintegration.Models.EventList.Event
 import com.example.securityintegration.Models.EventList.EventCreator
 import com.example.securityintegration.Models.EventList.UserEventRequest
 import com.example.securityintegration.Models.ProjectList.Project
+import com.example.securityintegration.Models.ProjectList.ProjectRequest
 import com.example.securityintegration.Models.User.*
 import com.example.securityintegration.Models.User.Donation.Donation
 import com.example.securityintegration.Models.User.Donation.DonationCreator
@@ -27,14 +28,8 @@ interface APIInterface {
     suspend fun postUser(@Body user: UserResponse) : Response<UserResponse>
 
     @Headers("Content-Type: application/json")
-    @FormUrlEncoded
     @POST("proyecto/agregarProyecto")
-    suspend fun postProject(
-        @Field("id_proyecto") projId : Int,
-        @Field("nombre") projName : String,
-        @Field("descripcion") projDesc : String,
-        @Field("org_creadora") projOrg : String
-    ) : Response<Project>
+    suspend fun postProject(@Body project: ProjectRequest) : Response<Project>
 
     @GET("usuario/verUsuarios")
     suspend fun getUsers() : Response<List<User>>
@@ -85,10 +80,10 @@ interface APIInterface {
     suspend fun putNewPassword(@Body request: NewPasswordRequest) : Response<NewPasswordResponse>
 
     @Headers("Content-Type: application/json")
-    @PUT("evento/verEventosPorOrg")
+    @POST("evento/verEventosPorOrg")
     suspend fun getEventsFrom(@Body user: UserEventRequest) : Response<List<Event>>
 
     @Headers("Content-Type: application/json")
-    @PUT("proyecto/verProyectos")
+    @POST("proyecto/verProyectos")
     suspend fun getProjectsFrom(@Body user: UserEventRequest) : Response<List<Project>>
 }

@@ -13,6 +13,9 @@
         <action
             android:id="@+id/action_projectListFragment_to_projectInfoFragment"
             app:destination="@id/projectInfoFragment" />
+        <action
+            android:id="@+id/action_projectListFragment_to_createProjectFragment"
+            app:destination="@id/createProjectFragment" />
     </fragment>
     <fragment
         android:id="@+id/projectInfoFragment"
@@ -28,5 +31,13 @@
         <argument
             android:name="backTo"
             app:argType="string" />
+    </fragment>
+    <fragment
+        android:id="@+id/createProjectFragment"
+        android:name="com.example.securityintegration.Views.Profile.MyProjects.CreateProjectFragment"
+        android:label="CreateProjectFragment" >
+        <action
+            android:id="@+id/action_createProjectFragment_to_projectListFragment"
+            app:destination="@id/projectListFragment" />
     </fragment>
 </navigation>

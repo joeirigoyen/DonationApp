@@ -43,7 +43,7 @@
                 android:layout_height="match_parent"
                 android:layout_marginStart="35dp"
                 android:gravity="end|center_vertical"
-                android:text="Mis proyectos"
+                android:text="Mis eventos"
                 android:textColor="@color/white"
                 android:textSize="20sp"
                 android:textStyle="bold"></TextView>

@@ -60,19 +60,23 @@ class ProfileFragment : Fragment() {
         }
 
         binding.btnMyEvents.setOnClickListener {
-            findNavController().navigate(R.id.action_profileFragment_to_myEventsFragment)
+            val action = ProfileFragmentDirections.actionProfileFragmentToMyEventsFragment()
+            findNavController().navigate(action)
         }
 
         binding.btnMyProjects.setOnClickListener {
-            findNavController().navigate(R.id.action_profileFragment_to_myProjectsFragment)
+            val action = ProfileFragmentDirections.actionProfileFragmentToMyProjectsFragment()
+            findNavController().navigate(action)
         }
 
         binding.btnMyDonations.setOnClickListener {
-            findNavController().navigate(R.id.action_profileFragment_to_myDonationsFragment)
+            val action = ProfileFragmentDirections.actionProfileFragmentToMyDonationsFragment()
+            findNavController().navigate(action)
         }
 
         binding.btnProfileSettings.setOnClickListener {
-            findNavController().navigate(R.id.action_profileFragment_to_sign_in_navgraph)
+            val action = ProfileFragmentDirections.actionProfileFragmentToSignInNavgraph()
+            findNavController().navigate(action)
         }
     }
 }

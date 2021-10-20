@@ -9,6 +9,7 @@ import com.example.securityintegration.Models.ProjectList.Project
 import com.example.securityintegration.Models.API.APIService
 import com.example.securityintegration.Models.EventList.EventCreator
 import com.example.securityintegration.Models.EventList.UserEventRequest
+import com.example.securityintegration.Models.ProjectList.ProjectRequest
 import com.example.securityintegration.Models.User.*
 import com.example.securityintegration.Models.User.Donation.Donation
 import com.example.securityintegration.Models.User.Donation.DonationCreator
@@ -137,17 +138,17 @@ class APIViewModel(private val service: APIService) : ViewModel() {
         }
     }
 
+    fun postProject(project: ProjectRequest) {
+        viewModelScope.launch {
+            val response = service.postProject(project)
+            myProjectResponse.value = response
+        }
+    }
+
     fun validateRecovery(request: RecoveryRequest) {
         viewModelScope.launch {
             val response = service.validateRecovery(request)
             recoveryResponse.value = response
-        }
-    }
-
-    fun postProject(projId: Int, projName: String, projDesc: String, projOrg: String) {
-        viewModelScope.launch {
-            val response = service.postProject(projId, projName, projDesc, projOrg)
-            myProjectResponse.value = response
         }
     }
 
