@@ -38,17 +38,20 @@
         <entry key="..\:/Programacion/Android_studio/SecurityIntegration/app/src/main/res/layout/sign_up_new_password_fragment.xml" value="0.371875" />
         <entry key="..\:/Programacion/Android_studio/SecurityIntegration/app/src/main/res/layout/sign_up_org_info_fragment.xml" value="0.371875" />
         <entry key="..\:/Programacion/Android_studio/SecurityIntegration/app/src/main/res/layout/sign_up_payment_method_fragment.xml" value="0.371875" />
-        <entry key="..\:/irigx/Documents/School/5to/ISS/Mobile/DibujandoUnTomorrow/SecurityIntegration/App/SecurityIntegration/app/src/main/res/layout/create_event_fragment.xml" value="0.67" />
+        <entry key="..\:/irigx/Documents/School/5to/ISS/Mobile/DibujandoUnTomorrow/SecurityIntegration/App/SecurityIntegration/app/src/main/res/layout/create_event_fragment.xml" value="0.25" />
         <entry key="..\:/irigx/Documents/School/5to/ISS/Mobile/DibujandoUnTomorrow/SecurityIntegration/App/SecurityIntegration/app/src/main/res/layout/donation_row.xml" value="0.20520833333333333" />
+        <entry key="..\:/irigx/Documents/School/5to/ISS/Mobile/DibujandoUnTomorrow/SecurityIntegration/App/SecurityIntegration/app/src/main/res/layout/event_info_fragment.xml" value="0.36666666666666664" />
         <entry key="..\:/irigx/Documents/School/5to/ISS/Mobile/DibujandoUnTomorrow/SecurityIntegration/App/SecurityIntegration/app/src/main/res/layout/event_list_fragment.xml" value="0.36666666666666664" />
         <entry key="..\:/irigx/Documents/School/5to/ISS/Mobile/DibujandoUnTomorrow/SecurityIntegration/App/SecurityIntegration/app/src/main/res/layout/event_row.xml" value="0.36666666666666664" />
         <entry key="..\:/irigx/Documents/School/5to/ISS/Mobile/DibujandoUnTomorrow/SecurityIntegration/App/SecurityIntegration/app/src/main/res/layout/main_sign_up_fragment.xml" value="0.33" />
         <entry key="..\:/irigx/Documents/School/5to/ISS/Mobile/DibujandoUnTomorrow/SecurityIntegration/App/SecurityIntegration/app/src/main/res/layout/my_donations_fragment.xml" value="0.20520833333333333" />
+        <entry key="..\:/irigx/Documents/School/5to/ISS/Mobile/DibujandoUnTomorrow/SecurityIntegration/App/SecurityIntegration/app/src/main/res/layout/my_events_fragment.xml" value="0.36666666666666664" />
+        <entry key="..\:/irigx/Documents/School/5to/ISS/Mobile/DibujandoUnTomorrow/SecurityIntegration/App/SecurityIntegration/app/src/main/res/layout/my_projects_fragment.xml" value="0.36666666666666664" />
         <entry key="..\:/irigx/Documents/School/5to/ISS/Mobile/DibujandoUnTomorrow/SecurityIntegration/App/SecurityIntegration/app/src/main/res/layout/org_info_fragment.xml" value="0.36666666666666664" />
         <entry key="..\:/irigx/Documents/School/5to/ISS/Mobile/DibujandoUnTomorrow/SecurityIntegration/App/SecurityIntegration/app/src/main/res/layout/org_row.xml" value="0.36666666666666664" />
-        <entry key="..\:/irigx/Documents/School/5to/ISS/Mobile/DibujandoUnTomorrow/SecurityIntegration/App/SecurityIntegration/app/src/main/res/layout/profile_fragment.xml" value="0.28940217391304346" />
+        <entry key="..\:/irigx/Documents/School/5to/ISS/Mobile/DibujandoUnTomorrow/SecurityIntegration/App/SecurityIntegration/app/src/main/res/layout/profile_fragment.xml" value="0.33" />
         <entry key="..\:/irigx/Documents/School/5to/ISS/Mobile/DibujandoUnTomorrow/SecurityIntegration/App/SecurityIntegration/app/src/main/res/layout/profile_lookup_fragment.xml" value="0.36666666666666664" />
-        <entry key="..\:/irigx/Documents/School/5to/ISS/Mobile/DibujandoUnTomorrow/SecurityIntegration/App/SecurityIntegration/app/src/main/res/layout/project_info_fragment.xml" value="0.36666666666666664" />
+        <entry key="..\:/irigx/Documents/School/5to/ISS/Mobile/DibujandoUnTomorrow/SecurityIntegration/App/SecurityIntegration/app/src/main/res/layout/project_info_fragment.xml" value="0.17929292929292928" />
         <entry key="..\:/irigx/Documents/School/5to/ISS/Mobile/DibujandoUnTomorrow/SecurityIntegration/App/SecurityIntegration/app/src/main/res/layout/project_list_fragment.xml" value="0.36666666666666664" />
         <entry key="..\:/irigx/Documents/School/5to/ISS/Mobile/DibujandoUnTomorrow/SecurityIntegration/App/SecurityIntegration/app/src/main/res/layout/project_row.xml" value="0.36666666666666664" />
         <entry key="..\:/irigx/Documents/School/5to/ISS/Mobile/DibujandoUnTomorrow/SecurityIntegration/App/SecurityIntegration/app/src/main/res/layout/recover_password_fragment.xml" value="0.36666666666666664" />

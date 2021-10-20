@@ -11,29 +11,11 @@
         android:label="profile_fragment"
         tools:layout="@layout/profile_fragment" >
         <action
-            android:id="@+id/action_profileFragment_to_myProjectsFragment"
-            app:destination="@id/myProjectsFragment" />
-        <action
             android:id="@+id/action_profileFragment_to_myDonationsFragment"
             app:destination="@id/myDonationsFragment" />
         <action
-            android:id="@+id/action_profileFragment_to_myEventsFragment"
-            app:destination="@id/myEventsFragment" />
-        <action
-            android:id="@+id/action_profileFragment_to_myEventsFragment2"
-            app:destination="@id/myEventsFragment" />
-    </fragment>
-    <fragment
-        android:id="@+id/myProjectsFragment"
-        android:name="com.example.securityintegration.Views.Profile.MyProjects.MyProjectsFragment"
-        android:label="my_projects_fragment"
-        tools:layout="@layout/my_projects_fragment" >
-        <action
-            android:id="@+id/action_myProjectsFragment_to_projectInfoFragment2"
-            app:destination="@id/projectInfoFragment2" />
-        <action
-            android:id="@+id/action_myProjectsFragment_to_profileFragment"
-            app:destination="@id/profileFragment" />
+            android:id="@+id/action_profileFragment_to_sign_in_navgraph"
+            app:destination="@id/sign_in_navgraph" />
     </fragment>
     <fragment
         android:id="@+id/myDonationsFragment"
@@ -44,39 +26,5 @@
             android:id="@+id/action_myDonationsFragment_to_profileFragment"
             app:destination="@id/profileFragment" />
     </fragment>
-    <fragment
-        android:id="@+id/myEventsFragment"
-        android:name="com.example.securityintegration.Views.Profile.MyEvents.MyEventsFragment"
-        android:label="my_events_fragment"
-        tools:layout="@layout/my_events_fragment" >
-        <action
-            android:id="@+id/action_myEventsFragment_to_profileFragment"
-            app:destination="@id/profileFragment" />
-        <action
-            android:id="@+id/action_myEventsFragment_to_eventInfoFragment2"
-            app:destination="@id/eventInfoFragment2" />
-    </fragment>
-    <fragment
-        android:id="@+id/projectInfoFragment2"
-        android:name="com.example.securityintegration.Views.Projects.ProjectInfoFragment"
-        android:label="project_info_fragment"
-        tools:layout="@layout/project_info_fragment" >
-        <argument
-            android:name="selectedProject"
-            app:argType="com.example.securityintegration.Models.ProjectList.Project" />
-        <action
-            android:id="@+id/action_projectInfoFragment2_to_myProjectsFragment"
-            app:destination="@id/myProjectsFragment" />
-    </fragment>
-    <fragment
-        android:id="@+id/eventInfoFragment2"
-        android:name="com.example.securityintegration.Views.Events.EventInfoFragment"
-        android:label="event_info_fragment"
-        tools:layout="@layout/event_info_fragment" >
-        <action
-            android:id="@+id/action_eventInfoFragment2_to_myEventsFragment"
-            app:destination="@id/myEventsFragment" />
-        <argument android:name="selectedEvent"
-            app:argType="com.example.securityintegration.Models.EventList.Event" />
-    </fragment>
+    <include app:graph="@navigation/sign_in_navgraph" />
 </navigation>

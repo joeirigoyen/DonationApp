@@ -88,10 +88,9 @@ class EventListFragment : Fragment(), RowListener {
         recyclerView.adapter = adapter
     }
 
-    override fun onClick (pos: Int)
-    {
+    override fun onClick (pos: Int) {
         val event = adapter.evArray[pos]
-        val action = EventListFragmentDirections.actionEventListFragmentToEventInfoFragment(event)
+        val action = EventListFragmentDirections.actionEventListFragmentToEventInfo1(event, "events")
         findNavController().navigate(action)
     }
 

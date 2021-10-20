@@ -18,11 +18,26 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
+        <ImageButton
+            android:id="@+id/btnBack"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_marginTop="0dp"
+            android:layout_marginLeft="10dp"
+            android:backgroundTint="#A10606"
+            android:minHeight="48dp"
+            android:src="@drawable/ic_back"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.03"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:ignore="SpeakableTextPresentCheck" />
+
         <TextView
             android:id="@+id/tvOrgTitle"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_marginStart="15dp"
+            android:layout_marginStart="70dp"
             android:gravity="center_vertical"
             android:text="@string/nombre_de_la_organizaci_n"
             android:textColor="#FFFFFF"

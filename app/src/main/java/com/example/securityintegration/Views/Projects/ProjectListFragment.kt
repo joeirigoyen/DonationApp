@@ -72,7 +72,7 @@ class ProjectListFragment : Fragment(), RowListener {
 
     override fun onClick(pos: Int) {
         val project = adapter.prArray[pos]
-        val action = ProjectListFragmentDirections.actionProjectListFragmentToProjectInfoFragment(project)
+        val action = ProjectListFragmentDirections.actionProjectListFragmentToProjectInfoFragment(project, "project")
         findNavController().navigate(action)
     }
 }

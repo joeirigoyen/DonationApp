@@ -7,6 +7,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.securityintegration.Models.API.APIService
 import com.example.securityintegration.Models.OrgLookup.MarginItemDecoration
@@ -55,6 +56,11 @@ class MyDonationsFragment : Fragment(), RowListener {
     }
 
     private fun configEvents() {
+        // Back button
+        binding.btnBack.setOnClickListener {
+            val action = MyDonationsFragmentDirections.actionMyDonationsFragmentToProfileFragment()
+            findNavController().navigate(action)
+        }
         // Get activity variables
         if (activity != null) {
             act = activity as MainPageActivity

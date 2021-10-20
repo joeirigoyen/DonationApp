@@ -64,11 +64,11 @@
                         <TextView
                             android:id="@+id/tvEventCard"
                             android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_gravity="bottom|center_horizontal"
+                            android:layout_height="match_parent"
                             android:layout_marginLeft="10dp"
                             android:layout_marginRight="10dp"
-                            android:layout_marginBottom="10dp"
+                            android:layout_marginBottom="0dp"
+                            android:gravity="center_vertical"
                             android:text="Mis Eventos"
                             android:textAlignment="textStart"
                             android:textColor="#FFFFFF"
@@ -113,11 +113,12 @@
                         <TextView
                             android:id="@+id/tvProjectCard"
                             android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
+                            android:layout_height="match_parent"
                             android:layout_gravity="bottom|center_horizontal"
                             android:layout_marginLeft="10dp"
                             android:layout_marginRight="10dp"
-                            android:layout_marginBottom="10dp"
+                            android:layout_marginBottom="0dp"
+                            android:gravity="center_vertical"
                             android:text="Mis Proyectos"
                             android:textAlignment="textStart"
                             android:textColor="#FFFFFF"
@@ -162,11 +163,12 @@
                         <TextView
                             android:id="@+id/tvDonationsCard"
                             android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
+                            android:layout_height="match_parent"
                             android:layout_gravity="bottom|center_horizontal"
                             android:layout_marginLeft="10dp"
                             android:layout_marginRight="10dp"
-                            android:layout_marginBottom="10dp"
+                            android:layout_marginBottom="0dp"
+                            android:gravity="center_vertical"
                             android:text="Mis Donaciones"
                             android:textAlignment="textStart"
                             android:textColor="#FFFFFF"
@@ -209,14 +211,15 @@
                             tools:srcCompat="@drawable/ic_settings" />
 
                         <TextView
-                            android:id="@+id/tvSettingsCard"
+                            android:id="@+id/tvLogOut"
                             android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
+                            android:layout_height="match_parent"
                             android:layout_gravity="bottom|center_horizontal"
                             android:layout_marginLeft="10dp"
                             android:layout_marginRight="10dp"
-                            android:layout_marginBottom="10dp"
-                            android:text="Ajustes"
+                            android:layout_marginBottom="0dp"
+                            android:gravity="center_vertical"
+                            android:text="@string/cerrar_sesion"
                             android:textAlignment="textStart"
                             android:textColor="#FFFFFF"
                             android:textSize="20sp"
@@ -252,8 +255,11 @@
                 android:layout_width="84dp"
                 android:layout_height="84dp"
                 android:layout_gravity="center_vertical"
+                android:background="@drawable/ic_initiative"
+                android:backgroundTint="#FFFFFF"
                 android:src="@drawable/ic_person"
-                app:srcCompat="@drawable/ic_initiative" />
+                app:srcCompat="@drawable/ic_initiative"
+                tools:srcCompat="@drawable/ic_initiative" />
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -316,12 +322,17 @@
 
             <ProgressBar
                 android:id="@+id/progressBar2"
-                style="?android:attr/progressBarStyle"
+                style="?android:attr/progressBarStyleHorizontal"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="10dp"
-                android:backgroundTint="#FF0000"
-                android:progressTint="#FF0000" />
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="15dp"
+                android:layout_marginEnd="10dp"
+                android:layout_marginBottom="15dp"
+                android:max="10000"
+                android:progress="500"
+                android:progressTint="#E6E2E2" />
+
         </LinearLayout>
     </androidx.cardview.widget.CardView>
 

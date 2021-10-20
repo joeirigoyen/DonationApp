@@ -11,23 +11,26 @@
         android:label="event_list_fragment"
         tools:layout="@layout/event_list_fragment" >
         <action
-            android:id="@+id/action_eventListFragment_to_eventInfoFragment"
-            app:destination="@id/eventInfoFragment" />
-        <action
             android:id="@+id/action_eventListFragment_to_createEventFragment"
             app:destination="@id/createEventFragment" />
+        <action
+            android:id="@+id/action_eventListFragment_to_eventInfo1"
+            app:destination="@id/eventInfo1" />
     </fragment>
     <fragment
-        android:id="@+id/eventInfoFragment"
+        android:id="@+id/eventInfo1"
         android:name="com.example.securityintegration.Views.Events.EventInfoFragment"
-        android:label="event_info_fragment"
-        tools:layout="@layout/event_info_fragment" >
-        <action
-            android:id="@+id/action_eventInfoFragment_to_eventListFragment"
-            app:destination="@id/eventListFragment" />
+        android:label="eventInfo1"
+        tools:layout="@layout/event_info_fragment">
         <argument
             android:name="selectedEvent"
             app:argType="com.example.securityintegration.Models.EventList.Event" />
+        <argument
+            android:name="backTo"
+            app:argType="string" />
+        <action
+            android:id="@+id/action_eventInfo1_to_eventListFragment"
+            app:destination="@id/eventListFragment" />
     </fragment>
     <fragment
         android:id="@+id/createEventFragment"

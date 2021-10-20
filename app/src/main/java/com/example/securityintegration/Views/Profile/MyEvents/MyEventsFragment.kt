@@ -66,9 +66,7 @@ class MyEventsFragment : Fragment(), RowListener {
     }
 
     override fun onClick(pos: Int) {
-        val event = adapter.evArray[pos]
-        val action = MyEventsFragmentDirections.actionMyEventsFragmentToEventInfoFragment2(event)
-        findNavController().navigate(action)
+        //Nada
     }
 
 }

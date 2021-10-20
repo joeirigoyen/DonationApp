@@ -48,14 +48,12 @@ class ProfileFragment : Fragment() {
             binding.tvProfileUsername.text = "@${act.accUsername}"
         }
 
-        binding.btnMyProjects.setOnClickListener {
-            findNavController().navigate(R.id.action_profileFragment_to_myProjectsFragment)
-        }
         binding.btnMyDonations.setOnClickListener {
             findNavController().navigate(R.id.action_profileFragment_to_myDonationsFragment)
         }
-        binding.btnMyEvents.setOnClickListener {
-            findNavController().navigate(R.id.action_profileFragment_to_myEventsFragment)
+
+        binding.btnProfileSettings.setOnClickListener {
+            findNavController().navigate(R.id.action_profileFragment_to_sign_in_navgraph)
         }
     }
 }
