@@ -1,6 +1,7 @@
 package com.example.securityintegration.Views.SignIn
 
 import android.content.Intent
+import android.net.Uri
 import android.os.Bundle
 import android.util.Log
 import androidx.fragment.app.Fragment
@@ -100,5 +101,16 @@ class MainSignInFrag : Fragment() {
             }
 
         }
+
+        binding.btnTyC.setOnClickListener {
+            val intent = Intent("android.intent.action.VIEW", Uri.parse("https://www.termsandconditionsgenerator.com/live.php?token=HNIXHM6LZQT2mNnzIyOAXHT8Nx4hLpTC"))
+            startActivity(intent)
+        }
+
+        binding.btnPriv.setOnClickListener {
+            val intent = Intent("android.intent.action.VIEW", Uri.parse("https://www.privacypolicygenerator.info/live.php?token=kMOOomXopp1z7HUqIgLh2s93101AgoJa"))
+            startActivity(intent)
+        }
+
     }
 }
