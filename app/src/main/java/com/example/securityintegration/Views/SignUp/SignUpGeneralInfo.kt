@@ -1,3 +1,7 @@
+/*
+* Autor: Raúl Youthan Irigoyen Osorio
+* */
+
 package com.example.securityintegration.Views.SignUp
 
 import android.os.Bundle
@@ -13,10 +17,14 @@ import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
 import com.example.securityintegration.Models.API.APIService
 import com.example.securityintegration.Models.User.UsernameRequest
+import com.example.securityintegration.Models.User.ValidDateRequest
 import com.example.securityintegration.ViewModels.API.APIViewModel
 import com.example.securityintegration.ViewModels.API.ViewModelFactory
 import com.example.securityintegration.ViewModels.SignUp.MainSignUpViewModel
 import com.example.securityintegration.databinding.SignUpGeneralInfoFragmentBinding
+import java.text.ParseException
+import java.text.SimpleDateFormat
+import java.util.*
 
 class SignUpGeneralInfo : Fragment() {
 
@@ -48,7 +56,6 @@ class SignUpGeneralInfo : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        Toast.makeText(activity, "${args.accType}", Toast.LENGTH_SHORT).show()
         // Button events
         binding.btnNext.setOnClickListener {
             if (!binding.etNames.text.isEmpty() && !binding.etLastName1.text.isEmpty() && !binding.etLastName2.text.isEmpty() && !binding.etUsername.text.isEmpty() && !binding.etBirthdate.text.isEmpty() && !binding.etCountry.text.isEmpty()) {
@@ -60,21 +67,37 @@ class SignUpGeneralInfo : Fragment() {
                 val birthdate = binding.etBirthdate.text.toString().trim()
                 val country = binding.etCountry.text.toString().trim()
                 val rfc = binding.etRFC.text.toString().trim()
-                // Navigate
-                val user = UsernameRequest(binding.etUsername.text.toString())
-                viewModel.getUsernameExists(user)
-                viewModel.usernameResponse.observe(viewLifecycleOwner, Observer { response ->
+                // Check date
+                val request = ValidDateRequest(birthdate)
+                viewModel.isValidDate(request)
+                viewModel.validDateResponse.observe(viewLifecycleOwner, Observer { response ->
                     if (response.isSuccessful) {
-                        if (response.body()?.message!! == "true") {
-                            Toast.makeText(activity, "El nombre de usuario no está disponible", Toast.LENGTH_SHORT).show()
+                        if (response.body()?.status!! == "failed") {
+                            //Toast.makeText(activity, "Por favor verifique que el formato de la fecha sea aaaa-mm-dd", Toast.LENGTH_SHORT).show()
                             val action = SignUpGeneralInfoDirections.actionSignUpGeneralInfoSelf(args.accType)
                             findNavController().navigate(action)
                         } else {
-                            val action = SignUpGeneralInfoDirections.actionSignUpGeneralInfoToSignUpMembership(names, lastname1, lastname2, username, birthdate, country, rfc, desc="", args.accType)
-                            findNavController().navigate(action)
+                            val user = UsernameRequest(binding.etUsername.text.toString())
+                            viewModel.getUsernameExists(user)
+                            viewModel.usernameResponse.observe(viewLifecycleOwner, Observer { response ->
+                                if (response.isSuccessful) {
+                                    response.let {
+                                        if (it.body()?.message!! == "true") {
+                                            Toast.makeText(activity, "El nombre de usuario no está disponible", Toast.LENGTH_SHORT).show()
+                                            val action = SignUpGeneralInfoDirections.actionSignUpGeneralInfoSelf(args.accType)
+                                            findNavController().navigate(action)
+                                        } else {
+                                            val action = SignUpGeneralInfoDirections.actionSignUpGeneralInfoToSignUpMembership(names, lastname1, lastname2, username, birthdate, country, rfc, desc="", args.accType)
+                                            findNavController().navigate(action)
+                                        }
+                                    }
+                                } else {
+                                    Toast.makeText(activity, "Error con el servidor. Intente más tarde", Toast.LENGTH_SHORT).show()
+                                }
+                            })
                         }
                     } else {
-                        Toast.makeText(activity, "Error con el servidor. Intente más tarde", Toast.LENGTH_SHORT).show()
+                        Toast.makeText(activity, "Error en el servidor", Toast.LENGTH_SHORT).show()
                     }
                 })
             } else {

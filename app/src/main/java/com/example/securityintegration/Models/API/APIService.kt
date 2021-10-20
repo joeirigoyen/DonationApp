@@ -1,3 +1,7 @@
+/*
+* Autor: Raúl Youthan Irigoyen Osorio
+* */
+
 package com.example.securityintegration.Models.API
 
 import com.example.securityintegration.Models.EventList.Event
@@ -9,9 +13,7 @@ import com.example.securityintegration.Models.User.*
 import com.example.securityintegration.Models.User.Donation.Donation
 import com.example.securityintegration.Models.User.Donation.DonationCreator
 import com.example.securityintegration.Models.User.Donation.DonationInput
-import com.example.securityintegration.Models.User.Login.LoginInputResponse
-import com.example.securityintegration.Models.User.Login.LoginResponse
-import com.example.securityintegration.Models.User.Login.User
+import com.example.securityintegration.Models.User.Login.*
 import com.example.securityintegration.Models.User.Login.UserResponse
 import com.example.securityintegration.Models.User.Recovery.RecoveryRequest
 import com.example.securityintegration.Models.User.Recovery.RecoveryResponse
@@ -44,7 +46,7 @@ class APIService {
         return RetrofitInstance.api.getDonations(user)
     }
 
-    suspend fun postUser(user: UserResponse) : Response<UserResponse> {
+    suspend fun postUser(user: UserResponse) : Response<SignUpResponse> {
         return RetrofitInstance.api.postUser(user)
     }
 
@@ -94,6 +96,10 @@ class APIService {
 
     suspend fun getUsernameExists(user: UsernameRequest) : Response<UserExistsResponse> {
         return RetrofitInstance.api.getUsernameExists(user)
+    }
+
+    suspend fun isValidDate(fecha_nacimiento: ValidDateRequest) : Response<SignUpResponse> {
+        return RetrofitInstance.api.isValidDate(fecha_nacimiento)
     }
 
 }

@@ -1,3 +1,7 @@
+/*
+* Autor: Raúl Youthan Irigoyen Osorio
+* */
+
 package com.example.securityintegration.Models.API
 
 import com.google.gson.Gson
