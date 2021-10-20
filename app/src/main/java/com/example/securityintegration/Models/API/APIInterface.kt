@@ -86,4 +86,8 @@ interface APIInterface {
     @Headers("Content-Type: application/json")
     @POST("proyecto/verProyectos")
     suspend fun getProjectsFrom(@Body user: UserEventRequest) : Response<List<Project>>
+
+    @Headers("Content-Type: application/json")
+    @POST("usuario/existeUsername")
+    suspend fun getUsernameExists(@Body user: UsernameRequest) : Response<UserExistsResponse>
 }

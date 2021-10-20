@@ -32,6 +32,9 @@
             android:name="accType"
             app:argType="integer"
             android:defaultValue="1" />
+        <action
+            android:id="@+id/action_signUpOrgInfo_self"
+            app:destination="@id/signUpOrgInfo" />
     </fragment>
     <fragment
         android:id="@+id/signUpGeneralInfo"
@@ -45,6 +48,9 @@
             android:name="accType"
             app:argType="integer"
             android:defaultValue="1" />
+        <action
+            android:id="@+id/action_signUpGeneralInfo_self"
+            app:destination="@id/signUpGeneralInfo" />
     </fragment>
     <fragment
         android:id="@+id/signUpMembership"
