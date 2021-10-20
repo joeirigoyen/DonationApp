@@ -41,21 +41,42 @@ class ProfileFragment : Fragment() {
     @SuppressLint("SetTextI18n")
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-
+        // Set account type-dependant elements
         if (activity != null) {
             act = activity as MainPageActivity
             binding.tvProfileName.text = act.accNames
             binding.tvProfileUsername.text = "@${act.accUsername}"
+            if (act.accType == 1) {
+                binding.trEventsRow.visibility = View.GONE
+                binding.trProjectsRow.visibility = View.GONE
+                binding.trDonationsRow.visibility = View.VISIBLE
+                binding.cvProgress.visibility = View.VISIBLE
+            } else {
+                binding.trEventsRow.visibility = View.VISIBLE
+                binding.trProjectsRow.visibility = View.VISIBLE
+                binding.trDonationsRow.visibility = View.GONE
+                binding.cvProgress.visibility = View.GONE
+            }
+        }
+
+        binding.btnMyEvents.setOnClickListener {
+            val action = ProfileFragmentDirections.actionProfileFragmentToMyEventsFragment()
+            findNavController().navigate(action)
         }
 
         binding.btnMyProjects.setOnClickListener {
-            findNavController().navigate(R.id.action_profileFragment_to_myProjectsFragment)
+            val action = ProfileFragmentDirections.actionProfileFragmentToMyProjectsFragment()
+            findNavController().navigate(action)
         }
+
         binding.btnMyDonations.setOnClickListener {
-            findNavController().navigate(R.id.action_profileFragment_to_myDonationsFragment)
+            val action = ProfileFragmentDirections.actionProfileFragmentToMyDonationsFragment()
+            findNavController().navigate(action)
         }
-        binding.btnMyEvents.setOnClickListener {
-            findNavController().navigate(R.id.action_profileFragment_to_myEventsFragment)
+
+        binding.btnProfileSettings.setOnClickListener {
+            val action = ProfileFragmentDirections.actionProfileFragmentToSignInNavgraph()
+            findNavController().navigate(action)
         }
     }
 }

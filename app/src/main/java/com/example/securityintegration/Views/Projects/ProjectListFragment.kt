@@ -14,6 +14,7 @@ import com.example.securityintegration.Models.EventList.RowListener
 import com.example.securityintegration.Models.API.APIService
 import com.example.securityintegration.ViewModels.API.APIViewModel
 import com.example.securityintegration.ViewModels.API.ViewModelFactory
+import com.example.securityintegration.Views.Landing.MainPageActivity
 import com.example.securityintegration.Views.OrgLookup.ProjectListAdapter
 import com.example.securityintegration.databinding.ProjectListFragmentBinding
 
@@ -25,6 +26,7 @@ class ProjectListFragment : Fragment(), RowListener {
 
     private lateinit var binding: ProjectListFragmentBinding
     private lateinit var viewModel: APIViewModel
+    lateinit var act : MainPageActivity
     private val adapter = ProjectListAdapter(arrayListOf())
     private val space = 20
 
@@ -47,9 +49,25 @@ class ProjectListFragment : Fragment(), RowListener {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         // Observers, events and adapter
+        configEvents()
         configObservers()
         configAdapter()
         adapter.listener = this
+    }
+
+    private fun configEvents() {
+        if (activity != null) {
+            act = activity as MainPageActivity
+            if (act.accType == 2) {
+                binding.btnAddProject.visibility = View.VISIBLE
+                binding.btnAddProject.setOnClickListener {
+                    val action = ProjectListFragmentDirections.actionProjectListFragmentToCreateProjectFragment()
+                    findNavController().navigate(action)
+                }
+            } else {
+                binding.btnAddProject.visibility = View.GONE
+            }
+        }
     }
 
     private fun configObservers() {
@@ -72,7 +90,7 @@ class ProjectListFragment : Fragment(), RowListener {
 
     override fun onClick(pos: Int) {
         val project = adapter.prArray[pos]
-        val action = ProjectListFragmentDirections.actionProjectListFragmentToProjectInfoFragment(project)
+        val action = ProjectListFragmentDirections.actionProjectListFragmentToProjectInfoFragment(project, "project")
         findNavController().navigate(action)
     }
 }

@@ -31,13 +31,12 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
+                android:layout_marginStart="35dp"
                 android:gravity="end|center_vertical"
-                android:text="@string/eventos_disponibles"
+                android:text="Eventos disponibles"
                 android:textColor="@color/white"
                 android:textSize="20sp"
-                android:textStyle="bold">
-
-            </TextView>
+                android:textStyle="bold"></TextView>
 
         </androidx.appcompat.widget.Toolbar>
 

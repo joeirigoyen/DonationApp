@@ -7,11 +7,16 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.Observer
+import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.example.securityintegration.Models.API.APIService
 import com.example.securityintegration.Models.OrgLookup.MarginItemDecoration
 import com.example.securityintegration.Models.EventList.RowListener
+import com.example.securityintegration.Models.EventList.UserEventRequest
 import com.example.securityintegration.ViewModels.API.APIViewModel
+import com.example.securityintegration.ViewModels.API.ViewModelFactory
+import com.example.securityintegration.Views.Landing.MainPageActivity
 import com.example.securityintegration.databinding.MyEventsFragmentBinding
 
 class MyEventsFragment : Fragment(), RowListener {
@@ -20,11 +25,19 @@ class MyEventsFragment : Fragment(), RowListener {
         fun newInstance() = MyEventsFragment()
     }
 
+    lateinit var act : MainPageActivity
     private lateinit var binding : MyEventsFragmentBinding
-    private val viewModel: APIViewModel by viewModels()
+    private lateinit var viewModel: APIViewModel
     private val adapter = MyEventsAdapter(arrayListOf())
     private val space = 20
-    private val users = viewModel.getEvents()
+
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        val service = APIService()
+        val viewModelFactory = ViewModelFactory(service)
+
+        viewModel = ViewModelProvider(requireActivity(), viewModelFactory).get(APIViewModel::class.java)
+    }
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -45,15 +58,30 @@ class MyEventsFragment : Fragment(), RowListener {
 
     private fun configEvents() {
         // Set element info to boxes
-        viewModel.getEvents()
+        if (activity != null) {
+            act = activity as MainPageActivity
+            val user = UserEventRequest(act.accNames)
+            viewModel.getEventsFrom(user)
+            viewModel.eventFromResponse.observe(viewLifecycleOwner, Observer { response ->
+                if (response.isSuccessful) {
+                    response.body()?.let { adapter.setData(it) }
+                }
+            })
+        }
     }
 
     private fun configObservers() {
+        // Show events
         viewModel.myEventsResponse.observe(viewLifecycleOwner, Observer { response ->
             if (response.isSuccessful) {
                 response.body()?.let { adapter.setData(it) }
             }
         })
+        // Button listener
+        binding.btnBack.setOnClickListener {
+            val action = MyEventsFragmentDirections.actionMyEventsFragmentToProfileFragment()
+            findNavController().navigate(action)
+        }
     }
 
     private fun configAdapter() {
@@ -66,9 +94,7 @@ class MyEventsFragment : Fragment(), RowListener {
     }
 
     override fun onClick(pos: Int) {
-        val event = adapter.evArray[pos]
-        val action = MyEventsFragmentDirections.actionMyEventsFragmentToEventInfoFragment2(event)
-        findNavController().navigate(action)
+        //Nada
     }
 
 }

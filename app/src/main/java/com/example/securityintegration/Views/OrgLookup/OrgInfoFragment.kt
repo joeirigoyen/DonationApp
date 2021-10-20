@@ -11,6 +11,7 @@ import android.view.ViewGroup
 import android.widget.EditText
 import android.widget.Toast
 import androidx.annotation.RequiresApi
+import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
 import com.example.securityintegration.Models.API.APIService
 import com.example.securityintegration.Models.User.Donation.DonationCreator
@@ -74,6 +75,11 @@ class OrgInfoFragment : Fragment() {
 
     @RequiresApi(Build.VERSION_CODES.O)
     private fun configButtons() {
+        // Back button
+        binding.btnBack.setOnClickListener {
+            val action = OrgInfoFragmentDirections.actionOrgInfoFragmentToOrgListFragment()
+            findNavController().navigate(action)
+        }
         // Set PayPal button
         if (activity != null) {
             act = activity as MainPageActivity
