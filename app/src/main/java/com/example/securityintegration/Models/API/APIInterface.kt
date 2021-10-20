@@ -2,6 +2,7 @@ package com.example.securityintegration.Models.API
 
 import com.example.securityintegration.Models.EventList.Event
 import com.example.securityintegration.Models.EventList.EventCreator
+import com.example.securityintegration.Models.EventList.UserEventRequest
 import com.example.securityintegration.Models.ProjectList.Project
 import com.example.securityintegration.Models.User.*
 import com.example.securityintegration.Models.User.Donation.Donation
@@ -82,4 +83,12 @@ interface APIInterface {
     @Headers("Content-Type: application/json")
     @PUT("usuario/cambiarPassword")
     suspend fun putNewPassword(@Body request: NewPasswordRequest) : Response<NewPasswordResponse>
+
+    @Headers("Content-Type: application/json")
+    @PUT("evento/verEventosPorOrg")
+    suspend fun getEventsFrom(@Body user: UserEventRequest) : Response<List<Event>>
+
+    @Headers("Content-Type: application/json")
+    @PUT("proyecto/verProyectos")
+    suspend fun getProjectsFrom(@Body user: UserEventRequest) : Response<List<Project>>
 }

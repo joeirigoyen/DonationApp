@@ -32,7 +32,7 @@ class MyProjectListAdapter (var prArray: ArrayList<Project>) : RecyclerView.Adap
     }
 
     // Refresh changes on orgArray
-    fun update(prList: List<Project>?) {
+    fun setData(prList: List<Project>?) {
         // Free memory
         prArray.clear()
         // Update elements

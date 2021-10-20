@@ -16,6 +16,12 @@
         <action
             android:id="@+id/action_profileFragment_to_sign_in_navgraph"
             app:destination="@id/sign_in_navgraph" />
+        <action
+            android:id="@+id/action_profileFragment_to_myEventsFragment"
+            app:destination="@id/myEventsFragment" />
+        <action
+            android:id="@+id/action_profileFragment_to_myProjectsFragment"
+            app:destination="@id/myProjectsFragment" />
     </fragment>
     <fragment
         android:id="@+id/myDonationsFragment"
@@ -27,4 +33,22 @@
             app:destination="@id/profileFragment" />
     </fragment>
     <include app:graph="@navigation/sign_in_navgraph" />
+    <fragment
+        android:id="@+id/myEventsFragment"
+        android:name="com.example.securityintegration.Views.Profile.MyEvents.MyEventsFragment"
+        android:label="my_events_fragment"
+        tools:layout="@layout/my_events_fragment" >
+        <action
+            android:id="@+id/action_myEventsFragment_to_profileFragment"
+            app:destination="@id/profileFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/myProjectsFragment"
+        android:name="com.example.securityintegration.Views.Profile.MyProjects.MyProjectsFragment"
+        android:label="my_projects_fragment"
+        tools:layout="@layout/my_projects_fragment" >
+        <action
+            android:id="@+id/action_myProjectsFragment_to_profileFragment"
+            app:destination="@id/profileFragment" />
+    </fragment>
 </navigation>

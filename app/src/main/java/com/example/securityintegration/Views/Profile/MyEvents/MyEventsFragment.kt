@@ -11,7 +11,9 @@ import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.securityintegration.Models.OrgLookup.MarginItemDecoration
 import com.example.securityintegration.Models.EventList.RowListener
+import com.example.securityintegration.Models.EventList.UserEventRequest
 import com.example.securityintegration.ViewModels.API.APIViewModel
+import com.example.securityintegration.Views.Landing.MainPageActivity
 import com.example.securityintegration.databinding.MyEventsFragmentBinding
 
 class MyEventsFragment : Fragment(), RowListener {
@@ -20,6 +22,7 @@ class MyEventsFragment : Fragment(), RowListener {
         fun newInstance() = MyEventsFragment()
     }
 
+    lateinit var act : MainPageActivity
     private lateinit var binding : MyEventsFragmentBinding
     private val viewModel: APIViewModel by viewModels()
     private val adapter = MyEventsAdapter(arrayListOf())
@@ -45,7 +48,16 @@ class MyEventsFragment : Fragment(), RowListener {
 
     private fun configEvents() {
         // Set element info to boxes
-        viewModel.getEvents()
+        if (activity != null) {
+            act = activity as MainPageActivity
+            val user = UserEventRequest(act.accNames)
+            viewModel.getEventsFrom(user)
+            viewModel.eventFromResponse.observe(viewLifecycleOwner, Observer { response ->
+                if (response.isSuccessful) {
+                    response.body()?.let { adapter.setData(it) }
+                }
+            })
+        }
     }
 
     private fun configObservers() {

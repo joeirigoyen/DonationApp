@@ -8,6 +8,7 @@ import com.example.securityintegration.Models.EventList.Event
 import com.example.securityintegration.Models.ProjectList.Project
 import com.example.securityintegration.Models.API.APIService
 import com.example.securityintegration.Models.EventList.EventCreator
+import com.example.securityintegration.Models.EventList.UserEventRequest
 import com.example.securityintegration.Models.User.*
 import com.example.securityintegration.Models.User.Donation.Donation
 import com.example.securityintegration.Models.User.Donation.DonationCreator
@@ -37,6 +38,8 @@ class APIViewModel(private val service: APIService) : ViewModel() {
     val questionResponse : MutableLiveData<Response<QuestionResponse>> = MutableLiveData()
     val validateQuestionResponse : MutableLiveData<Response<ValidateQuestionResponse>> = MutableLiveData()
     val newPasswordResponse : MutableLiveData<Response<NewPasswordResponse>> = MutableLiveData()
+    val eventFromResponse : MutableLiveData<Response<List<Event>>> = MutableLiveData()
+    val projectFromResponse : MutableLiveData<Response<List<Project>>> = MutableLiveData()
 
     fun getEvents() {
         viewModelScope.launch {
@@ -117,6 +120,20 @@ class APIViewModel(private val service: APIService) : ViewModel() {
             val response = service.putNewPassword(request)
             newPasswordResponse.value = response
             Log.e("diego", response.toString())
+        }
+    }
+
+    fun getEventsFrom(user: UserEventRequest) {
+        viewModelScope.launch {
+            val response = service.getEventsFrom(user)
+            eventFromResponse.value = response
+        }
+    }
+
+    fun getProjectsFrom(user: UserEventRequest) {
+        viewModelScope.launch {
+            val response = service.getProjectsFrom(user)
+            projectFromResponse.value = response
         }
     }
 

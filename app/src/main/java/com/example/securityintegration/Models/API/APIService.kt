@@ -2,6 +2,7 @@ package com.example.securityintegration.Models.API
 
 import com.example.securityintegration.Models.EventList.Event
 import com.example.securityintegration.Models.EventList.EventCreator
+import com.example.securityintegration.Models.EventList.UserEventRequest
 import com.example.securityintegration.Models.ProjectList.Project
 import com.example.securityintegration.Models.User.*
 import com.example.securityintegration.Models.User.Donation.Donation
@@ -80,6 +81,14 @@ class APIService {
 
     suspend fun putNewPassword(request: NewPasswordRequest) : Response<NewPasswordResponse> {
         return RetrofitInstance.api.putNewPassword(request)
+    }
+
+    suspend fun getEventsFrom(user: UserEventRequest) : Response<List<Event>> {
+        return RetrofitInstance.api.getEventsFrom(user)
+    }
+
+    suspend fun getProjectsFrom(user: UserEventRequest): Response<List<Project>> {
+        return RetrofitInstance.api.getProjectsFrom(user)
     }
 
 }
